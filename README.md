@@ -6,7 +6,7 @@
 Clone the project
 
 ```bash
-  git clone https://github.com/LexT96/mern-starter.git
+  g https://github.com/LexT96/SustainMind.git
 ```
 
 Go to the project directory
