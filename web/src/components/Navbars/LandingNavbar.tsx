@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useRef } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Link } from "react-scroll";
-import logo from "../../assets/logo.png";
+import logo from "/logo.png";
 export function LandingNavBar() {
     const navRef = useRef(null);
 

@@ -1,7 +1,11 @@
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import AutoModeIcon from '@mui/icons-material/AutoMode';
 import HandshakeIcon from '@mui/icons-material/Handshake';
-import screenshot from "../../../assets/screenshot.jpg";
+import screenshot from "/screenshot.jpg";
+import { Slide } from '@mui/material';
+import { useState } from 'react';
+import VisibilitySensor from 'react-visibility-sensor';
+
 const features = [
   {
     name: 'Collaborate.',
@@ -22,10 +26,15 @@ const features = [
 ]
 
 export function LandingFeaturesSection() {
+    const [slideIn, setSlideIn] = useState(false);
   return (
     <section id="features" className="overflow-hidden bg-white py-24 sm:py-32">
+        <VisibilitySensor minTopValue={300} partialVisibility={true} delayedCall scrollCheck onChange={(isVisible: boolean) => (isVisible) && setSlideIn(isVisible)}>
+
       <div className="mx-auto max-w-7xl md:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-start">
+
+        <Slide timeout={750} direction={"right"} in={slideIn}  >
           <div className="px-6 lg:px-0 lg:pr-4 lg:pt-4">
             <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
               <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Intuitive workflow</p>
@@ -45,7 +54,12 @@ export function LandingFeaturesSection() {
               </dl>
             </div>
           </div>
-          <div className="sm:px-6 lg:px-0">
+          </Slide>
+
+
+
+
+          <div className="sm:px-6 lg:px-0 ">
             <div className="relative isolate overflow-hidden bg-green-500 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pl-16 sm:pr-0 sm:pt-16 lg:mx-0 lg:max-w-none">
               <div
                 className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-green-100 opacity-20 ring-1 ring-inset ring-white"
@@ -54,6 +68,7 @@ export function LandingFeaturesSection() {
               <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
                 <img
                   src={screenshot}
+                  loading="lazy"
                   alt="Product screenshot"
                   width={2432}
                   height={1442}
@@ -68,6 +83,8 @@ export function LandingFeaturesSection() {
           </div>
         </div>
       </div>
+
+      </VisibilitySensor>
     </section>
   )
 }

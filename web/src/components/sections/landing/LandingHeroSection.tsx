@@ -1,8 +1,8 @@
 import { useRef } from 'react';
-import heroBg from '../../../assets/hero-bg.jpg'
-import heroFg from '../../../assets/hero-fg.png'
+import heroBg from '/hero-bg.jpg'
+import heroFg from '/hero-fg.png'
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
-import logo from "../../../assets/logo.png";
+import logo from "/logo.png";
 import { Link } from "react-scroll";
 export function LandingHeroSection() {
   return (
