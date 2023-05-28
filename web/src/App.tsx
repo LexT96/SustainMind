@@ -7,8 +7,16 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import { ClerkProvider } from '@clerk/clerk-react'
+import { CLERK_KEY } from './config'
 
 function App() {
+if (!CLERK_KEY) {
+
+  throw new Error("Missing Publishable Key")
+
+}
+
   const [count, setCount] = useState(0);
   const [users, setUsers] = useState([]);
 
@@ -21,7 +29,9 @@ function App() {
     }, []);
 
   return (
-    <RouterProvider router={router} />
+    <ClerkProvider publishableKey={CLERK_KEY}>
+      <RouterProvider router={router} />
+    </ClerkProvider>
   )
 }
 
