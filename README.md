@@ -1,5 +1,5 @@
 
-# MERN Starter
+# SustainMind
 
 ## Run Locally
 
@@ -12,7 +12,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd mern-starter
+  cd SustainMind
 ```
 
 ### Server
@@ -58,4 +58,8 @@ Start the server
 ```bash
   yarn dev
 ```
+
+## Deployments
+Pushing changes in the /web folder on the main branch will lead to a deployment on www.SustainMind.de
+
 
