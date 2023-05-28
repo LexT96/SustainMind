@@ -7,8 +7,8 @@
   "scripts": {
     "dev": "nodemon --exec ts-node --esm src/index.ts",
     "build": "tsc",
-    "start": "slc start"
-  },
+    "start": "pm2 start build/index.js"
+    },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
