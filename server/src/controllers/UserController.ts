@@ -18,4 +18,8 @@ export class UserController {
         }
         res.send(user);
     }
+    public addNew = async (req: Request) => {
+        const user = new User(req.params);
+        await user.save();
+    }
 }
