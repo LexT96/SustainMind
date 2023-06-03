@@ -2,6 +2,7 @@ import { Fragment, useEffect, useRef } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from "/logo.png";
+import { UserButton } from '@clerk/clerk-react';
 
 export function MainNavbar() {
     const pathName = window.location.pathname
@@ -75,6 +76,9 @@ export function MainNavbar() {
                   </a>
                 </div>
               </div>
+           <div className="flex justify-center items-center">
+            <UserButton />
+           </div>
             </div>
           </div>
 
