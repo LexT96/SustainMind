@@ -1,8 +1,9 @@
-import { Grid } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import { PageLayout } from "../components/PageLayout"
 import { Searchbar } from "../components/Searchbar"
 import { useState } from "react";
 import { SiteCard } from "../components/ProductionSites/SiteCard";
+import { AddModal } from "../components/AddModal";
 
 
 const mockSites = [{
@@ -35,16 +36,17 @@ const mockSites = [{
 }];
 
 export const SitesPage = () => {
+    const [addModalOpen, setAddModalOpen] = useState(false);
     const [matchingSites, setMatchingSites] = useState(mockSites);
     return <PageLayout>
         <Searchbar label="Production Site" options={mockSites.map((s) => s.name)} onInputChange={(event: Event, value: string) => {
-            setMatchingSites(matchingSites.filter(m => m.name.includes(value)));
+            setMatchingSites(mockSites.filter(m => m.name.includes(value)));
         }} />
         <p className="mb-2">{matchingSites.length} Results</p>
         <Grid container rowSpacing={3} columnSpacing={3}>
           {matchingSites.map((site) => (
             <Grid
-              className="justify-center flex sm:block"
+              className="sm:block"
               item
               xs={12}
               sm={6}

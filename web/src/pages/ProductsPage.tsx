@@ -9,6 +9,8 @@ import { PageLayout } from "../components/PageLayout";
 import { ProductCard } from "../components/Products/ProductCard";
 import { useState } from "react";
 import { Searchbar } from "../components/Searchbar";
+import { AddModal } from "../components/AddModal";
+import { AddProductModal } from "../components/Products/AddProductModal";
 
 const mockProducts = [
     {
@@ -42,8 +44,10 @@ const mockProducts = [
 ]
 export function ProductsPage () {
     const [matchingProducts, setMatchingProducts] = useState(mockProducts);
+    const [addModalOpen, setAddModalOpen] = useState(false);
     return (
       <PageLayout>
+        <AddProductModal open={addModalOpen} setOpen={setAddModalOpen} />
         <Searchbar
           label={"Product"}
           options={mockProducts.map((p) => p.name)}
@@ -53,7 +57,11 @@ export function ProductsPage () {
             );
           }}
         />
-        <p className="mb-2">{matchingProducts.length} Results</p>
+        <div className="mb-2 flex justify-between items-center px-8">
+        <p >{matchingProducts.length} Results</p>
+        <Button variant="contained" color="success" onClick={() => setAddModalOpen(true)}>Add Product</Button>
+        </div>
+
         <Grid container rowSpacing={3} columnSpacing={1}>
           {matchingProducts.map((product) => (
             <Grid

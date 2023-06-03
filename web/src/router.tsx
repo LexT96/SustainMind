@@ -8,13 +8,18 @@ import { RedirectToSignIn, SignedIn, SignedOut, SignIn, SignUp } from "@clerk/cl
 import { UserButton } from "@clerk/clerk-react";
 import { ProductsPage } from "./pages/ProductsPage";
 import { SitesPage } from "./pages/SitesPage";
+import { AnalysisPage } from "./pages/AnalysisPage";
+
+const redirectToSignIn = (
+  <SignedOut>
+    <RedirectToSignIn />
+  </SignedOut>
+);
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-        <LandingPage />
-    ),
+    element: <LandingPage />,
   },
   {
     path: "/login/*",
@@ -26,11 +31,34 @@ export const router = createBrowserRouter([
   },
   {
     path: "/products",
-    element: <ProductsPage />
+    element:      <>
+    <SignedIn>
+      <ProductsPage />
+    </SignedIn>
+    {redirectToSignIn}
+  </>
   },
   {
     path: "/sites",
-    element: <SitesPage />
+    element: (
+      <>
+        <SignedIn>
+          <SitesPage />
+        </SignedIn>
+        {redirectToSignIn}
+      </>
+    ),
+  },
+  {
+    path: "/analysis",
+    element: (
+      <>
+        <SignedIn>
+          <AnalysisPage />
+        </SignedIn>
+        {redirectToSignIn}
+      </>
+    ),
   },
   {
     path: "/app",
@@ -40,9 +68,7 @@ export const router = createBrowserRouter([
           <p>Hello World</p>
           <UserButton />
         </SignedIn>
-        <SignedOut>
-          <RedirectToSignIn />
-        </SignedOut>
+        {redirectToSignIn}
       </>
     ),
   },
