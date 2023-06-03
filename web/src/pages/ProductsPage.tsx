@@ -4,9 +4,10 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions, Grid } from '@mui/material';
+import { Autocomplete, Button, CardActionArea, CardActions, Grid, TextField } from '@mui/material';
 import { PageLayout } from "../components/PageLayout";
 import { ProductCard } from "../components/Products/ProductCard";
+import { useState } from "react";
 
 const mockProducts = [
     {
@@ -39,11 +40,28 @@ const mockProducts = [
 }
 ]
 export function ProductsPage () {
+    const [matchingProducts, setMatchingProducts] = useState(mockProducts);
     return (
       <PageLayout>
+        <Autocomplete
+          disablePortal
+          className="rounded-full mb-12 w-3/4 mx-auto"
+          options={mockProducts.map(product => product.name)}
+          onInputChange={(event, value) => {
+            setMatchingProducts(mockProducts.filter((p => p.name.includes(value))))
+          }}
+          renderInput={(params) => <TextField {...params} label="Product" />}
+        />
+        <p className="mb-2">{matchingProducts.length} Results</p>
         <Grid container rowSpacing={3} columnSpacing={1}>
-          {mockProducts.map((product) => (
-            <Grid className="justify-center flex sm:block" item xs={12} sm={6} md={4} >
+          {matchingProducts.map((product) => (
+            <Grid
+              className="justify-center flex sm:block"
+              item
+              xs={12}
+              sm={6}
+              md={4}
+            >
               <ProductCard product={product} />
             </Grid>
           ))}
