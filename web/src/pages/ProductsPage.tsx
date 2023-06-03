@@ -8,6 +8,7 @@ import { Autocomplete, Button, CardActionArea, CardActions, Grid, TextField } fr
 import { PageLayout } from "../components/PageLayout";
 import { ProductCard } from "../components/Products/ProductCard";
 import { useState } from "react";
+import { Searchbar } from "../components/Searchbar";
 
 const mockProducts = [
     {
@@ -43,14 +44,14 @@ export function ProductsPage () {
     const [matchingProducts, setMatchingProducts] = useState(mockProducts);
     return (
       <PageLayout>
-        <Autocomplete
-          disablePortal
-          className="rounded-full mb-12 w-3/4 mx-auto"
-          options={mockProducts.map(product => product.name)}
-          onInputChange={(event, value) => {
-            setMatchingProducts(mockProducts.filter((p => p.name.includes(value))))
+        <Searchbar
+          label={"Product"}
+          options={mockProducts.map((p) => p.name)}
+          onInputChange={(event: Event, value: string) => {
+            setMatchingProducts(
+              mockProducts.filter((p) => p.name.includes(value))
+            );
           }}
-          renderInput={(params) => <TextField {...params} label="Product" />}
         />
         <p className="mb-2">{matchingProducts.length} Results</p>
         <Grid container rowSpacing={3} columnSpacing={1}>
