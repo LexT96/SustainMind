@@ -6,6 +6,7 @@ import {
 import { LandingPage } from "./pages/LandingPage";
 import { RedirectToSignIn, SignedIn, SignedOut, SignIn, SignUp } from "@clerk/clerk-react";
 import { UserButton } from "@clerk/clerk-react";
+import { ProductsPage } from "./pages/ProductsPage";
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
   {
     path: "/register/*",
     element: <SignUp routing="path" path="/register" />,
+  },
+  {
+    path: "/products",
+    element: <ProductsPage />
   },
   {
     path: "/app",
