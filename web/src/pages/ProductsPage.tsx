@@ -40,6 +40,13 @@ const mockProducts = [
     image: "https://picsum.photos/300",
     description: "Test description",
     score: 1
+},
+{
+    id: 5,
+    name: "ProductName5",
+    image: "https://picsum.photos/300",
+    description: "Test description",
+    score: 1
 }
 ]
 export function ProductsPage () {
