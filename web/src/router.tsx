@@ -1,14 +1,13 @@
 import {
-    createBrowserRouter,
-    RouterProvider,
-  } from "react-router-dom";
+  createBrowserRouter
+} from "react-router-dom";
 
-import { LandingPage } from "./pages/LandingPage";
-import { RedirectToSignIn, SignedIn, SignedOut, SignIn, SignUp } from "@clerk/clerk-react";
-import { UserButton } from "@clerk/clerk-react";
-import { ProductsPage } from "./pages/ProductsPage";
-import { SitesPage } from "./pages/SitesPage";
+import { RedirectToSignIn, SignedIn, SignedOut, SignIn, SignUp, UserButton } from "@clerk/clerk-react";
 import { AnalysisPage } from "./pages/AnalysisPage";
+import { LandingPage } from "./pages/LandingPage";
+import { ProductsPage } from "./pages/ProductsPage";
+import { ProfilePage } from "./pages/ProfilePage";
+import { SitesPage } from "./pages/SitesPage";
 
 const redirectToSignIn = (
   <SignedOut>
@@ -55,6 +54,17 @@ export const router = createBrowserRouter([
       <>
         <SignedIn>
           <AnalysisPage />
+        </SignedIn>
+        {redirectToSignIn}
+      </>
+    ),
+  },
+  {
+    path: "/profile",
+    element: (
+      <>
+        <SignedIn>
+          <ProfilePage />
         </SignedIn>
         {redirectToSignIn}
       </>
