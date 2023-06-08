@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import { PageLayout } from "../components/PageLayout"
-import { Avatar, Box, Typography } from "@mui/material";
+import { Avatar, Box, Grid, Typography } from "@mui/material";
 import { ProductScore } from "../components/Products/ProductScore";
+import { SupplierRisk } from "../components/Suppliers/SupplierRisk";
 
 const supplier = {
   id: 1,
@@ -28,6 +29,29 @@ export const SupplierDetailPage = () => {
             <Typography>{supplier.description}</Typography>
           </Box>
         </Box>
+        <Typography variant="h5" sx={{ fontWeight: "bold", mt: 5 }}>
+          Risks
+        </Typography>
+        <Typography sx={{ mb: 3 }}>
+          Potential risks identified based on production countries and product
+          categories
+        </Typography>
+        <Grid container spacing={3}>
+          <Grid xs={4}>
+            <SupplierRisk
+              name={"Work safety"}
+              score={6}
+              explanation={"dasdasdsadsadsadsadsdsadsadsdsadsds"}
+            />
+          </Grid>
+          <Grid xs={4}>
+            <SupplierRisk
+              name={"Slave labour"}
+              score={2}
+              explanation={"dasdasdsadsadsadsadsdsadsadsdsadsds"}
+            />
+          </Grid>
+        </Grid>
       </PageLayout>
     );
 }
