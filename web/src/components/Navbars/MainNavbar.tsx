@@ -63,7 +63,15 @@ export function MainNavbar() {
                       pathName === "/suppliers" ? "text-green-700" : ""
                     } inline-flex cursor-pointer items-center border-b-2 border-transparent px-1 pt-1 text-md font-medium text-black hover:text-gray-500`}
                   >
-                    Suppliers
+                    My Suppliers
+                  </a>
+                  <a
+                    href="/marketplace"
+                    className={`${
+                      pathName === "/marketplace" ? "text-green-700" : ""
+                    } inline-flex cursor-pointer items-center border-b-2 border-transparent px-1 pt-1 text-md font-medium text-black hover:text-gray-500`}
+                  >
+                    Marketplace
                   </a>
                   <a
                     href="/sites"

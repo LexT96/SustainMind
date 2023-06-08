@@ -8,6 +8,9 @@ import { LandingPage } from "./pages/LandingPage";
 import { ProductsPage } from "./pages/ProductsPage";
 import { ProfilePage } from "./pages/ProfilePage";
 import { SitesPage } from "./pages/SitesPage";
+import { MarketplacePage } from "./pages/MarketplacePage";
+import { SuppliersPage } from "./pages/SuppliersPage";
+import { SupplierDetailPage } from "./pages/SupplierDetailPage";
 
 const redirectToSignIn = (
   <SignedOut>
@@ -30,12 +33,14 @@ export const router = createBrowserRouter([
   },
   {
     path: "/products",
-    element:      <>
-    <SignedIn>
-      <ProductsPage />
-    </SignedIn>
-    {redirectToSignIn}
-  </>
+    element: (
+      <>
+        <SignedIn>
+          <ProductsPage />
+        </SignedIn>
+        {redirectToSignIn}
+      </>
+    ),
   },
   {
     path: "/sites",
@@ -65,6 +70,39 @@ export const router = createBrowserRouter([
       <>
         <SignedIn>
           <ProfilePage />
+        </SignedIn>
+        {redirectToSignIn}
+      </>
+    ),
+  },
+  {
+    path: "/suppliers",
+    element: (
+      <>
+        <SignedIn>
+          <SuppliersPage />
+        </SignedIn>
+        {redirectToSignIn}
+      </>
+    ),
+  },
+  {
+    path: "/marketplace",
+    element: (
+      <>
+        <SignedIn>
+          <MarketplacePage />
+        </SignedIn>
+        {redirectToSignIn}
+      </>
+    ),
+  },
+  {
+    path: "/suppliers/:id",
+    element: (
+      <>
+        <SignedIn>
+          <SupplierDetailPage />
         </SignedIn>
         {redirectToSignIn}
       </>
