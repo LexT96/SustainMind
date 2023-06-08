@@ -20,14 +20,20 @@ def get_relevant_rows(first_column):
     """
     This function returns the indices of the relevant rows in the excel sheet
     """
-    relevant_infos = {"Factor 1: Constraints on Government Powers": -1,
-                      "Factor 2: Absence of Corruption": -1, 
-                      "Factor 3: Open Government": -1, 
-                      "Factor 4: Fundamental Rights": -1, 
-                      "Factor 5: Order and Security": -1, 
-                      "Factor 6: Regulatory Enforcement": -1, 
-                      "Factor 7: Civil Justice": -1, 
-                      "Factor 8: Criminal Justice": -1}
+    relevant_infos = {
+        "WJP Rule of Law Index: Overall Score": -1,
+        "Factor 1: Constraints on Government Powers": -1,
+        "Factor 2: Absence of Corruption": -1, 
+        "Factor 3: Open Government": -1, 
+        "Factor 4: Fundamental Rights": -1,
+        "4.1 Equal treatment and absence of discrimination": -1,
+        "4.8 Fundamental labor rights are effectively guaranteed": -1,
+        "Factor 5: Order and Security": -1, 
+        "Factor 6: Regulatory Enforcement": -1, 
+        "Factor 7: Civil Justice": -1,
+        "7.2 Civil justice is free of discrimination": -1,
+        "Factor 8: Criminal Justice": -1
+    }
     
     for i in range(len(first_column)):
         cell = first_column[i]

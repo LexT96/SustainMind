@@ -7,7 +7,7 @@ Load the Global Slavery Index from Excel (.xlsx) into a MongoDB table
 This script needs to be run only when the index is updated (once a year). It can be run with: "python load_slavery_index.py"
 IMPORTANT: Update the sheet name when running the script!
 Copyright @SustainMind
-Tested with: WJP 2022
+Tested with: GSI 2023
 """
 
 EXCEL_FILE = "indices/2023-Global-Slavery-Index-Data.xlsx"
