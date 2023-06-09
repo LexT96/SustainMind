@@ -14,7 +14,7 @@ Tested with: UNICEF Child Labor Index May 2022
 EXCEL_FILE = "indices/XLS_Child-labour-database_May-2022.xlsx"
 EXCEL_SHEET_NAME = "Child labour"
 MONGO_DB_CONFIG_FILE = "db_config.txt"
-COLLECTION_NAME = "child_labour"
+COLLECTION_NAME = "child_labor"
 
 
 if __name__ == "__main__":
