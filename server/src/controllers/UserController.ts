@@ -1,11 +1,11 @@
 import { User } from "../models/user";
 import { Request, Response } from "express";
 export class UserController {
-    public getAll = async (req: Request, res: Response) => {
+    public getAllUser = async (req: Request, res: Response) => {
         const users = await User.find();
         res.send(users);
     }
-    public getById = async (req: Request, res: Response) => {
+    public getUserById = async (req: Request, res: Response) => {
         const id = req.params.id;
         if (!id) {
             res.status(400).send("Please provide a user id");
@@ -18,8 +18,36 @@ export class UserController {
         }
         res.send(user);
     }
-    public addNew = async (req: Request) => {
-        const user = new User(req.params);
-        await user.save();
+    public addNewUser = async (req: Request, res: Response) => {
+        const newUser = new User(req.params);
+        if (!newUser) {
+            res.status(400).send("Please provide user");
+            return;
+        }
+        await newUser.save();
+        }
+    public deleteUser = async (req: Request, res: Response) => {
+        const id = req.params.id;
+        if (!id) {
+            res.status(400).send("Please provide a user id");
+            return;
+        }
+        const deletedUser = await User.findByIdAndDelete(id);
+        if (deletedUser) {
+            res.status(200).send(`User with id: ${id} has been deleted`);
+        }
+    }
+    public updateUser = async (req: Request, res: Response) => {
+        const updatedUser = req.params;
+        const updatedUserId = req.params.id;
+
+        if (!updatedUserId) {
+            res.status(400).send("Please provide a user id");
+            return;
+        } else if (!updatedUser) {
+            res.status(400).send("Please provide user");
+            return;
+        }
+        await User.findByIdAndUpdate(updatedUserId, updatedUser);
     }
 }
