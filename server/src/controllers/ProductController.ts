@@ -38,7 +38,7 @@ export class ProductController {
         }
     }
     public updateProduct = async (req: Request, res: Response) => {
-        const updatedProduct = req.params;
+        const updatedProduct = new Product(req.params);
         const updatedProductId = req.params.id;
 
         if (!updatedProductId) {
@@ -49,5 +49,6 @@ export class ProductController {
             return;
         }
         await Product.findByIdAndUpdate(updatedProductId, updatedProduct);
+        res.status(200).send("Product has been updated succesfully");
     }
 }
