@@ -20,11 +20,4 @@ const userSchema = new Schema({
     }
     });
 
-const productSchema = new Schema({
-    name: String,
-    user: userSchema
-
-    });
-
 export const User = model("User", userSchema);
-export const Product = model("Product", productSchema);
