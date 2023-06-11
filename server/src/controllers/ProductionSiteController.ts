@@ -2,9 +2,14 @@ import { ProductionSite } from "../models/productionSite";
 import { Request, Response } from "express";
 export class ProductionSiteController {
     public getAllProductionSites = async (req: Request, res: Response) => {
-        const ProductionSites = await ProductionSite.find();
-        res.send(ProductionSites);
+        const productionSites = await ProductionSite.find();
+        res.send(productionSites);
     }
+    public getAllProductSitesOfSupplier = async (req: Request, res: Response) => {
+        const supplierName = req.params.supplierName;
+        const productionSites = await ProductionSite.find({ company: supplierName });
+        res.send(productionSites);
+      }
     public getProductionSiteById = async (req: Request, res: Response) => {
         const id = req.params.id;
         if (!id) {
@@ -18,14 +23,27 @@ export class ProductionSiteController {
         }
         res.send(ProductionSite);
     }
+
     public addNewProductionSite = async (req: Request, res: Response) => {
         const newProductionSite = new ProductionSite(req.params);
         if (!newProductionSite) {
             res.status(400).send("Please provide ProductionSite");
             return;
+        } else if (
+            // newProductionSite.id &&
+            newProductionSite.name &&
+            // newProductionSite.description &&
+            newProductionSite.company &&
+            newProductionSite.country &&
+            // newProductionSite.region &&
+            newProductionSite.city &&
+            newProductionSite.zipcode &&
+            newProductionSite.address
+          ) {
+            await newProductionSite.save();
+          } 
         }
-         await newProductionSite.save();
-        }
+
     public deleteProductionSite = async (req: Request, res: Response) => {
         const id = req.params.id;
         if (!id) {
