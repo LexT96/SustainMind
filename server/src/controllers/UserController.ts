@@ -1,4 +1,4 @@
-import { User } from "../models/user";
+import { User } from "../models/user.js";
 import { Request, Response } from "express";
 export class UserController {
     public getAllUser = async (req: Request, res: Response) => {
