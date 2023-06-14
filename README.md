@@ -1,6 +1,8 @@
 
 # SustainMind
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/26994758-d413-4aaa-8b10-7467c7c0b8fb/deploy-status)](https://app.netlify.com/sites/grand-fenglisu-52932d/deploys)
+
 ## Run Locally
 
 Clone the project
