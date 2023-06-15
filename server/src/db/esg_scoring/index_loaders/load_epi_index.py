@@ -22,7 +22,7 @@ def insert_country_scores(collection, csv):
 
     relevant_infos = {
         "country": "Country",
-        "iso"    : "ISO code",
+        "iso"    : "Country Code",
         "EPI.new": "EPI score",
         "BDH.new": "Biodiversity & Habitat",
         "ECS.new": "Ecosystem Services",

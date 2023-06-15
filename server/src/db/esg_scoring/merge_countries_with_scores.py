@@ -43,7 +43,7 @@ slavery_index_country_mappings = {
     'Bolivia (Plurinational State of)': 'Bolivia',
     'Congo, Democratic Republic of the': 'Democratic Republic of the Congo',
     'Iran (Islamic Republic of)': 'Iran', 
-    '': 'Kosovo', # not an entry in counry databse -> # TODO add Kosovo
+    '': 'Kosovo', # not an entry in country databse -> # TODO add Kosovo
     'Lao People\'s Democratic Republic': 'Lao PDR', 
     'Moldova, Republic of': 'Moldova', 
     'Korea (Democratic People\'s Republic of)': 'North Korea', 
@@ -57,7 +57,6 @@ slavery_index_country_mappings = {
     'United Kingdom of Great Britain and Northern Ireland': 'United Kingdom', 
     'Venezuela (Bolivarian Republic of)': 'Venezuela'
 }
-
 
 def index_to_risk_score(level_0, level_30, level_70, level_100, index_value):
     """
@@ -112,25 +111,95 @@ def slavery_index_to_risk(slavery_index_data):
     else:
         result["Modern Slavery Prevalence"] = -1
 
-    result["Risk: Human Trafficking"] = score
+    result["Risk: Modern Slavery"] = score
     return result
 
 
-def wjp_to_risks(wjp_scores):
+def wjp_to_risks(wjp_data):
     """
     Convert a single WJP score object to a dict of SustainMind ESG scores
-    @param wjp_scores: JSON WJP object
+    @param wjp_data: JSON WJP object
     @return risks: Map of SustainMind ESG scores and their values (-1: not enough data)
     """
-    risks = {"Forced labor": -1, }
+    risks = {}
+
+    if wjp_data:
+        factor_4_7 = wjp_data["4.7 Freedom of assembly and association is effectively guaranteed"]
+        factor_4_8 = wjp_data["4.8 Fundamental labor rights are effectively guaranteed"]
+        factor_6 = wjp_data["Factor 6: Regulatory Enforcement"]
+        factor_4_1 = wjp_data["4.1 Equal treatment and absence of discrimination"]
+        factor_7_2 = wjp_data["7.2 Civil justice is free of discrimination"]
+
+        coalition_score = 100 - 100*(factor_4_7 + factor_6)/2
+        labor_rights_score = 100 - 100*(factor_4_8 + factor_6)/2
+        discrimination_score = 100 - 100*(factor_4_1 + factor_7_2)/2
+
+        coalition_risk = index_to_risk_score(10, 30, 50, 70, coalition_score)
+        labor_rights_risk = index_to_risk_score(10, 30, 50, 70, labor_rights_score)
+        discrimination_risk = index_to_risk_score(10, 30, 50, 70, discrimination_score)
+
+        risks["Risk: No Freedom of Association"] = coalition_risk
+        risks["Risk: Poor Labor Rights and Work Safety"] = labor_rights_risk
+        risks["Risk: Discrimination"] = discrimination_risk
+    else:
+        risks = {
+            "Risk: No Freedom of Association" : -1,
+            "Risk: Poor Safety at Work" : -1,
+            "Risk: Discrimination": -1,
+        }
+
+    return risks
 
 
-def test_conversion(index, country_region, index_name, risk_name, mapping=None):
+def epi_to_risks(epi_data):
+    """
+    Convert a single EPI data record into a dict of SustainMind ESG scores
+    @param epi_data: JSON EPI object
+    @return risks: Map of SustainMind ESG scores and their values (-1: not enough data)
+    """
+    risks = {}
+
+    if epi_data:
+        water_score = 100 - epi_data["Water Resources"]
+        air_score = 100 - epi_data["Air Quality"]
+        waste_score = 100 - epi_data["Waste Management"]
+        metal_score = 100 - epi_data["Heavy Metals"]
+
+        water_risk = index_to_risk_score(0, 30, 70, 100, water_score)
+        air_risk = index_to_risk_score(0, 30, 70, 100, air_score)
+        waste_risk = index_to_risk_score(0, 45, 75, 100, waste_score)
+        metal_risk = index_to_risk_score(0, 30, 70, 100, metal_score)
+
+        risks = {
+            "Risk: Waste Water Pollution": water_risk,
+            "Risk: Poor Air Quality": air_risk,
+            "Risk: Inadequate Waste Disposal": waste_risk,
+            "Risk: Release of Heavy Metals": metal_risk
+        }
+    else:
+        risks = {
+            "Risk: Waste Water Pollution": -1,
+            "Risk: Air Pollution": -1,
+            "Risk: Inadequate Waste Disposal": -1,
+            "Risk: Release of Heavy Metals": -1
+        }
+    
+    return risks
+
+
+def test_conversion(index, country_region, index_name, risk_name, mapping=None, use_iso=False):
     # check if all countries of an index could be matched
-    countries_index = index.find({}, {"_id": 0, "Country": 1})
-    countries_index_list = [c["Country"] for c in countries_index]
-    countries_all = country_region.find({risk_name: {"$ne": -1}}, {"_id": 0, "name": 1})
-    countries_all_list_ = [c["name"] for c in countries_all]
+
+    if use_iso:
+        countries_index = index.find({}, {"_id": 0, "Country Code": 1})
+        countries_index_list = [c["Country Code"] for c in countries_index]
+        countries_all = country_region.find({risk_name: {"$ne": -1}}, {"_id": 0, "alpha-3": 1})
+        countries_all_list_ = [c["alpha-3"] for c in countries_all]
+    else:
+        countries_index = index.find({}, {"_id": 0, "Country": 1})
+        countries_index_list = [c["Country"] for c in countries_index]
+        countries_all = country_region.find({risk_name: {"$ne": -1}}, {"_id": 0, "name": 1})
+        countries_all_list_ = [c["name"] for c in countries_all]
     if mapping:
         countries_all_list = [(mapping[c] if c in mapping.keys() else c) for c in countries_all_list_]
     else:
@@ -187,7 +256,7 @@ if __name__ == "__main__":
     for country in country_region.find({}, {'_id': 0, 'name': 1, 'alpha-2': 1, 'alpha-3': 1, 'region': 1, 'sub-region': 1}):
 
         country_name = country["name"]
-        iso_code = country_region["alpha-2"]
+        iso_code = country["alpha-3"]
 
         # append child labor index
         cl_country_name = country_name
@@ -208,8 +277,13 @@ if __name__ == "__main__":
         for risk, score in slavery_index_to_risk(slavery_index_data).items():
             country[risk] = score
 
-        #wjp_scores = wjp.find_one({"Country Code": iso_code})
-        #wjp_to_risks(wjp_scores)
+        wjp_index_data = wjp.find_one({"Country Code": iso_code})
+        for risk, score in wjp_to_risks(wjp_index_data).items():
+            country[risk] = score
+
+        epi_index_data = epi.find_one({"Country Code": iso_code})
+        for risk, score in epi_to_risks(epi_index_data).items():
+            country[risk] = score
 
         country_list.append(country)
 
@@ -219,6 +293,7 @@ if __name__ == "__main__":
 
     test_conversion(child_labor_index, merged_indices, "Child Labor", "Risk: Child Labor", mapping=child_labor_country_mappings)
     test_conversion(slavery_index, merged_indices, "Slavery", "Risk: Human Trafficking", mapping=slavery_index_country_mappings)
-    #print(country_list)
+    test_conversion(wjp, merged_indices, "World Justice Project", "Risk: No Freedom of Association", use_iso=True)
+    test_conversion(epi, merged_indices, "Environmental Performance Index", "Risk: Poor Air Quality", use_iso=True)
 
     print("Merging completed!")

@@ -28,6 +28,7 @@ def get_relevant_rows(first_column):
         "Factor 3: Open Government": -1, 
         "Factor 4: Fundamental Rights": -1,
         "4.1 Equal treatment and absence of discrimination": -1,
+        "4.7 Freedom of assembly and association is effectively guaranteed": -1,
         "4.8 Fundamental labor rights are effectively guaranteed": -1,
         "Factor 5: Order and Security": -1, 
         "Factor 6: Regulatory Enforcement": -1, 
