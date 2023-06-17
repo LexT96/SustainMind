@@ -1,0 +1,250 @@
+_id,name,alpha-2,alpha-3,region,sub-region,Child Labor Percentage,Risk: Child Labor,Modern Slavery Prevalence,Risk: Modern Slavery,Risk: No Freedom of Association,Risk: Poor Labor Rights and Work Safety,Risk: Discrimination,Risk: Waste Water Pollution,Risk: Poor Air Quality,Risk: Inadequate Waste Disposal,Risk: Release of Heavy Metals
+ObjectId(648b983942bcddb776862bcf),Afghanistan,AF,AFG,Asia,Southern Asia,13,77.50583,12.9599723815918,78.06559,85.13808,91.80552,100,100,84.5,95.42689,100
+ObjectId(648b983942bcddb776862bd0),Albania,AL,ALB,Europe,Southern Europe,3.3,32.25608,11.81394481658936,75.08531,76.61633,78.1927,61.17444,98.1,62.5,85.0683,54.5
+ObjectId(648b983942bcddb776862bd1),Antarctica,AQ,ATA,,,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862bd2),Antigua and Barbuda,AG,ATG,Americas,Latin America and the Caribbean,-1,0,-1,-1,36.95383,25.06107,31.83128,84.3,43.5,19.0194,40.2
+ObjectId(648b983942bcddb776862bd3),Argentina,AR,ARG,Americas,Latin America and the Caribbean,-1,0,4.178747653961182,24.46807,42.07934,56.1082,41.44807,94.1,48,40.02096,27.8
+ObjectId(648b983942bcddb776862bd4),Armenia,AM,ARM,Asia,Western Asia,4.1,38.16854,8.938274383544922,64.64492,-1,,-1,95.5,67.9,48.58663,49.8
+ObjectId(648b983942bcddb776862bd5),Andorra,AD,AND,Europe,Southern Europe,-1,0,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862bd6),American Samoa,AS,ASM,Oceania,Polynesia,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862bd7),Australia,AU,AUS,Oceania,Australia and New Zealand,-1,0,1.609539031982422,8.61601,9.56536,17.88756,37.44607,7.1,8.9,13.58322,23.6
+ObjectId(648b983942bcddb776862bd8),Bahamas,BS,BHS,Americas,Latin America and the Caribbean,-1,0,-1,-1,43.34008,53.36238,60.16718,82.6,45.5,50.97428,33.7
+ObjectId(648b983942bcddb776862bd9),Bahrain,BH,BHR,Asia,Western Asia,-1,0,6.736337385130479,45.04193,-1,,-1,12,65.3,18.93452,42
+ObjectId(648b983942bcddb776862bda),Bangladesh,BD,BGD,Asia,Southern Asia,6.8,56.08585,7.056299209594727,48.16167,96.16573,84.43996,97.90148,100,85.6,88.54492,77.2
+ObjectId(648b983942bcddb776862bdb),Anguilla,AI,AIA,Americas,Latin America and the Caribbean,-1,0,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862bdc),Barbados,BB,BRB,Americas,Latin America and the Caribbean,1.4,15.36668,-1,-1,27.5607,33.77591,38.85268,100,34.7,21.8716,30.4
+ObjectId(648b983942bcddb776862bdd),Belarus,BY,BLR,Europe,Eastern Europe,4.1,38.16854,11.34423828125,73.81161,92.04247,80.53599,36.38735,44.2,53.9,30.8777,43
+ObjectId(648b983942bcddb776862bde),Belgium,BE,BEL,Europe,Western Europe,-1,0,0.9710318446159363,5.06545,5.19801,8.77593,12.3664,31.8,25.4,14.35866,33.4
+ObjectId(648b983942bcddb776862bdf),Belize,BZ,BLZ,Americas,Latin America and the Caribbean,3.3,32.25608,-1,-1,74.23373,75.92139,71.29717,99.6,62.4,72.17947,46.2
+ObjectId(648b983942bcddb776862be0),Austria,AT,AUT,Europe,Western Europe,-1,0,1.855276346206665,10.02664,4.40897,8.96459,30.21774,6,25,7.7013,9.3
+ObjectId(648b983942bcddb776862be1),Aruba,AW,ABW,Americas,Latin America and the Caribbean,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862be2),Angola,AO,AGO,Africa,Sub-Saharan Africa,18.7,89.37363,4.136548519134521,24.18938,85.3509,80.05258,65.41324,100,76.9,89.59784,63.3
+ObjectId(648b983942bcddb776862be3),Åland Islands,AX,ALA,Europe,Northern Europe,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862be4),Algeria,DZ,DZA,Africa,Northern Africa,2.5,25.94096,1.922730684280396,10.41804,82.29449,68.89584,68.37297,66.9,60.6,58.66862,61.7
+ObjectId(648b983942bcddb776862be5),Azerbaijan,AZ,AZE,Asia,Western Asia,-1,0,10.56178951263428,71.62287,-1,,-1,96.1,77.9,60.79833,59.6
+ObjectId(648b983942bcddb776862be6),Bermuda,BM,BMU,Americas,Northern America,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862be7),Benin,BJ,BEN,Africa,Sub-Saharan Africa,24.8,97.59388,3.042785406112671,17.16918,64.12247,63.0077,46.16846,90.4,77.7,62.69982,63.8
+ObjectId(648b983942bcddb776862be8),Bolivia (Plurinational State of),BO,BOL,Americas,Latin America and the Caribbean,13.6,78.91316,7.15239953994751,49.09842,74.00904,78.08493,99.32963,96.5,70,30,57
+ObjectId(648b983942bcddb776862be9),Bhutan,BT,BTN,Asia,Southern Asia,3.5,33.74989,-1,-1,-1,,-1,100,80.4,38.41895,57.4
+ObjectId(648b983942bcddb776862bea),Bosnia and Herzegovina,BA,BIH,Europe,Southern Europe,-1,0,10.08794212341309,70.25687,64.18079,58.33949,53.90556,98.9,72.2,60.62287,57.7
+ObjectId(648b983942bcddb776862beb),"Bonaire, Sint Eustatius and Saba",BQ,BES,Americas,Latin America and the Caribbean,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862bec),Bouvet Island,BV,BVT,Americas,Latin America and the Caribbean,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862bed),British Indian Ocean Territory,IO,IOT,Africa,Sub-Saharan Africa,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862bee),Brazil,BR,BRA,Americas,Latin America and the Caribbean,5.4,47.28597,4.954716682434082,29.68978,62.20144,74.73906,75.24378,47.6,55.1,46.40934,41.8
+ObjectId(648b983942bcddb776862bef),Brunei Darussalam,BN,BRN,Asia,South-eastern Asia,-1,0,-1,-1,-1,,-1,94.2,38.3,21.25885,32.4
+ObjectId(648b983942bcddb776862bf0),Botswana,BW,BWA,Africa,Sub-Saharan Africa,-1,0,1.842855215072632,9.95477,43.04308,56.16961,53.29909,99.1,82.9,66.62262,60.8
+ObjectId(648b983942bcddb776862bf1),Bulgaria,BG,BGR,Europe,Eastern Europe,-1,0,8.48421573638916,61.24188,51.34797,57.30306,55.94156,86.1,71.4,22.04736,54.8
+ObjectId(648b983942bcddb776862bf2),Burkina Faso,BF,BFA,Africa,Sub-Saharan Africa,42,100,3.701391696929932,21.34868,59.78474,69.34988,57.09131,100,73.9,80.96306,70.9
+ObjectId(648b983942bcddb776862bf3),Burundi,BI,BDI,Africa,Sub-Saharan Africa,30.9,100,7.5060715675354,52.51444,-1,,-1,100,69.3,97.23425,64.8
+ObjectId(648b983942bcddb776862bf4),Cabo Verde,CV,CPV,Africa,Sub-Saharan Africa,-1,0,-1,-1,-1,,-1,75.3,72,71.22962,41.3
+ObjectId(648b983942bcddb776862bf5),Cameroon,CM,CMR,Africa,Sub-Saharan Africa,38.9,100,5.846192359924316,36.70566,85.07439,82.89004,80.07578,100,86.8,82.59864,64.4
+ObjectId(648b983942bcddb776862bf6),Cambodia,KH,KHM,Asia,South-eastern Asia,12.6,76.54925,4.982629299163818,29.88093,99.77112,96.03691,99.64238,100,74.1,84.70152,65.5
+ObjectId(648b983942bcddb776862bf7),Canada,CA,CAN,Americas,Northern America,-1,0,1.82606041431427,9.85768,4.20557,16.68572,55.58775,32.6,12,21.43353,4.4
+ObjectId(648b983942bcddb776862bf8),Cayman Islands,KY,CYM,Americas,Latin America and the Caribbean,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862bf9),Central African Republic,CF,CAF,Africa,Sub-Saharan Africa,26.9,99.1258,5.247385025024414,31.78266,-1,,-1,100,81,96.49611,76.5
+ObjectId(648b983942bcddb776862bfa),Chad,TD,TCD,Africa,Sub-Saharan Africa,39,100,5.881432056427002,37.01729,-1,,-1,100,75.7,94.66826,71.4
+ObjectId(648b983942bcddb776862bfb),Chile,CL,CHL,Americas,Latin America and the Caribbean,5.9,50.5709,3.173375844955444,17.98605,32.78824,33.31356,46.04946,28.1,51.6,34.06545,3.2
+ObjectId(648b983942bcddb776862bfc),China,CN,CHN,Asia,Eastern Asia,-1,0,4.009806632995605,23.35572,100,87.9179,84.13217,90.6,79.4,64.54081,63
+ObjectId(648b983942bcddb776862bfd),Christmas Island,CX,CXR,Oceania,Australia and New Zealand,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862bfe),Cocos (Keeling) Islands,CC,CCK,Oceania,Australia and New Zealand,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862bff),Comoros,KM,COM,Africa,Sub-Saharan Africa,28.5,99.79192,-1,-1,-1,,-1,89.9,61.6,82.47366,53.6
+ObjectId(648b983942bcddb776862c00),Colombia,CO,COL,Americas,Latin America and the Caribbean,7,57.23286,7.808035373687744,55.35486,61.44426,71.10844,78.79814,74.1,56,20.73678,38.9
+ObjectId(648b983942bcddb776862c01),"Congo, Democratic Republic of the",CD,COD,Africa,Sub-Saharan Africa,14.7,81.40372,4.547229290008545,26.9251,86.00947,83.39039,69.49668,99.9,74.9,95.74946,64.5
+ObjectId(648b983942bcddb776862c02),Cook Islands,CK,COK,Oceania,Polynesia,-1,0,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c03),Congo,CG,COG,Africa,Sub-Saharan Africa,14.1,80.05991,7.990757942199707,57.0211,82.18611,74.65214,69.47697,91.2,83.3,71.7731,55.6
+ObjectId(648b983942bcddb776862c04),Costa Rica,CR,CRI,Americas,Latin America and the Caribbean,3.8,35.97214,3.193997383117676,18.11559,18.84005,39.93802,31.04347,92.8,48.6,27.70867,46.9
+ObjectId(648b983942bcddb776862c05),Côte d'Ivoire,CI,CIV,Africa,Sub-Saharan Africa,22.1,94.60575,7.312020301818848,50.64825,66.42503,57.12275,46.69072,98.8,81.8,87.95456,55.8
+ObjectId(648b983942bcddb776862c06),Croatia,HR,HRV,Europe,Southern Europe,-1,0,5.243167400360107,31.75089,38.67387,42.64029,41.0988,31,54.2,25.16675,25.8
+ObjectId(648b983942bcddb776862c07),Cuba,CU,CUB,Americas,Latin America and the Caribbean,-1,0,5.406132221221924,33.01101,-1,,-1,98.3,49.4,64.54081,52.4
+ObjectId(648b983942bcddb776862c08),Curaçao,CW,CUW,Americas,Latin America and the Caribbean,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c09),Cyprus,CY,CYP,Asia,Western Asia,-1,0,8.044442176818848,57.50142,29.71186,40.69875,45.30394,50,31.7,21.95944,31.4
+ObjectId(648b983942bcddb776862c0a),Denmark,DK,DNK,Europe,Northern Europe,-1,0,0.6420400738716125,3.30291,0,0,4.03057,0,19.5,14.12456,0
+ObjectId(648b983942bcddb776862c0b),Czechia,CZ,CZE,Europe,Eastern Europe,-1,0,4.240109443664551,24.87432,18.99892,24.6512,24.8406,38.5,46.7,9.32243,24.5
+ObjectId(648b983942bcddb776862c0c),Djibouti,DJ,DJI,Africa,Sub-Saharan Africa,-1,0,7.135610103607178,48.93491,-1,,-1,100,80.4,80.70936,54.4
+ObjectId(648b983942bcddb776862c0d),Dominica,DM,DMA,Americas,Latin America and the Caribbean,-1,0,-1,-1,56.76162,60.11525,57.31353,99.1,56,31.51694,47.9
+ObjectId(648b983942bcddb776862c0e),Ecuador,EC,ECU,Americas,Latin America and the Caribbean,-1,0,7.63454008102417,53.73412,62.46022,64.42396,82.20481,100,55.9,46.76977,37.7
+ObjectId(648b983942bcddb776862c0f),Egypt,EG,EGY,Africa,Northern Africa,4.8,43.16955,4.315521240234375,25.37519,100,95.09421,96.13281,58,65.4,76.97049,86.9
+ObjectId(648b983942bcddb776862c10),El Salvador,SV,SLV,Americas,Latin America and the Caribbean,6.9,56.66318,8.082976341247559,57.84337,72.58416,68.24068,57.54046,99.9,63.3,28.07421,65.1
+ObjectId(648b983942bcddb776862c11),Dominican Republic,DO,DOM,Americas,Latin America and the Caribbean,3.8,35.97214,6.632640838623047,44.03625,58.44836,68.43471,66.05279,94.2,66.5,79.04711,70.5
+ObjectId(648b983942bcddb776862c12),Equatorial Guinea,GQ,GNQ,Africa,Sub-Saharan Africa,-1,0,7.812037944793701,55.39184,-1,,-1,98.8,77.1,33.93387,60.5
+ObjectId(648b983942bcddb776862c13),Eritrea,ER,ERI,Africa,Sub-Saharan Africa,-1,0,90.28486633300781,100,-1,,-1,100,80.7,82.72348,62.2
+ObjectId(648b983942bcddb776862c14),Estonia,EE,EST,Europe,Northern Europe,-1,0,4.113351345062256,24.03641,6.27277,18.19372,3.39551,29.6,25.4,15.38705,13.5
+ObjectId(648b983942bcddb776862c15),Eswatini,SZ,SWZ,Africa,Sub-Saharan Africa,7.8,61.49633,3.604331970214844,20.72351,-1,,-1,30,83.1,83.59338,60.4
+ObjectId(648b983942bcddb776862c16),Ethiopia,ET,ETH,Africa,Sub-Saharan Africa,45,100,6.31956148147583,41.03985,97.1079,95.63966,93.86031,99.9,66.3,94.77714,64.8
+ObjectId(648b983942bcddb776862c17),Falkland Islands (Malvinas),FK,FLK,Americas,Latin America and the Caribbean,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c18),Faroe Islands,FO,FRO,Europe,Northern Europe,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c19),Finland,FI,FIN,Europe,Northern Europe,-1,0,1.412570953369141,7.50283,0.19313,2.77428,2.82129,0,6.5,13.1248,0
+ObjectId(648b983942bcddb776862c1a),Fiji,FJ,FJI,Oceania,Melanesia,16.7,85.61347,-1,-1,-1,,-1,96.1,69.7,55.03079,23.9
+ObjectId(648b983942bcddb776862c1b),France,FR,FRA,Europe,Western Europe,-1,0,2.061271667480469,11.22748,12.59998,17.52064,37.40549,12,18,17.75685,16.9
+ObjectId(648b983942bcddb776862c1c),French Guiana,GF,GUF,Americas,Latin America and the Caribbean,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c1d),French Polynesia,PF,PYF,Oceania,Polynesia,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c1e),French Southern Territories,TF,ATF,Africa,Sub-Saharan Africa,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c1f),Gabon,GA,GAB,Africa,Sub-Saharan Africa,19.6,90.90694,7.609169483184814,53.49444,74.21439,62.8132,70.69158,100,74.3,61.32226,46.6
+ObjectId(648b983942bcddb776862c20),Gambia,GM,GMB,Africa,Sub-Saharan Africa,16.9,86.01046,6.546003341674805,43.20013,68.0647,87.26379,59.24393,92.1,79.3,83.71708,63.5
+ObjectId(648b983942bcddb776862c21),Georgia,GE,GEO,Asia,Western Asia,1.6,17.42477,7.793662071228027,55.2219,44.31292,57.5315,58.38469,53.4,72.1,38.89264,50.7
+ObjectId(648b983942bcddb776862c22),Ghana,GH,GHA,Africa,Sub-Saharan Africa,20.1,91.71396,2.932558059692383,16.48437,43.71788,63.168,55.85392,97,84.7,84.82393,45.4
+ObjectId(648b983942bcddb776862c23),Germany,DE,DEU,Europe,Western Europe,-1,0,0.5649979114532471,2.89692,0.71914,3.41197,11.75638,3,24.8,13.58322,10.2
+ObjectId(648b983942bcddb776862c24),Gibraltar,GI,GIB,Europe,Southern Europe,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c25),Greenland,GL,GRL,Americas,Northern America,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c26),Grenada,GD,GRD,Americas,Latin America and the Caribbean,-1,0,-1,-1,42.94241,43.98607,31.079,84.9,56.5,28.99001,58.7
+ObjectId(648b983942bcddb776862c27),Guadeloupe,GP,GLP,Americas,Latin America and the Caribbean,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c28),Greece,GR,GRC,Europe,Southern Europe,-1,0,6.368064880371094,41.49896,37.74097,54.40046,51.04668,18.3,38,21.0845,31.4
+ObjectId(648b983942bcddb776862c29),Guam,GU,GUM,Oceania,Micronesia,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c2a),Guatemala,GT,GTM,Americas,Latin America and the Caribbean,-1,0,7.820735931396484,55.47212,64.44082,88.81986,96.29466,93.2,70.9,75.91976,69.9
+ObjectId(648b983942bcddb776862c2b),Guernsey,GG,GGY,Europe,Northern Europe,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c2c),Guinea,GN,GIN,Africa,Sub-Saharan Africa,24.2,97.02566,4.023453235626221,23.44524,73.54743,77.35822,62.22197,100,79,78.14271,67.7
+ObjectId(648b983942bcddb776862c2d),Guinea-Bissau,GW,GNB,Africa,Sub-Saharan Africa,17.2,86.59743,4.495571136474609,26.57814,-1,,-1,100,80.6,83.96406,72
+ObjectId(648b983942bcddb776862c2e),Guyana,GY,GUY,Americas,Latin America and the Caribbean,6.4,53.70306,4.188868522644043,24.535,63.26423,64.71408,72.26389,100,67.9,55.58135,75.6
+ObjectId(648b983942bcddb776862c2f),Haiti,HT,HTI,Americas,Latin America and the Caribbean,35.5,100,8.21799087524414,59.02149,88.44072,91.34175,84.65638,92.9,71.8,89.83011,88.3
+ObjectId(648b983942bcddb776862c30),Heard Island and McDonald Islands,HM,HMD,Oceania,Australia and New Zealand,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c31),Holy See,VA,VAT,Europe,Southern Europe,-1,0,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c32),Honduras,HN,HND,Americas,Latin America and the Caribbean,15.3,82.71115,6.95623779296875,47.1851,74.65833,84.04692,93.81133,96.9,68.7,64.86812,79.8
+ObjectId(648b983942bcddb776862c33),Hong Kong,HK,HKG,Asia,Eastern Asia,-1,-1,2.762860774993896,15.43857,42.29359,31.05413,38.68978,-1,,-1,-1
+ObjectId(648b983942bcddb776862c34),Hungary,HU,HUN,Europe,Eastern Europe,-1,0,6.565171718597412,43.38475,75.81637,57.53413,98.22882,44.7,61.8,38.41895,32.6
+ObjectId(648b983942bcddb776862c35),Iceland,IS,ISL,Europe,Northern Europe,-1,0,-1,-1,-1,,-1,84.7,4,10.00353,4.9
+ObjectId(648b983942bcddb776862c36),India,IN,IND,Asia,Southern Asia,-1,0,8.007246017456055,57.1691,68.42136,73.46358,88.00359,97.8,92.2,85.67667,79.4
+ObjectId(648b983942bcddb776862c37),Indonesia,ID,IDN,Asia,South-eastern Asia,-1,0,6.702832221984863,44.71649,50.4803,50.131,89.49908,100,78.5,63.03939,66
+ObjectId(648b983942bcddb776862c38),Iran (Islamic Republic of),IR,IRN,Asia,Southern Asia,-1,0,7.104307174682617,48.62986,100,98.44814,87.59274,96.3,58.4,64.37625,73.1
+ObjectId(648b983942bcddb776862c39),Iraq,IQ,IRQ,Asia,Western Asia,4.5,41.04966,5.49226226733973,33.7025,-1,,-1,86.9,68.2,75.25895,70.9
+ObjectId(648b983942bcddb776862c3a),Ireland,IE,IRL,Europe,Northern Europe,-1,0,1.101991295814514,5.77988,5.08361,6.49443,27.9039,13,10.9,14.43696,18.2
+ObjectId(648b983942bcddb776862c3b),Isle of Man,IM,IMN,Europe,Northern Europe,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c3c),Israel,IL,ISR,Asia,Western Asia,-1,0,3.792859554290771,21.94069,-1,,-1,18.3,32,18.68047,8.9
+ObjectId(648b983942bcddb776862c3d),Italy,IT,ITA,Europe,Southern Europe,-1,0,3.26297926902771,18.54998,28.51655,47.74483,38.56044,41.2,30.6,20.47688,19.4
+ObjectId(648b983942bcddb776862c3e),Jamaica,JM,JAM,Americas,Latin America and the Caribbean,2.9,29.23335,7.287474155426025,50.41061,40.72965,50.56061,49.62475,97,60.2,65.51532,51.8
+ObjectId(648b983942bcddb776862c3f),Japan,JP,JPN,Asia,Eastern Asia,-1,0,1.140809535980225,5.99304,17.55974,13.88649,11.57488,25.2,21.1,27.43485,0
+ObjectId(648b983942bcddb776862c40),Jersey,JE,JEY,Europe,Northern Europe,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c41),Kazakhstan,KZ,KAZ,Asia,Central Asia,-1,0,11.06179714202881,73.03117,81.15479,65.1865,61.30291,72.5,71.4,65.99394,47.8
+ObjectId(648b983942bcddb776862c42),Jordan,JO,JOR,Asia,Western Asia,1.7,18.43435,10.005855967217204,70.01714,79.03979,63.4205,38.06515,81.4,49.3,44.09751,53.9
+ObjectId(648b983942bcddb776862c43),Kenya,KE,KEN,Africa,Sub-Saharan Africa,-1,0,5.003462791442871,30.02376,63.45183,70.56849,71.94118,98.9,70,85.19027,50.1
+ObjectId(648b983942bcddb776862c44),Kiribati,KI,KIR,Oceania,Micronesia,16.5,85.21198,-1,-1,-1,,-1,95.5,67.9,79.04711,63.5
+ObjectId(648b983942bcddb776862c45),Korea (Democratic People's Republic of),KP,PRK,Asia,Eastern Asia,4.3,39.61639,104.6,100,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c46),"Korea, Republic of",KR,KOR,Asia,Eastern Asia,-1,0,3.502935409545898,20.07376,25.31282,33.38534,26.60592,23.2,37.1,11.34565,11.6
+ObjectId(648b983942bcddb776862c47),Kuwait,KW,KWT,Asia,Western Asia,-1,0,12.959253188009185,78.06378,-1,,-1,56.9,53,58.12887,43.9
+ObjectId(648b983942bcddb776862c48),Kyrgyzstan,KG,KGZ,Asia,Central Asia,22.3,94.86421,8.725506782531738,63.11703,66.9662,74.41723,65.32112,91.4,76.5,92.3431,59.8
+ObjectId(648b983942bcddb776862c49),Lao People's Democratic Republic,LA,LAO,Asia,South-eastern Asia,28.2,99.70129,5.161807537078857,31.14702,-1,,-1,100,77.4,80.96306,65.9
+ObjectId(648b983942bcddb776862c4a),Latvia,LV,LVA,Europe,Northern Europe,-1,0,3.378555059432983,19.28146,22.12954,21.98798,23.20487,9.3,48.9,18.42732,22.5
+ObjectId(648b983942bcddb776862c4b),Lesotho,LS,LSO,Africa,Sub-Saharan Africa,13.9,79.6041,1.646948337554932,8.8292,-1,,-1,99.7,88.9,93.79113,75.5
+ObjectId(648b983942bcddb776862c4c),Lebanon,LB,LBN,Asia,Western Asia,-1,0,7.567281429788705,53.0974,66.65762,80.58894,90.78402,61.8,58.8,36.88654,57
+ObjectId(648b983942bcddb776862c4d),Liberia,LR,LBR,Africa,Sub-Saharan Africa,31.7,100,3.14580249786377,17.81308,67.51197,82.88878,77.19821,100,71.7,86.88232,63.3
+ObjectId(648b983942bcddb776862c4e),Liechtenstein,LI,LIE,Europe,Western Europe,-1,0,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c4f),Libya,LY,LBY,Africa,Northern Africa,-1,0,6.821667194366455,45.87241,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c50),Lithuania,LT,LTU,Europe,Northern Europe,-1,0,6.085984230041504,38.86405,18.72424,26.51409,11.26599,47.7,41.6,14.83052,17
+ObjectId(648b983942bcddb776862c51),Luxembourg,LU,LUX,Europe,Western Europe,-1,0,-1,-1,0.78869,9.60951,17.76546,2,19,6.6697,4.9
+ObjectId(648b983942bcddb776862c52),Macao,MO,MAC,Asia,Eastern Asia,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c53),Madagascar,MG,MDG,Africa,Sub-Saharan Africa,36.7,100,4.572755336761475,27.09684,76.74504,74.59394,62.78499,100,66.4,87.71735,67.6
+ObjectId(648b983942bcddb776862c54),Malawi,MW,MWI,Africa,Sub-Saharan Africa,14,79.83249,4.865484237670898,29.08021,50.59598,70.65529,57.55373,100,64.3,96.38996,63.2
+ObjectId(648b983942bcddb776862c55),Malaysia,MY,MYS,Asia,South-eastern Asia,-1,0,6.255043506622314,40.43273,70.11416,57.87918,65.97376,87.4,56.3,55.39797,38.6
+ObjectId(648b983942bcddb776862c56),Mali,ML,MLI,Africa,Sub-Saharan Africa,13.2,77.97866,5.233090400695801,31.67515,62.17721,64.51048,70.42868,100,73.3,95.31902,68.1
+ObjectId(648b983942bcddb776862c57),Maldives,MV,MDV,Asia,Southern Asia,-1,0,-1,-1,-1,,-1,96.2,48,70,45.3
+ObjectId(648b983942bcddb776862c58),Malta,MT,MLT,Europe,Southern Europe,-1,0,-1,-1,38.36359,32.54471,62.64018,100,26.8,18.00748,50.1
+ObjectId(648b983942bcddb776862c59),Marshall Islands,MH,MHL,Oceania,Micronesia,-1,0,-1,-1,-1,,-1,NaN,65.1,46.22955,54
+ObjectId(648b983942bcddb776862c5a),Martinique,MQ,MTQ,Americas,Latin America and the Caribbean,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c5b),Mauritania,MR,MRT,Africa,Sub-Saharan Africa,14,79.83249,32.01548385620117,100,91.07829,94.4958,95.20764,100,78.9,52.26588,44.9
+ObjectId(648b983942bcddb776862c5c),Mauritius,MU,MUS,Africa,Sub-Saharan Africa,-1,0,1.507123351097107,8.03524,40.92427,42.62395,43.51837,97.2,49.3,14.83052,34
+ObjectId(648b983942bcddb776862c5d),Mayotte,YT,MYT,Africa,Sub-Saharan Africa,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c5e),Micronesia (Federated States of),FM,FSM,Oceania,Micronesia,-1,0,-1,-1,-1,,-1,NaN,68.4,83.22141,59.1
+ObjectId(648b983942bcddb776862c5f),Mexico,MX,MEX,Americas,Latin America and the Caribbean,6,51.21017,6.589330673217773,43.61774,66.72017,77.65213,99.79301,74.8,65.8,38.26243,54.9
+ObjectId(648b983942bcddb776862c60),"Moldova, Republic of",MD,MDA,Europe,Eastern Europe,-1,0,9.474068641662598,67.87233,61.93193,71.34355,66.02171,90.8,59.5,79.68913,46
+ObjectId(648b983942bcddb776862c61),Monaco,MC,MCO,Europe,Western Europe,-1,0,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c62),Montenegro,ME,MNE,Europe,Southern Europe,7.7,60.99342,-1,-1,-1,,-1,91.6,69.3,82.47366,35.6
+ObjectId(648b983942bcddb776862c63),Montserrat,MS,MSR,Americas,Latin America and the Caribbean,-1,0,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c64),Mongolia,MN,MNG,Asia,Eastern Asia,14.7,81.40372,4.044466495513916,23.58319,56.51053,67.22226,57.35614,96.7,85.1,82.22329,67.4
+ObjectId(648b983942bcddb776862c65),Mozambique,MZ,MOZ,Africa,Sub-Saharan Africa,-1,0,2.974953413009644,16.74725,83.24576,84.45312,68.10034,80,62.1,89.36495,76.7
+ObjectId(648b983942bcddb776862c66),Morocco,MA,MAR,Africa,Northern Africa,-1,0,2.292283058166504,12.59363,72.61192,67.39493,59.33239,94.6,77.3,60.79833,71.6
+ObjectId(648b983942bcddb776862c67),Namibia,NA,NAM,Africa,Sub-Saharan Africa,-1,0,2.351321458816528,12.94603,36.59534,57.88467,59.92387,95,77.8,67.84535,56.1
+ObjectId(648b983942bcddb776862c68),Nauru,NR,NRU,Oceania,Micronesia,-1,0,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c69),Myanmar,MM,MMR,Asia,South-eastern Asia,9.9,69.7316,12.07966709136963,75.79246,100,73.84474,100,100,83.1,91.21044,62.4
+ObjectId(648b983942bcddb776862c6a),Netherlands,NL,NLD,Europe,Western Europe,-1,0,0.5684135556221008,2.91487,2.37819,5.39674,7.01487,0,23.2,15.78842,5.9
+ObjectId(648b983942bcddb776862c6b),New Caledonia,NC,NCL,Oceania,Melanesia,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c6c),Nepal,NP,NPL,Asia,Southern Asia,21.7,94.0717,3.322043418884277,18.92323,55.87644,68.19823,80.40613,100,90.5,70.41091,73.3
+ObjectId(648b983942bcddb776862c6d),New Zealand,NZ,NZL,Oceania,Australia and New Zealand,-1,0,1.611743211746216,8.62855,3.34562,8.67081,26.69349,20.1,6.8,20.21776,25.4
+ObjectId(648b983942bcddb776862c6e),Nicaragua,NI,NIC,Americas,Latin America and the Caribbean,-1,0,7.343417167663574,50.95177,96.9899,81.91432,98.25482,100,61.8,77.62302,66
+ObjectId(648b983942bcddb776862c6f),Niger,NE,NER,Africa,Sub-Saharan Africa,34.4,100,4.645125389099121,27.58482,67.19145,64.04383,72.94129,100,72.9,90.98198,73.2
+ObjectId(648b983942bcddb776862c70),Nigeria,NG,NGA,Africa,Sub-Saharan Africa,31.5,100,7.81476354598999,55.41701,73.60449,80.60341,69.86945,99.8,86.2,85.91899,49.1
+ObjectId(648b983942bcddb776862c71),Niue,NU,NIU,Oceania,Polynesia,-1,0,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c72),Norfolk Island,NF,NFK,Oceania,Australia and New Zealand,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c73),North Macedonia,MK,MKD,Europe,Southern Europe,2.9,29.23335,12.60249519348145,77.15542,61.07505,66.1823,46.68378,99.2,77.4,40.51383,53.9
+ObjectId(648b983942bcddb776862c74),Norway,NO,NOR,Europe,Northern Europe,-1,0,0.5151357054710388,2.63555,0,0.66967,15.92,35.7,7.6,12.29825,7
+ObjectId(648b983942bcddb776862c75),Northern Mariana Islands,MP,MNP,Oceania,Micronesia,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c76),Pakistan,PK,PAK,Asia,Southern Asia,11.4,73.59538,10.63333225250244,71.82646,76.48966,95.17939,95.29323,99.9,94.3,82.09789,77.5
+ObjectId(648b983942bcddb776862c77),Oman,OM,OMN,Asia,Western Asia,-1,0,6.500495535800399,42.7628,-1,,-1,86.6,68.2,57.22394,63.5
+ObjectId(648b983942bcddb776862c78),"Palestine, State of",PS,PSE,Asia,Western Asia,7.3,58.89445,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c79),Panama,PA,PAN,Americas,Latin America and the Caribbean,2.3,24.1702,4.661962509155273,27.69857,51.15767,50.90939,66.05241,76.9,48.1,46.58942,43.2
+ObjectId(648b983942bcddb776862c7a),Palau,PW,PLW,Oceania,Micronesia,-1,0,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c7b),Papua New Guinea,PG,PNG,Oceania,Melanesia,-1,0,10.34617519378662,71.00508,-1,,-1,100,68.3,68.87447,40.4
+ObjectId(648b983942bcddb776862c7c),Paraguay,PY,PRY,Americas,Latin America and the Caribbean,17.9,87.92642,6.417139530181885,41.96564,56.5102,71.86204,90.30144,99.3,56.7,42.36408,49.4
+ObjectId(648b983942bcddb776862c7d),Peru,PE,PER,Americas,Latin America and the Caribbean,14.5,80.95977,7.098518371582031,48.57343,49.09012,70.98936,88.50615,59,58.5,65.99394,32.6
+ObjectId(648b983942bcddb776862c7e),Poland,PL,POL,Europe,Eastern Europe,-1,0,5.510272026062012,33.84919,42.2882,39.60198,38.09306,38.5,59.6,17.84029,35.5
+ObjectId(648b983942bcddb776862c7f),Puerto Rico,PR,PRI,Americas,Latin America and the Caribbean,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c80),Pitcairn,PN,PCN,Oceania,Polynesia,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c81),Portugal,PT,PRT,Europe,Southern Europe,-1,0,3.813815355300903,22.0767,25.70515,42.73327,34.58634,40.8,21.9,18.84973,35.4
+ObjectId(648b983942bcddb776862c82),Qatar,QA,QAT,Asia,Western Asia,-1,0,6.804503562827048,45.7052,-1,,-1,30,57.9,20.47688,41.6
+ObjectId(648b983942bcddb776862c83),Philippines,PH,PHL,Asia,South-eastern Asia,-1,0,7.842455863952637,55.67219,71.60423,75.54875,80.97121,99.2,74.1,72.17947,52.6
+ObjectId(648b983942bcddb776862c84),Réunion,RE,REU,Africa,Sub-Saharan Africa,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c85),Romania,RO,ROU,Europe,Eastern Europe,-1,0,7.549961566925049,52.93277,44.54924,39.9021,26.87547,74.3,60.8,35.15181,49.2
+ObjectId(648b983942bcddb776862c86),Russian Federation,RU,RUS,Europe,Eastern Europe,-1,0,13.01579189300537,78.20611,88.18599,67.31771,64.50083,81.5,51.2,65.99394,28.7
+ObjectId(648b983942bcddb776862c87),Rwanda,RW,RWA,Africa,Sub-Saharan Africa,19,89.89608,4.252303600311279,24.95519,55.30741,37.05959,27.87899,100,75.3,95.31902,55.4
+ObjectId(648b983942bcddb776862c88),Saint Barthélemy,BL,BLM,Americas,Latin America and the Caribbean,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c89),Saint Kitts and Nevis,KN,KNA,Americas,Latin America and the Caribbean,-1,0,-1,-1,39.72784,36.04226,36.73852,-1,,-1,-1
+ObjectId(648b983942bcddb776862c8a),"Saint Helena, Ascension and Tristan da Cunha",SH,SHN,Africa,Sub-Saharan Africa,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c8b),Saint Lucia,LC,LCA,Americas,Latin America and the Caribbean,3.3,32.25608,-1,-1,46.85272,42.40451,20.94677,86,54,25.07662,48.8
+ObjectId(648b983942bcddb776862c8c),Saint Martin (French part),MF,MAF,Americas,Latin America and the Caribbean,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c8d),Saint Pierre and Miquelon,PM,SPM,Americas,Northern America,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c8e),San Marino,SM,SMR,Europe,Southern Europe,-1,0,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c8f),Samoa,WS,WSM,Oceania,Polynesia,13.9,79.6041,-1,-1,-1,,-1,99.1,64,28.89832,32.2
+ObjectId(648b983942bcddb776862c90),Saint Vincent and the Grenadines,VC,VCT,Americas,Latin America and the Caribbean,-1,0,-1,-1,50.12779,54.59665,43.93323,86,57.3,32.79422,65.8
+ObjectId(648b983942bcddb776862c91),Sao Tome and Principe,ST,STP,Africa,Sub-Saharan Africa,10.5,71.30161,-1,-1,-1,,-1,89.1,73.2,76.18321,55.7
+ObjectId(648b983942bcddb776862c92),Saudi Arabia,SA,SAU,Asia,Western Asia,-1,0,21.26152055941187,94.11562,-1,,-1,62.3,67.2,20.73678,65.1
+ObjectId(648b983942bcddb776862c93),Senegal,SN,SEN,Africa,Sub-Saharan Africa,22.8,95.48505,2.941902160644531,16.54225,43.34223,45.39441,39.83069,99.5,77.9,87.71735,53
+ObjectId(648b983942bcddb776862c94),Seychelles,SC,SYC,Africa,Sub-Saharan Africa,-1,0,-1,-1,-1,,-1,80.5,45.2,36.88654,32.2
+ObjectId(648b983942bcddb776862c95),Serbia,RS,SRB,Europe,Southern Europe,9.5,68.53677,7.015529632568359,47.76384,68.26698,60.90014,40.29676,99.3,70.6,43.57289,49.6
+ObjectId(648b983942bcddb776862c96),Sierra Leone,SL,SLE,Africa,Sub-Saharan Africa,25.2,97.94111,3.402239561080933,19.43193,73.37984,80.9239,67.60071,100,78.4,86.64238,63.2
+ObjectId(648b983942bcddb776862c97),Singapore,SG,SGP,Asia,South-eastern Asia,-1,0,2.133502960205078,11.65244,37.50382,14.67077,6.38332,0,30.8,11.56308,15.5
+ObjectId(648b983942bcddb776862c98),Sint Maarten (Dutch part),SX,SXM,Americas,Latin America and the Caribbean,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c99),Slovakia,SK,SVK,Europe,Eastern Europe,-1,0,7.651405811309814,53.89311,28.74173,33.92916,63.37043,55.3,49.1,19.10438,31.6
+ObjectId(648b983942bcddb776862c9a),Slovenia,SI,SVN,Europe,Southern Europe,-1,0,4.448514461517334,26.26279,31.97528,30.22243,30.49195,7.8,44.9,15.38705,12.8
+ObjectId(648b983942bcddb776862c9b),Somalia,SO,SOM,Africa,Sub-Saharan Africa,-1,0,6.173291206359863,39.66989,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c9c),Solomon Islands,SB,SLB,Oceania,Melanesia,17.9,87.92642,-1,-1,-1,,-1,98.8,71.4,87.83603,75
+ObjectId(648b983942bcddb776862c9d),South Africa,ZA,ZAF,Africa,Sub-Saharan Africa,3.6,34.49325,2.662498235702515,14.82496,42.90434,48.8667,69.69919,78.3,77.8,45.51341,41.9
+ObjectId(648b983942bcddb776862c9e),South Georgia and the South Sandwich Islands,GS,SGS,Americas,Latin America and the Caribbean,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862c9f),South Sudan,SS,SSD,Africa,Sub-Saharan Africa,-1,0,10.29315185546875,70.85218,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862ca0),Spain,ES,ESP,Europe,Southern Europe,-1,0,2.312372207641602,12.71339,19.17493,25.21648,28.55235,8.9,26,19.78768,29.5
+ObjectId(648b983942bcddb776862ca1),Sri Lanka,LK,LKA,Asia,Southern Asia,0.8,8.93687,6.470595836639404,42.47625,57.96467,61.03917,76.9155,100,67.5,77.88313,28.4
+ObjectId(648b983942bcddb776862ca2),Sudan,SD,SDN,Africa,Northern Africa,18.1,88.29549,3.974432945251465,23.12396,87.412,99.96119,99.95521,100,84.4,65.35447,93.3
+ObjectId(648b983942bcddb776862ca3),Sweden,SE,SWE,Europe,Northern Europe,-1,0,0.5693487524986267,2.91978,2.6372,10.13244,25.71174,0,6,12.22403,3.1
+ObjectId(648b983942bcddb776862ca4),Svalbard and Jan Mayen,SJ,SJM,Europe,Northern Europe,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862ca5),Suriname,SR,SUR,Americas,Latin America and the Caribbean,4.3,39.61639,-1,-1,62.1525,73.89648,61.93493,86.8,63.1,81.97235,57.4
+ObjectId(648b983942bcddb776862ca6),Syrian Arab Republic,SY,SYR,Asia,Western Asia,-1,0,8.733797199233372,63.17887,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862ca7),"Taiwan, Province of China",TW,TWN,Asia,Eastern Asia,-1,-1,1.68527090549469,9.04818,-1,,-1,93.5,53.8,21.69614,27.2
+ObjectId(648b983942bcddb776862ca8),Tajikistan,TJ,TJK,Asia,Central Asia,-1,0,13.95576953887939,80.50743,-1,,-1,97.8,87.8,93.23749,84.7
+ObjectId(648b983942bcddb776862ca9),"Tanzania, United Republic of",TZ,TZA,Africa,Sub-Saharan Africa,24.8,97.59388,2.85969066619873,16.03404,75.40797,69.75114,63.58122,97.1,66.8,88.66253,57
+ObjectId(648b983942bcddb776862caa),Thailand,TH,THA,Asia,South-eastern Asia,-1,0,5.741637706756592,35.79361,80.4092,74.04866,72.46188,98.2,65.6,64.70477,19.3
+ObjectId(648b983942bcddb776862cab),Switzerland,CH,CHE,Europe,Western Europe,-1,0,0.4981281459331512,2.54665,-1,,-1,3,15.7,8.33534,6
+ObjectId(648b983942bcddb776862cac),Timor-Leste,TL,TLS,Asia,South-eastern Asia,9.2,67.51765,6.050777912139893,38.5419,-1,,-1,99.4,67.5,78.91831,66.2
+ObjectId(648b983942bcddb776862cad),Togo,TG,TGO,Africa,Sub-Saharan Africa,38.5,100,3.349859714508057,19.09942,71.21182,67.33182,54.54079,100,79,88.77999,56.9
+ObjectId(648b983942bcddb776862cae),Tokelau,TK,TKL,Oceania,Polynesia,-1,0,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862caf),Tonga,TO,TON,Oceania,Polynesia,26.1,98.62788,-1,-1,-1,,-1,NaN,58.1,59.20568,22.1
+ObjectId(648b983942bcddb776862cb0),Trinidad and Tobago,TT,TTO,Americas,Latin America and the Caribbean,0.8,8.93687,4.73182487487793,28.17147,46.50137,49.83072,51.31203,97,45.7,85.19027,18.9
+ObjectId(648b983942bcddb776862cb1),Tunisia,TN,TUN,Africa,Northern Africa,2.3,24.1702,2.316662788391113,12.73899,53.27572,70.28488,52.17533,57,56.7,68.29125,64.1
+ObjectId(648b983942bcddb776862cb2),Turkey,TR,TUR,Asia,Western Asia,3.8,35.97214,15.64948081970215,84.34187,97.16116,87.8046,99.56775,69.5,55.4,43.0521,39.2
+ObjectId(648b983942bcddb776862cb3),Turkmenistan,TM,TKM,Asia,Central Asia,0.3,3.37865,11.87536239624023,75.24962,-1,,-1,90.2,61.3,31.51694,57.1
+ObjectId(648b983942bcddb776862cb4),Tuvalu,TV,TUV,Oceania,Polynesia,4,37.43953,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862cb5),Turks and Caicos Islands,TC,TCA,Americas,Latin America and the Caribbean,6.1,51.84318,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862cb6),Uganda,UG,UGA,Africa,Sub-Saharan Africa,18.1,88.29549,4.151514053344727,24.28815,83.10299,86.5728,88.40838,99.6,72.6,85.31209,58.7
+ObjectId(648b983942bcddb776862cb7),United Arab Emirates,AE,ARE,Asia,Western Asia,-1,0,13.36672792369608,79.07968,73.29712,60.89145,52.73793,7.9,58.3,38.41895,46.4
+ObjectId(648b983942bcddb776862cb8),United Kingdom of Great Britain and Northern Ireland,GB,GBR,Europe,Northern Europe,-1,0,1.803719639778137,9.7287,4.35262,20.66622,43.5563,1,21.4,18.76505,6.4
+ObjectId(648b983942bcddb776862cb9),Ukraine,UA,UKR,Europe,Eastern Europe,3.2,31.50595,12.79318714141846,77.64314,63.32203,61.63984,35.67415,85.9,64.1,58.66862,31.6
+ObjectId(648b983942bcddb776862cba),United States Minor Outlying Islands,UM,UMI,Oceania,Micronesia,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862cbb),United States of America,US,USA,Americas,Northern America,-1,0,3.29526686668396,18.75387,20.08803,41.52131,85.01033,41.1,23,26.07075,24.9
+ObjectId(648b983942bcddb776862cbc),Uruguay,UY,URY,Americas,Latin America and the Caribbean,4.2,38.89421,1.888077855110168,10.21675,15.31754,16.28637,18.59776,97.9,36.4,46.76977,38.5
+ObjectId(648b983942bcddb776862cbd),Uzbekistan,UZ,UZB,Asia,Central Asia,-1,0,7.440157890319824,51.88336,91.99393,71.68936,53.68637,100,83.3,81.97235,72.7
+ObjectId(648b983942bcddb776862cbe),Vanuatu,VU,VUT,Oceania,Melanesia,15.6,83.35084,-1,-1,-1,,-1,95.5,69.3,50.42157,55.1
+ObjectId(648b983942bcddb776862cbf),Virgin Islands (British),VG,VGB,Americas,Latin America and the Caribbean,-1,0,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862cc0),Venezuela (Bolivarian Republic of),VE,VEN,Americas,Latin America and the Caribbean,-1,0,9.482327461242676,67.91429,100,95.76143,69.173,93.6,53.3,86.64238,57.5
+ObjectId(648b983942bcddb776862cc1),Virgin Islands (U.S.),VI,VIR,Americas,Latin America and the Caribbean,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862cc2),Wallis and Futuna,WF,WLF,Oceania,Polynesia,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862cc3),Viet Nam,VN,VNM,Asia,South-eastern Asia,6.6,54.90883,4.067520141601563,23.7347,87.47125,62.44738,53.46255,99.7,73.5,69.16107,52.9
+ObjectId(648b983942bcddb776862cc4),Yemen,YE,YEM,Asia,Western Asia,-1,0,6.049450596413327,38.52979,-1,,-1,-1,,-1,-1
+ObjectId(648b983942bcddb776862cc5),Zimbabwe,ZW,ZWE,Africa,Sub-Saharan Africa,27.9,99.59467,4.981103897094727,29.87048,99.63503,88.1177,83.02667,62.8,76.1,85.19027,67.9
+ObjectId(648b983942bcddb776862cc6),Zambia,ZM,ZMB,Africa,Sub-Saharan Africa,23,95.72314,5.092990398406982,30.65018,87.27067,85.32989,82.2546,95.5,76.4,92.67973,58.3
+ObjectId(648b983942bcddb776862cc7),Western Sahara,EH,ESH,Africa,Northern Africa,-1,-1,-1,-1,-1,,-1,-1,,-1,-1
