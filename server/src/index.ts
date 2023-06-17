@@ -4,6 +4,7 @@ import { connectToDatabase } from './db/conn.js';
 import { host, port } from './config.js';
 import { userRouter } from './routes/user.router.js';
 import cors from 'cors';
+import { customerRouter } from './routes/customer.router.js';
 
 dotenv.config();
 
@@ -12,6 +13,7 @@ const app: Express = express();
 app.use(cors())
 
 app.use('/user', userRouter)
+app.use('/customer', customerRouter)
 
 
 

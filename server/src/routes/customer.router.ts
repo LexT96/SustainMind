@@ -9,6 +9,8 @@ customerRouter.use(express.json());
 customerRouter.get("/", async (req, res) => {
     await customerController.getAllCustomer(req, res);
 });
+
+customerRouter.get("/marketplace", customerController.getCustomersForMarketplace)
   
 customerRouter.get("/:id", async (req, res) => {
     await customerController.getCustomerById(req, res);
@@ -25,3 +27,4 @@ customerRouter.put("/:id", async (req, res) => {
 customerRouter.delete("/:id",async (req, res) => {
     await customerController.deleteCustomer(req, res);
 })
+

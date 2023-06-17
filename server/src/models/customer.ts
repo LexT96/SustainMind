@@ -12,7 +12,14 @@ const customerSchema = new Schema({
     contactPersonFirstName: String,
     contactPersonEmail: String,
     accountType: String,
-    revenue: String
+    revenue: String,
+    showOnMarketplace: Boolean,
+    image: String,
+    description: String,
+    productionSites: [{
+        ref: "ProductionSite",
+        type: [Types.ObjectId],
+    }],
     });
 
 export const Customer = model("Customer", customerSchema);

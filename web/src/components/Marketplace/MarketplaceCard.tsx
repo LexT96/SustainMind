@@ -17,12 +17,12 @@ export const MarketplaceCard = ({supplier}: any) => {
             <Box className="flex justify-between w-full">
               <Stack sx={{ ml: 2 }} spacing={0.2}>
                 <Typography sx={{ fontWeight: "bold", fontSize: "1.1rem" }}>
-                  {supplier.name}
+                  {supplier.companyName}
                 </Typography>
                 <Box sx={{ display: "flex", alignItems: "center" }}>
                   <PlaceIcon sx={{ width: 20, height: 20 }} />
                   <Typography className="italic" variant="body2">
-                    {supplier.location}
+                    {supplier.city + ", " + supplier.country}
                   </Typography>
                 </Box>
               </Stack>

@@ -9,6 +9,9 @@ import {
 } from "react-router-dom";
 import { ClerkProvider } from '@clerk/clerk-react'
 import { CLERK_KEY } from './config'
+import { QueryClient, QueryClientProvider } from 'react-query'
+
+const queryClient = new QueryClient();
 
 function App() {
 if (!CLERK_KEY) {
@@ -29,10 +32,12 @@ if (!CLERK_KEY) {
     }, []);
 
   return (
-    <ClerkProvider publishableKey={CLERK_KEY}>
-      <RouterProvider router={router} />
-    </ClerkProvider>
-  )
+    <QueryClientProvider client={queryClient}>
+      <ClerkProvider publishableKey={CLERK_KEY}>
+        <RouterProvider router={router} />
+      </ClerkProvider>
+    </QueryClientProvider>
+  );
 }
 
 export default App
