@@ -16,9 +16,7 @@ customerRouter.get("/:id", async (req, res) => {
     await customerController.getCustomerById(req, res);
 });
 
-customerRouter.post("/", async (req, res) => {
-    await customerController.addNewCustomer(req, res);
-});
+customerRouter.post("/", customerController.addNewCustomer);
 
 customerRouter.put("/:id", async (req, res) => {
     await customerController.updateCustomer(req, res);

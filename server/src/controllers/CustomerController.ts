@@ -19,19 +19,18 @@ export class CustomerController {
         res.send(customer);
     }
     public addNewCustomer = async (req: Request, res: Response) => {
-        const newCustomer = new Customer(req.params);
+        const newCustomer = new Customer(req.body);
         if (!newCustomer) {
-            res.status(400).send("Please provide Customer");
-            return;
+            return res.status(400).send("Please provide Customer");
         }
         if (!(await Customer.findOne({ companyName: newCustomer.companyName }))) {
-            await newCustomer.save();
+            const newCreatedCustomer = await newCustomer.save();
+            res.send(newCreatedCustomer);
           }
           else {
-            res.status(400).send("Company name already exists");
-            return;
+            return res.status(400).send("Company name already exists");
         }
-        }
+    }
     public deleteCustomer = async (req: Request, res: Response) => {
         const id = req.params.id;
         if (!id) {
