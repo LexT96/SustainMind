@@ -1,3 +1,4 @@
+import { useUser } from "@clerk/clerk-react";
 import { API_URL } from "../config";
 
 export const getAllSuppliersForMarketplace = async () => {

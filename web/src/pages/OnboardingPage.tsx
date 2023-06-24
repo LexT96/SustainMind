@@ -13,11 +13,12 @@ export const OnboardingPage = () => {
     const { register, handleSubmit} = useForm();
     const navigate = useNavigate();
     const { user } = useUser();
-    const {mutate: createMutation} = useCreateCustomerMutation((user?.unsafeMetadata?._id as string) ?? "");
+    const {mutate: createMutation, data: newUser} = useCreateCustomerMutation("");
 
     useEffect(() => {
         if (!user) return;
-        if (user && user.unsafeMetadata?.onboardingCompleted) {
+        console.log(user.unsafeMetadata)
+        if (user && user.unsafeMetadata?.onboardingCompleted && user.unsafeMetadata?.customerId) {
             navigate('/products')
         }
     }, [user]) 
@@ -27,6 +28,7 @@ export const OnboardingPage = () => {
           createMutation(data);
           await user!.update({
             unsafeMetadata: {
+              customerId: newUser._id,
               onboardingCompleted: true,
             },
           });
