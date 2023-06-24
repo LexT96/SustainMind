@@ -3,7 +3,7 @@ import { ProductScore } from "../Products/ProductScore";
 import PlaceIcon from '@mui/icons-material/Place';
 import FactoryIcon from '@mui/icons-material/Factory';
 import { ProductCategory } from "./ProductCategory";
-export const MarketplaceCard = ({supplier}: any) => {
+export const MarketplaceCard = ({supplier, forMarketplace=true}: any) => {
     return (
       <Box className="rounded-xl border border-green-500 shadow">
         <CardContent>
@@ -35,17 +35,21 @@ export const MarketplaceCard = ({supplier}: any) => {
             </Box>
           </Box>
           <ProductScore score={supplier.score} />
-          <Stack direction="row" spacing={1} sx={{mt: 1}}>
+          <Stack direction="row" spacing={1} sx={{ mt: 1 }}>
             {supplier.productCategories.map((category: string) => (
               <ProductCategory category={category} />
             ))}
           </Stack>
         </CardContent>
         <Divider />
-        <CardContent>
-          <Typography variant="body2">{supplier.description}</Typography>
-        </CardContent>
-        <Divider />
+        {forMarketplace && (
+          <>
+            <CardContent>
+              <Typography variant="body2">{supplier.description}</Typography>
+            </CardContent>
+            <Divider />
+          </>
+        )}
         <CardContent
           sx={{
             background: "rgba(0,200,0,0.08)",
