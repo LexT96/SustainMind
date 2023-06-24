@@ -5,7 +5,7 @@ import { IsSupplier } from "../models/isSupplier.js";
 const customers = [
     {
       id: "648db5cc159cc359f22a64e9",
-      companyName: "SupplierName",
+      companyName: "TestSupp",
       image: "https://picsum.photos/300",
       numberOfProductionSites: 3,
       productCategories: ["Textiles", "Consumer Electronics"],
@@ -16,7 +16,7 @@ const customers = [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nisi tincidunt, interdum tellus a, dignissim diam. Mauris luctus consequat erat nec rhoncus. Suspendisse consequat, purus in faucibus porttitor, odio sem viverra nisi, non hendrerit tellus augue at dui. Nam at finibus justo, sed condimentum nisi. Suspendisse gravida aliquam leo, in tempor nibh pulvinar in. Suspendisse iaculis massa eu diam tincidunt varius eget eu mi. Curabitur pretium ante id ante pellentesque, a convallis mi tempor. ",
     },
     {
-      id: 1,
+      id: "648db5cc159cc359f22a64e9",
       companyName: "SupplierName",
       image: "https://picsum.photos/300",
       numberOfProductionSites: 3,
@@ -28,7 +28,7 @@ const customers = [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet nisi tincidunt, interdum tellus a, dignissim diam. Mauris luctus consequat erat nec rhoncus. Suspendisse consequat, purus in faucibus porttitor, odio sem viverra nisi, non hendrerit tellus augue at dui. Nam at finibus justo, sed condimentum nisi. Suspendisse gravida aliquam leo, in tempor nibh pulvinar in. Suspendisse iaculis massa eu diam tincidunt varius eget eu mi. Curabitur pretium ante id ante pellentesque, a convallis mi tempor. ",
     },
     {
-      id: 1,
+      id: "648db5cc159cc359f22a64e9",
       companyName: "SupplierName",
       image: "https://picsum.photos/300",
       numberOfProductionSites: 3,
