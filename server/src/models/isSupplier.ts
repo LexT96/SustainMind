@@ -12,4 +12,4 @@ const isSupplierSchema = new Schema({
     contractVolume: String
     });
 
-export const isSupplier = model("Customer", isSupplierSchema);
+export const IsSupplier = model("IsSupplier", isSupplierSchema);

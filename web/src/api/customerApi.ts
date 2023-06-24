@@ -24,5 +24,17 @@ export const createCustomer = async (customer: any) => {
         },
         body: JSON.stringify(customer)
     });
+}
+export const getCustomer = async (id: string) => {
+    const response = await fetch(`${API_URL}/customer/${id}`);
+    return await response.json();
+}
+
+export const getSuppliersOfCustomer = async (id: string) => {
+    const response = await fetch(`${API_URL}/customer/${id}/suppliers`);
+    return await response.json();
+}
+export const getProductionSitesByCustomerId = async (customerId: string) => {
+    const response = await fetch(`${API_URL}/${customerId}/productionSites/`);
     return await response.json();
 }

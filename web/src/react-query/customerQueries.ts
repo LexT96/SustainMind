@@ -1,5 +1,5 @@
-import { createCustomer, getAllSuppliersForMarketplace, updateCustomer } from "../api/customerApi";
 import { useMutation, useQuery } from "react-query";
+import { getAllSuppliersForMarketplace, createCustomer, updateCustomer, getCustomer, getProductionSitesByCustomerId, getSuppliersOfCustomer } from "../api/customerApi";
 
 export const useAllSuppliersForMarketplace = () => {
     return useQuery('marketplace', getAllSuppliersForMarketplace);
@@ -14,9 +14,24 @@ export const useUpdateCustomerMutation = (customerId: string) => {
 }
 
 export const useCreateCustomerMutation = (customerData: any) => {
-    return useMutation('createCustomer', createCustomer, {
-        onSuccess: (data: any) => {
-            return data;
-        }
-    });
+  return useMutation("createCustomer", createCustomer, {
+    onSuccess: (data: any) => {
+      return data;
+    },
+  });
+}
+export const useCustomerQuery = (id: string) => {
+    return useQuery(['customer', id], () => getCustomer(id));
+}
+
+export const useSuppliersOfCustomerQuery = (id: string) => {
+    return useQuery(["customer", id, "suppliers"], () =>
+      getSuppliersOfCustomer(id)
+    );
+}
+
+export const useProductionSitesByCustomerIdQuery = (customerId: string) => {
+    return useQuery(["customer", customerId, "productionSites"], () =>
+      getProductionSitesByCustomerId(customerId)
+    );
 }
