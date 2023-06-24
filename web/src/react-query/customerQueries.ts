@@ -1,4 +1,4 @@
-import { getAllSuppliersForMarketplace, getCustomer, getSuppliersOfCustomer } from "../api/customerApi";
+import { getAllSuppliersForMarketplace, getCustomer, getProductionSitesByCustomerId, getSuppliersOfCustomer } from "../api/customerApi";
 import { useQuery } from "react-query";
 
 export const useAllSuppliersForMarketplace = () => {
@@ -12,5 +12,11 @@ export const useCustomerQuery = (id: string) => {
 export const useSuppliersOfCustomerQuery = (id: string) => {
     return useQuery(["customer", id, "suppliers"], () =>
       getSuppliersOfCustomer(id)
+    );
+}
+
+export const useProductionSitesByCustomerIdQuery = (customerId: string) => {
+    return useQuery(["customer", customerId, "productionSites"], () =>
+      getProductionSitesByCustomerId(customerId)
     );
 }
