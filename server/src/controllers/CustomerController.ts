@@ -60,7 +60,7 @@ export class CustomerController {
     public getCustomersForMarketplace = async (req: Request, res: Response) => {
         const customers = [
             {
-              id: 1,
+              id: "648db5cc159cc359f22a64e9",
               companyName: "SupplierName",
               image: "https://picsum.photos/300",
               numberOfProductionSites: 3,

@@ -7,7 +7,7 @@ const productionSiteController = new ProductionSiteController();
 productionSiteRouter.use(express.json());
 
 productionSiteRouter.get("/", async (req, res) => {
-    await productionSiteController.getAllProductionSites(req, res);
+    return await productionSiteController.getAllProductionSites(req, res);
 });
   
 productionSiteRouter.get("/:id", async (req, res) => {
