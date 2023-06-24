@@ -3,7 +3,7 @@ import { ProductScore } from "../Products/ProductScore";
 import PlaceIcon from '@mui/icons-material/Place';
 import FactoryIcon from '@mui/icons-material/Factory';
 import { ProductCategory } from "./ProductCategory";
-export const MarketplaceCard = ({supplier}: any) => {
+export const MarketplaceCard = ({supplier, forMarketplace=true}: any) => {
     return (
       <Box className="rounded-xl border border-green-500 shadow">
         <CardContent>
@@ -43,7 +43,7 @@ export const MarketplaceCard = ({supplier}: any) => {
         </CardContent>
         <Divider />
         <CardContent>
-          <Typography variant="body2">{supplier.description}</Typography>
+          {forMarketplace && <Typography variant="body2">{supplier.description}</Typography>}
         </CardContent>
         <Divider />
         <CardContent

@@ -26,3 +26,5 @@ customerRouter.delete("/:id",async (req, res) => {
     await customerController.deleteCustomer(req, res);
 })
 
+customerRouter.get("/:id/suppliers", customerController.getSuppliersOfCustomer);
+

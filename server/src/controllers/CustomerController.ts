@@ -1,5 +1,6 @@
 import { Customer } from "../models/customer.js";
 import { Request, Response } from "express";
+import { IsSupplier } from "../models/isSupplier.js";
 export class CustomerController {
     public getAllCustomer = async (req: Request, res: Response) => {
         const Customers = await Customer.find();
@@ -100,4 +101,9 @@ export class CustomerController {
         // const customers = await Customer.find({ showOnMarketplace: true });
         res.send(customers);
     }
+
+    public getSuppliersOfCustomer = async (req: Request, res: Response) => {
+        const suppliers = await IsSupplier.find({ idCorporation: req.params.id }).populate("idSupplier");
+        res.send(suppliers);
+    };
 }
