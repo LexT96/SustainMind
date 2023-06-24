@@ -24,6 +24,7 @@ export const createCustomer = async (customer: any) => {
         },
         body: JSON.stringify(customer)
     });
+    return await response.json();
 }
 export const getCustomer = async (id: string) => {
     const response = await fetch(`${API_URL}/customer/${id}`);
