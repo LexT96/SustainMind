@@ -14,9 +14,7 @@ customerRouter.get("/marketplace", customerController.getCustomersForMarketplace
   
 customerRouter.get("/:id", customerController.getCustomerById);
 
-customerRouter.post("/", async (req, res) => {
-    await customerController.addNewCustomer(req, res);
-});
+customerRouter.post("/", customerController.addNewCustomer);
 
 customerRouter.put("/:id", async (req, res) => {
     await customerController.updateCustomer(req, res);
