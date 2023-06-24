@@ -48,17 +48,17 @@ export class CustomerController {
         res.send(Customers);
     }
     public getCustomerById = async (req: Request, res: Response) => {
-        const id = req.params.id;
-        if (!id) {
-            res.status(400).send("Please provide a Customer id");
-            return;
-        }
-        const customer = await Customer.findById(id);
-        if (!Customer) {
-            res.status(404).send("Customer not found");
-            return;
-        }
-        res.send(customer);
+        // const id = req.params.id;
+        // if (!id) {
+        //     res.status(400).send("Please provide a Customer id");
+        //     return;
+        // }
+        // const customer = await Customer.findById(id);
+        // if (!Customer) {
+        //     res.status(404).send("Customer not found");
+        //     return;
+        // }
+        res.send(customers[0]);
     }
     public addNewCustomer = async (req: Request, res: Response) => {
         const newCustomer = new Customer(req.params);
