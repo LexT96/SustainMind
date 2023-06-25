@@ -1,17 +1,16 @@
 import mongoose, { Schema, Types, model } from "mongoose";
 
 const customerSchema = new Schema({
-    id: String,
     companyName: String,
     country: String,
     region: String,
     city: String,
     zipcode: String,
     address: String,
-    contactPersonLastName: String,
-    contactPersonFirstName: String,
+    contactPersonName: String,
     contactPersonEmail: String,
     accountType: String,
+    numberOfEmployees: Number,
     revenue: String,
     showOnMarketplace: Boolean,
     image: String,

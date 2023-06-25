@@ -7,35 +7,25 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import { ClerkProvider } from '@clerk/clerk-react'
+import { ClerkProvider, useUser } from '@clerk/clerk-react'
 import { CLERK_KEY } from './config'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
 const queryClient = new QueryClient();
 
 function App() {
-if (!CLERK_KEY) {
-
-  throw new Error("Missing Publishable Key")
-
-}
-
-  const [count, setCount] = useState(0);
-  const [users, setUsers] = useState([]);
+  const { user } = useUser();
 
   useEffect(() => {
-    const fetchUsers = async () => {
-      const fetchedUsers = await getUsers();
-      setUsers(fetchedUsers);
-      };
-    fetchUsers();
-    }, []);
+    if (!user) return;
+    if (user && ! user.unsafeMetadata?.onboardingCompleted) {
+      router.navigate('/onboarding')
+    }
+  }, [user])
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ClerkProvider publishableKey={CLERK_KEY}>
         <RouterProvider router={router} />
-      </ClerkProvider>
     </QueryClientProvider>
   );
 }

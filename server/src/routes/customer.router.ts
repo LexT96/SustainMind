@@ -12,13 +12,9 @@ customerRouter.get("/", async (req, res) => {
 
 customerRouter.get("/marketplace", customerController.getCustomersForMarketplace)
   
-customerRouter.get("/:id", async (req, res) => {
-    await customerController.getCustomerById(req, res);
-});
+customerRouter.get("/:id", customerController.getCustomerById);
 
-customerRouter.post("/", async (req, res) => {
-    await customerController.addNewCustomer(req, res);
-});
+customerRouter.post("/", customerController.addNewCustomer);
 
 customerRouter.put("/:id", async (req, res) => {
     await customerController.updateCustomer(req, res);
@@ -27,4 +23,6 @@ customerRouter.put("/:id", async (req, res) => {
 customerRouter.delete("/:id",async (req, res) => {
     await customerController.deleteCustomer(req, res);
 })
+
+customerRouter.get("/:id/suppliers", customerController.getSuppliersOfCustomer);
 
