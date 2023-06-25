@@ -1,0 +1,223 @@
+% run this script with pdflatex risk_analysis.tex
+% make sure to install pdflatex before. On MAC: brew install --cask mactex
+
+\documentclass{article}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{calc} 
+\usepackage{ifthen}
+
+\definecolor{sustainblue}{HTML}{A3CDFF}
+\definecolor{sustaingrey}{HTML}{D9D9D9}
+
+\makeatletter
+\newdimen\skillb@level
+\newdimen\skillb@length
+\newdimen\skillb@height
+\skillb@length=3pt% * 100
+\skillb@height=10pt%
+\newcommand*{\skillbar}[1]{%
+    \skillb@level=\dimexpr#1 \skillb@length \relax%
+    {\color{sustainblue}\rule{\skillb@level}{\skillb@height}}%
+    {\color{sustaingrey}%
+        \rule{\dimexpr\skillb@length*100-\skillb@level\relax}{\skillb@height}}%
+}
+\newcommand*{\risk}[2]{%
+    \par\noindent%
+    {\hskip 1ex\small #1 (#2/100.0 - \ifthenelse{\lengthtest{#2 pt < 30 pt} }{low}{\ifthenelse{\lengthtest{#2 pt < 70 pt} }{medium}{high}} risk)}\\%
+    \skillbar{#2}%
+}
+\makeatother
+
+\titlespacing*{\section}
+{0pt}{15ex plus 1ex minus .2ex}{4.3ex plus .2ex}
+
+\title{Risk Analysis for Supply Chain Due Diligence}
+\author{Company Name}
+\date{June 25th 2023}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Introduction}
+
+In today's globalized economy, supply chains have become increasingly complex, involving multiple stakeholders and spanning across different countries and regions.
+The growing recognition of the importance of responsible business practices has led to the introduction of legislation such as the Supply Chain Due Diligence Act,
+both at the national and European levels. These regulations aim to ensure that businesses uphold human rights, promote environmental sustainability, and prevent
+adverse impacts on communities and workers throughout the supply chain. This risk analysis encompasses the entirety of our supply chain, including all entities
+involved in the production, manufacturing, distribution, and sale of our products. It covers our suppliers, subcontractors, and other relevant business partners,
+irrespective of their location or the nature of their involvement. By conducting this analysis, we aim to fulfill our legal obligations and contribute to a more
+sustainable and ethical supply chain.
+
+%\addcontentsline{toc}{section}{Unnumbered Section}
+%\section*{Unnumbered Section}
+
+\section{Policy Statement}
+
+At [Company Name], we are committed to upholding the principles and objectives outlined in the German Lieferkettengesetz (Supply Chain Due Diligence Act).
+We recognize the importance of responsible business practices and the critical role they play in ensuring human rights, labor rights, and environmental
+standards are respected throughout our supply chain.
+
+As a company operating in Germany, we fully support the Supply Chain Due Diligence Act's goal of promoting sustainable and ethical supply chain management. We are
+dedicated to actively implementing the requirements set forth by this legislation, as well as going beyond compliance to foster positive change within our
+operations and among our suppliers.
+
+Our commitment to the Lieferkettengesetz is demonstrated through the following key principles:
+
+1. Due Diligence: We are committed to conducting thorough due diligence throughout our supply chain to identify and address potential risks and adverse impacts
+on human rights, labor rights, and the environment. We will establish robust procedures to assess, prevent, mitigate, and account for these risks, ensuring
+our suppliers adhere to the same standards.
+2. Transparency and Reporting: We believe in the power of transparency and accountability. We will strive to provide clear and accurate information regarding
+our supply chains, including details of our due diligence processes, supplier assessments, and any remediation actions taken. We are committed to regular reporting
+to stakeholders, including relevant authorities, to foster trust and promote industry-wide transparency.
+3. Collaboration and Engagement: We recognize that addressing complex supply chain challenges requires collaboration and engagement with various stakeholders,
+including suppliers, workers, local communities, civil society organizations, and governmental bodies. We will actively seek partnerships to exchange best practices,
+share knowledge, and drive collective action to improve supply chain sustainability and human rights protection.
+4. Continuous Improvement: We embrace a culture of continuous improvement and are committed to regularly reviewing and enhancing our supply chain due diligence processes.
+We will adapt to emerging risks, integrate new technologies, and stay updated on international best practices to ensure our operations align with the evolving
+standards of responsible business conduct.
+5. Remediation and Redress: In the event that human rights, labor rights, or environmental abuses are identified within our supply chain, we are committed to taking
+swift and appropriate actions to address these issues. We will work diligently to provide remediation and support to affected individuals and communities, in line
+with internationally recognized frameworks and guidelines.
+As we implement the German Lieferkettengesetz, we are dedicated to promoting a responsible and sustainable supply chain that respects the dignity, rights, and
+well-being of all individuals impacted by our operations. By adhering to these principles, we aim to contribute to a fair and sustainable global economy and set
+a positive example for the business community.
+
+[Company Name] is fully committed to supporting the German Lieferkettengesetz and ensuring that our supply chain operates with the highest standards of ethics,
+responsibility, and sustainability.
+
+
+\section{Methodology}
+
+The risk analysis combines both internal and external expertise by using publicly available indices, supplier knowledge from the SustainMind database and internal
+knowledge from people within our organization. By incorporating these perspectives, we gain valuable insights and ensure a holistic understanding of the risks
+associated with our supply chain.
+
+As a first step, we gathered information about each of our suppliers by asking them for a list of their production sites and by using publicly available company databases
+to create a list of production countries and production processes. Based on a supplier's inventory and production countries, we used multiple indices to
+create a generic risk mapping. To get a comprehensive image, we combined information of the following indices:
+
+\begin{itemize}
+    \item The UNICEF Child Labor Dataset
+    \item The World Justice Project's Rule of Law Index
+    \item The Walkfree Global Slavery Index
+    \item The Environmental Performance Index
+\end{itemize}
+
+The generic risk mapping performed for each country includes the following risk categories, listed with their respective paragraph of the German Supply Chain Due Diligence Act (LkSG):
+\begin{itemize}
+    \item Child Labor (§ 2 II Nr. 1, 2 LkSG)
+    \item Modern Slavery (§ 2 II Nr. 3, 4 LkSG)
+    \item No Freedom of Association (§ 2 II Nr. 6 LkSG)
+    \item Poor Labor Rights and Work Safety (§ 2 II Nr. 5 LkSG)
+    \item Discrimination (§ 2 II Nr. 7 LkSG)
+    \item Waste Water Pollution (§ 2 II Nr. 9 LkSG)
+    \item Poor Air Quality (§ 2 II Nr. 9 LkSG)
+    \item Release of Heavy Metals (§ 2 III Nr. 1, 2, 3 LkSG)
+    \item Inadequate Waste Disposal (§ 2 III Nr. 6, 7, 8 LkSG)
+\end{itemize}
+
+For each of these risks, a score between 0 and 100 is calculated. A score below 30 indicates a low risk, a score of at least 30 and below 70 a medium risk and
+a score of at least 70 indicates a high risk. More details about the calculation of the scores can be found in appendix A.
+
+The scores give a good first impression of the severity of each risk. To refine the identified risks, we conducted employee surveys within our company, especially
+of the purchasing department, considered complaints by employees of our suppliers and exchanged knowledge with other companies which having the same suppliers via the
+SustainMind ESG collaboration platform.
+
+We prioritized the risks based on the refined risk scores, the potential severity and our ability to eliminate the risks, measured by our contract volume compared to
+a supplier's total revenue. A detailed description of the risk priority algorithm can be found in appendix B.
+
+\section{Supplier Analysis}
+
+\subsection{SteelWorks Inc.}
+
+\subsubsection*{Supplier Self Description}
+% Supplier description text
+SteelWorks Inc. is a leading steel company based in Asia, specializing in the manufacturing and distribution of high-quality steel products.
+With a rich history spanning over four decades, SteelWorks Inc. has established itself as a trusted name in the steel industry, catering to diverse sectors
+such as construction, infrastructure development, automotive, and manufacturing.
+
+\subsubsection*{Production Sites}
+SteelWorks Inc. has production sites in the following countries/regions:
+\begin{itemize}
+    \item Shanghai, China
+    \item Mumbai, India
+    \item Busan, South Korea
+\end{itemize}
+
+\subsubsection*{Identified Risks}
+Based on the production countries and our supplier's product offer, we calculated the following risk scores:
+
+\vspace{10px}
+
+\risk{Child Labor}{71.0}
+\risk{Modern Slavery}{82.4}
+\risk{No Freedom of Association}{100}
+\risk{Poor Labor Rights and Work Safety}{66.2}
+\risk{Discrimination}{98.2}
+\risk{Waste Water Pollution}{23}
+\risk{Poor Air Quality}{10}
+\risk{Release of Heavy Metals}{45}
+\risk{Inadequate Waste Disposal}{54}
+
+\vspace{10px}
+
+Interviews conducted with our employees that had direct contact with the supplier revealed no further knowledge about worker right violations or
+environmental pollution. Also, the SustainMind database didn't include records of these violations. In addition, we received no complaints from employees of SteelWorks
+via our complaint platform. Thus, we proceeded with the stated scores.
+
+\subsubsection*{Implemented Prevention Measures}
+
+Our supplier, SteelWorks Inc., has implemented stringent prevention measures to help us comply with the requirements of the Lieferkettengesetz.
+They maintain comprehensive record-keeping and traceability systems at each supply chain stage, ensuring transparency. Regular audits and assessments
+verify the accuracy of their documentation. SteelWorks Inc. demonstrates a commitment to responsible business practices and compliance with the legislation.
+We are proud to partner with them, as they prioritize documentation to promote transparency and accountability.
+
+To put down our efforts on writing, we concluded a human rights and environmental protection supplementary agreement with SteelWorks Inc. It commits SteelWorks Inc.
+to improve their worker's rights and to increase their environmental standards, otherwise contract penalties or the end of our business relationship are possible.
+[Company Name] is strongly supports SteelWorks Inc. with all resources within the scope of our possibilities with their change management.
+
+Furthermore, we established a complaint plafform for our supplier's workers to report inadequate working conditions and environmental violations. The complaint plafform
+is realizzed with the help of SustainMind and publicly accessible. To lower the hurdle of complaints and to eliminate the likelihood of negative consequences for the reporter,
+an anonymous reporting option is available. All complaints are carefully considered and further investigated.
+
+What is more, we are offering recurrent and mandatory seminars for the employees of SteelWorks Inc. Based on the identified risks, the following topics were covered during
+the seminars:
+\begin{itemize}
+    \item Prevention of Child Labour and Human Trafficking
+    \item Labour Rights Seminar
+    \item Anti-Discrimination Seminar
+\end{itemize}
+
+What is more, as a response to the high risks of child labour and modern slavery, we implemented the SustainMind employee registration software at our supplier.
+Each factory worker of SteelWorkers Inc. is assigned a unique employee ID. Only people with a valid employee ID (or guest ID) and a valid identity document are
+allowed to enter the factory. During unannounced audits, the auditor will check the employee IDs and identity documents of the factory workers. Unregistered employees
+will lead to severe consequences for the supplier companies, including a possible end of business relations.
+
+\subsubsection*{Future Prevention Measures}
+
+Looking to the future, we are committed to implementing even stronger prevention measures to ensure compliance with the evolving requirements of the Supply Chain
+Due Diligence Act.
+
+To deal with the risks of inadequate waste disposal and the release of heavy metals, we are investigating the current waste treatment together with our supplier.
+As the public waste disposal systems in some of our supplier's production countries aren't environmentally friendly, we are considering private alternatives.
+
+\subsubsection*{Audits}
+
+We conduct regular audits to assess our suppliers' adherence to ethical standards, labor rights, and environmental practices. These audits are conducted by
+independent third-party organizations who thoroughly evaluate our suppliers' operations, policies, and documentation. Through audits, we ensure transparency,
+identify areas for improvement, and verify the accuracy of supplier-provided information. By conducting audits, we maintain accountability and promote continuous
+improvement within our supply chain, thereby safeguarding the rights and well-being of workers and minimizing environmental impact.
+
+\subsection{The Iron Company}
+
+\end{document}
