@@ -1,4 +1,4 @@
-% run this script with pdflatex risk_analysis.tex
+% run this script with: pdflatex risk_analysis.tex
 % make sure to install pdflatex before. On MAC: brew install --cask mactex
 
 \documentclass{article}
@@ -25,8 +25,13 @@
 }
 \newcommand*{\risk}[2]{%
     \par\noindent%
-    {\hskip 1ex\small #1 (#2/100.0 - \ifthenelse{\lengthtest{#2 pt < 30 pt} }{low}{\ifthenelse{\lengthtest{#2 pt < 70 pt} }{medium}{high}} risk)}\\%
-    \skillbar{#2}%
+    \ifthenelse{\lengthtest{#2 pt < 0 pt}}{
+        {\hskip 1ex\small #1 \color{red}(No data avilable)}\\%
+        \skillbar{0}%
+    }{
+        {\hskip 1ex\small #1 (#2/100.0 - \ifthenelse{\lengthtest{#2 pt < 30 pt} }{low}{\ifthenelse{\lengthtest{#2 pt < 70 pt} }{medium}{high}} risk)}\\%
+        \skillbar{#2}%
+    }
 }
 \makeatother
 
@@ -109,7 +114,7 @@ create a generic risk mapping. To get a comprehensive image, we combined informa
 \begin{itemize}
     \item The UNICEF Child Labor Dataset
     \item The World Justice Project's Rule of Law Index
-    \item The Walkfree Global Slavery Index
+    \item The Walk Free Global Slavery Index
     \item The Environmental Performance Index
 \end{itemize}
 
@@ -134,7 +139,7 @@ of the purchasing department, considered complaints by employees of our supplier
 SustainMind ESG collaboration platform.
 
 We prioritized the risks based on the refined risk scores, the potential severity and our ability to eliminate the risks, measured by our contract volume compared to
-a supplier's total revenue. A detailed description of the risk priority algorithm can be found in appendix B.
+a supplier's total revenue.
 
 \section{Supplier Analysis}
 
@@ -165,7 +170,7 @@ Based on the production countries and our supplier's product offer, we calculate
 \risk{Poor Labor Rights and Work Safety}{66.2}
 \risk{Discrimination}{98.2}
 \risk{Waste Water Pollution}{23}
-\risk{Poor Air Quality}{10}
+\risk{Poor Air Quality}{-1}
 \risk{Release of Heavy Metals}{45}
 \risk{Inadequate Waste Disposal}{54}
 
@@ -190,15 +195,15 @@ Furthermore, we established a complaint plafform for our supplier's workers to r
 is realizzed with the help of SustainMind and publicly accessible. To lower the hurdle of complaints and to eliminate the likelihood of negative consequences for the reporter,
 an anonymous reporting option is available. All complaints are carefully considered and further investigated.
 
-What is more, we are offering recurrent and mandatory seminars for the employees of SteelWorks Inc. Based on the identified risks, the following topics were covered during
+In addition, we are offering recurrent and mandatory seminars for the employees of SteelWorks Inc. Based on the identified risks, the following topics are covered during
 the seminars:
 \begin{itemize}
-    \item Prevention of Child Labour and Human Trafficking
-    \item Labour Rights Seminar
+    \item Prevention of Child Labor and Human Trafficking
+    \item Labor Rights Seminar
     \item Anti-Discrimination Seminar
 \end{itemize}
 
-What is more, as a response to the high risks of child labour and modern slavery, we implemented the SustainMind employee registration software at our supplier.
+What is more, as a response to the high risks of child labor and modern slavery, we implemented the SustainMind employee registration software at our supplier.
 Each factory worker of SteelWorkers Inc. is assigned a unique employee ID. Only people with a valid employee ID (or guest ID) and a valid identity document are
 allowed to enter the factory. During unannounced audits, the auditor will check the employee IDs and identity documents of the factory workers. Unregistered employees
 will lead to severe consequences for the supplier companies, including a possible end of business relations.
@@ -219,5 +224,164 @@ identify areas for improvement, and verify the accuracy of supplier-provided inf
 improvement within our supply chain, thereby safeguarding the rights and well-being of workers and minimizing environmental impact.
 
 \subsection{The Iron Company}
+
+...
+
+\section{Appendix}
+
+\subsection{Appendix A: Risk Classification}
+
+Our risk classifications follow the SustainMind guidelines and are listed in more detail in this section.
+
+\subsubsection*{Risk: Child Labor}
+
+The risk of child labor is classified based on the UNICEF child labor dataset, which contains data about the child labor percentage in 96 countries.
+Child labor is defined as work done by children (ages 5 to 17) who are engaged in labor that is considered detrimental to their health and development.
+In the least developed countries, slightly more than 1 in 5 children are engaged in child labor.
+
+We map countries to different child labor risk categories:
+\begin{itemize}
+    \item Low risk: Less than 3\% of children are involved in child labor
+    \item Medium risk: At least 3\% but less than 10\% of children in a country are involved child labor
+    \item High risk: At least 10\% of children in a country are involved in child labor
+\end{itemize}
+
+The UNICEF child labor dataset mostly contains countries with an increased expected risk of child labor and doesn't include many highly developed countries
+where child labor isn't an issue. Thus, all countries that aren't contained in the dataset are treated as low risk countries. 
+
+\subsubsection*{Risk: Modern Slavery}
+
+The risk of modern slavery (human trafficking) is calculated with the help of the Walk Free Global Slavery Index. The index provides national estimates of modern slavery for 160
+countries. Modern slavery is an umbrella term, which encompasses several types of exploitation, including forced labor, human trafficking and forced marriage.
+The index is based on nationally representative household surveys with thousands of survivors.
+
+We map countries and their modern slavery prevalence to the following risk categories:
+\begin{itemize}
+    \item Low risk: Less than 0.5\% of people in a country are subject to modern slavery
+    \item Medium risk: At least 0.5\% but less than 1\% of people in a country are subject to modern slavery
+    \item High risk: At least 1\% of people in a country are subject to modern slavery
+\end{itemize}
+
+Some smaller countries aren't included in the modern slavery index. We have marked the scores of theses countries as not existing in the risk identification summary.
+
+\subsubsection*{Risk: No Freedom of Association}
+
+Freedom of association is a fundamental human right and a cornerstone of democratic societies. It refers to the right of individuals to form and join organizations,
+such as trade unions or worker associations, to collectively voice their concerns, protect their interests, and negotiate better working conditions.
+We calculate the risk of lacking freedom of association based on the World Justice Project Rule of Law Index, which evaluates 140 countries and jurisdictions
+around the world. The Rule of Law Index contains 8 different factors with several sub-factors, each with a score between 0 (poor performance) and 1 (good performance).
+
+To estimate the freedome of association, we considered the factors '4.7 Freedom of assembly and association is effectively guaranteed' ($factor_{4.7}$) and
+'Factor 6: Regulatory Enforcement' ($factor_6$). Next, we calculated the lacking freedom of association risk score as:
+$score_{fa} = 100 - 100*(factor_{4.7} + factor_6)/2$.
+
+The calculated score resulted in the following risk categories:
+\begin{itemize}
+    \item Low risk: A score below 30
+    \item Medium risk: A score of at least 30 but less than 50
+    \item High risk: A score of at least 50
+\end{itemize}
+
+A score for countries not included in the Rule of Law Index couldn't be calculated. These countries are marked accordingly in the risk identification summary.
+
+\subsubsection*{Risk: Poor Labor Rights and Work Safety}
+
+We calculate the risk of poor labor rights and work safety based on the World Justice Project Rule of Law Index, which evaluates 140 countries and jurisdictions
+around the world. The Rule of Law Index contains 8 different factors with several sub-factors, each with a score between 0 (poor performance) and 1 (good performance).
+
+To estimate the freedome of association, we considered the factors '4.8 Fundamental labor rights are effectively guaranteed' ($factor_{4.8}$) and
+'Factor 6: Regulatory Enforcement' ($factor_6$). Next, we calculated the poor labor rights and work safetly risk score as:
+$score_{labor} = 100 - 100*(factor_{4.8} + factor_6)/2$.
+
+The calculated score resulted in the following risk categories:
+\begin{itemize}
+    \item Low risk: A score below 30
+    \item Medium risk: A score of at least 30 but less than 50
+    \item High risk: A score of at least 50
+\end{itemize}
+
+A score for countries not included in the Rule of Law Index couldn't be calculated. These countries are marked accordingly in the risk identification summary.
+
+\subsubsection*{Risk: Discrimination}
+
+We calculate the risk of discrimination based on the World Justice Project Rule of Law Index, which evaluates 140 countries and jurisdictions
+around the world. The Rule of Law Index contains 8 different factors with several sub-factors, each with a score between 0 (poor performance) and 1 (good performance).
+
+To estimate the freedome of association, we considered the factors '4.1 Equal treatment and absence of discrimination' ($factor_{4.1}$) and
+'7.2 Civil justice is free of discrimination' ($factor_{7.2}$). Next, we calculated the descrimination risk score as:
+$score_{disc} = 100 - 100*(factor_{4.1} + factor_{7.2})/2$.
+
+The calculated score resulted in the following risk categories:
+\begin{itemize}
+    \item Low risk: A score below 30
+    \item Medium risk: A score of at least 30 but less than 50
+    \item High risk: A score of at least 50
+\end{itemize}
+
+A score for countries not included in the Rule of Law Index couldn't be calculated. These countries are marked accordingly in the risk identification summary.
+
+\subsubsection*{Risk: Waste Water Pollution}
+
+We calculate the risk of waste water pollution based on the Environmental Performance Index, which summarizes the state of sustainability around the world with
+40 performance indicators. Each performance indicator has a score from 0 (poor performance) to 100 (good performance). The Environmental Performance Index includes data
+for 180 countries on climate change performance, environmental health, and ecosystem vitality.
+
+To estimate waste water pollution, we use the index factor 'Water Resources'. We categorize the risk of waste water pollution with the following conversion:
+\begin{itemize}
+    \item Low risk: A score of more than 70
+    \item Medium risk: A score of more than 30 but at most 70
+    \item High risk: A score of at most 30
+\end{itemize}
+
+A score for countries not included in the Environmental Performance Index couldn't be calculated. These countries are marked accordingly in the risk identification summary.
+
+\subsubsection*{Risk: Poor Air Quality}
+
+We calculate the risk of poor air quality based on the Environmental Performance Index, which summarizes the state of sustainability around the world with
+40 performance indicators. Each performance indicator has a score from 0 (poor performance) to 100 (good performance). The Environmental Performance Index includes data
+for 180 countries on climate change performance, environmental health, and ecosystem vitality.
+
+To estimate air quality, we use the corresponding index factor 'Air Quality'. We categorize the risk of poor air quality with the following conversion:
+\begin{itemize}
+    \item Low risk: A score of more than 70
+    \item Medium risk: A score of more than 30 but at most 70
+    \item High risk: A score of at most 30
+\end{itemize}
+
+A score for countries not included in the Environmental Performance Index couldn't be calculated. These countries are marked accordingly in the risk identification summary.
+
+\subsubsection*{Risk: Release of Heavy Metals}
+
+We calculate the risk of release of heavy metals based on the Environmental Performance Index, which summarizes the state of sustainability around the world with
+40 performance indicators. Each performance indicator has a score from 0 (poor performance) to 100 (good performance). The Environmental Performance Index includes data
+for 180 countries on climate change performance, environmental health, and ecosystem vitality.
+
+To estimate the release of heavy metals, we use the index factor 'Heavy Metals'. We categorize the risk of release of heavy metals with the following conversion:
+\begin{itemize}
+    \item Low risk: A score of more than 70
+    \item Medium risk: A score of more than 30 but at most 70
+    \item High risk: A score of at most 30
+\end{itemize}
+
+A score for countries not included in the Environmental Performance Index couldn't be calculated. These countries are marked accordingly in the risk identification summary.
+
+\subsubsection*{Risk: Inadequate Waste Disposal}
+
+We calculate the risk of inadequate waste disposal based on the Environmental Performance Index, which summarizes the state of sustainability around the world with
+40 performance indicators. Each performance indicator has a score from 0 (poor performance) to 100 (good performance). The Environmental Performance Index includes data
+for 180 countries on climate change performance, environmental health, and ecosystem vitality.
+
+To estimate the correctness of waste disposal, we use the index factor 'Waste Management'. We categorize the risk of inadequate waste disposal with the following conversion:
+\begin{itemize}
+    \item Low risk: A score of more than 55
+    \item Medium risk: A score of more than 25 but at most 55
+    \item High risk: A score of at most 25
+\end{itemize}
+
+A score for countries not included in the Environmental Performance Index couldn't be calculated. These countries are marked accordingly in the risk identification summary.
+
+\subsubsection*{Multi-national suppliers}
+
+If a supplier has production sites in multiple countries, the risk scores are the maximum scores for any of the production countries. 
 
 \end{document}
