@@ -1,9 +1,15 @@
 import latex from 'node-latex';
 import fs from 'fs';
 
-const input = fs.createReadStream('risk_analysis.tex')
+const source = fs.readFileSync('risk_analysis.tex').toString()
 const output = fs.createWriteStream('generated_pdfs/analysis_1.pdf')
-const pdf = latex(input)
+
+// multiple passes are needed for the table of contents
+const options = {
+    passes: 2
+};
+
+const pdf = latex(source, options)
 
 pdf.pipe(output)
 pdf.on('error', err => console.error(err))
