@@ -12,7 +12,7 @@ import { MarketplacePage } from "./pages/MarketplacePage";
 import { SuppliersPage } from "./pages/SuppliersPage";
 import { SupplierDetailPage } from "./pages/SupplierDetailPage";
 import { OnboardingPage } from "./pages/OnboardingPage";
-
+import CorporationMode from "./pages/CorporationMode";
 const redirectToSignIn = (
   <SignedOut>
     <RedirectToSignIn />
@@ -31,6 +31,10 @@ export const router = createBrowserRouter([
   {
     path: "/register/*",
     element: <SignUp routing="path" path="/register" />,
+  },
+  {
+    path: "/CorporationMode",
+    element: <CorporationMode />,
   },
   {
     path: "/onboarding",
