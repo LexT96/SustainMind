@@ -1,0 +1,106 @@
+import { useState, useEffect, ChangeEvent, SetStateAction } from 'react';
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
+import TextField from '@mui/material/TextField';
+
+const AddSupplierButton = () => {
+  const [open, setOpen] = useState(false);
+  const [supplierName, setSupplierName] = useState('');
+  const [contractVolume, setContractVolume] = useState('');
+  const [searchResults, setSearchResults] = useState<string[]>([]);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleSave = () => {
+    console.log('Supplier Name:', supplierName);
+    console.log('Contract Volume:', contractVolume);
+    setOpen(false);
+  };
+
+  const handleSupplierNameChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    setSupplierName(value);
+    performSearch(value);
+  };
+
+  const performSearch = (query: string) => {
+    // Simulating a backend search
+    // Replace this code with your actual backend API call
+    // Here, we are using a setTimeout to simulate an asynchronous API call
+    setTimeout(() => {
+      // Simulated search results
+      const results: string[] = ['Supplier A', 'Supplier B', 'Supplier C'].filter(supplier =>
+        supplier.toLowerCase().includes(query.toLowerCase())
+      );
+      setSearchResults(results);
+    }, 300);
+  };
+
+  const handleContractVolumeChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setContractVolume(event.target.value);
+  };
+
+  useEffect(() => {
+    if (!open) {
+      // Clear the search results when the dialog is closed
+      setSearchResults([]);
+      // Reset the field values when the dialog is closed
+      setSupplierName('');
+      setContractVolume('');
+    }
+  }, [open]);
+
+  return (
+    <div>
+      <Button variant="contained" color="primary" onClick={handleClickOpen}>
+        Add Supplier
+      </Button>
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>Add Supplier</DialogTitle>
+        <DialogContent>
+          <TextField
+            autoFocus
+            margin="dense"
+            id="supplier-name"
+            label="Supplier Name"
+            type="text"
+            value={supplierName}
+            onChange={handleSupplierNameChange}
+            fullWidth
+          />
+          <TextField
+            margin="dense"
+            id="contract-volume"
+            label="Contract Volume"
+            type="text"
+            value={contractVolume}
+            onChange={handleContractVolumeChange}
+            fullWidth
+          />
+          <ul>
+            {searchResults.map(result => (
+              <li key={result}>{result}</li>
+            ))}
+          </ul>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleSave} color="primary">
+            Save
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </div>
+  );
+};
+
+export default AddSupplierButton;
