@@ -13,16 +13,14 @@ const stats = [
             <div className="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
               <div className="lg:w-full lg:max-w-2xl lg:flex-auto">
                 <p className="text-xl leading-8 text-gray-600">
-                  Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At arcu, sit dui mi, nibh dui, diam
-                  eget aliquam. Quisque id at vitae feugiat egestas ac. Diam nulla orci at in viverra scelerisque eget.
-                  Eleifend egestas fringilla sapien.
+                Revolutionize your supply chain and stay ahead of the game with our cutting-edge cloud-based collaboration software! We empower corporations and their suppliers to analyze, optimize, and drive sustainable practices across their entire supply chain, ensuring compliance with the latest regulations, including the LSKG (Lieferkettengesetz). </p>
+                <p className="text-xl leading-8 text-gray-600">
+
+                In today's rapidly evolving business landscape, it's more important than ever for companies to embrace environmental, social, and governance (ESG) principles. Our innovative software takes the guesswork out of ESG compliance and the requirements of the LSKG by providing comprehensive tools and automated reporting capabilities.
                 </p>
                 <p className="mt-10 max-w-xl text-base leading-7 text-gray-700">
-                  Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet
-                  vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque
-                  erat velit. Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris
-                  semper sed amet vitae sed turpis id.
-                </p>
+                With our solution, you can effortlessly identify and mitigate risks, ensure ethical sourcing, eliminate labor exploitation, reduce environmental impact, and enhance social responsibility throughout your supply chain. Collaborate seamlessly with your suppliers, exchange vital data, and gain valuable insights to make informed decisions that align with both your sustainability goals and legal obligations under the LSKG.
+</p>
               </div>
               <div className="lg:flex lg:flex-auto lg:justify-center">
                 <dl className="w-64 space-y-8 xl:w-80">

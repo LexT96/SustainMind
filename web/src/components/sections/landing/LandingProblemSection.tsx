@@ -3,7 +3,7 @@ import CountUp from 'react-countup';
 import VisibilitySensor from 'react-visibility-sensor';
 
 const stats: {id: number, name: string, value: number, suffix: string}[] = [
-    { id: 1, name: 'of ESG-regulations and steadily increasing', value: 100, suffix: "+" },
+    { id: 1, name: 'According to a groundbreaking 2020 survey by Accenture, an astounding 82% of consumers prefer sustainable products and services.', value: 82, suffix: "+" },
     { id: 2, name: "of companies report they don't have good tools that help them with LkSG compliance", value: 72, suffix: "%" },
     { id: 3, name: 'of companies viewed the temporal expenditure as their biggest challenge regarding the LkSG', value: 63, suffix: "%" },
   ]
