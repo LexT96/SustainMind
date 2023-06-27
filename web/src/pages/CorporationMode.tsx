@@ -1,5 +1,6 @@
 import BoxSx from '../components/Startsides/BoxSx';
 import index from '../App.css';
+import { PageLayout } from '../components/PageLayout';
 
 export default function CorporationMode() {
   const boxContents = [
@@ -14,10 +15,13 @@ export default function CorporationMode() {
       description: "Möglichkeit für eine Beschreibung",
     },
     { title: "ESG To Do's", description: "Möglichkeit für eine Beschreibung" },
+    { title: "Production Sites", description: "Möglichkeit für eine Beschreibung" },
   ];
 
   return (
-    <div className="grid-container">
+    <PageLayout>
+      
+   <div className="grid-container">
       {boxContents.map((content, index) => (
         <BoxSx
           key={index}
@@ -26,5 +30,7 @@ export default function CorporationMode() {
         />
       ))}
     </div>
+    </PageLayout>
+
   );
 }
