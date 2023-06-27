@@ -1,4 +1,4 @@
-import { SupplierToDo } from "../models/suppliertodo";
+import { SupplierToDo } from "../models/suppliertodo.js";
 import { Request, Response } from "express";
 export class SupplierToDoController {
     public getAllSupplierToDo = async (req: Request, res: Response) => {

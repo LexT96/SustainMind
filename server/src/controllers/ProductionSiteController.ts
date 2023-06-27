@@ -1,4 +1,4 @@
-import { ProductionSite } from "../models/productionSite";
+import { ProductionSite } from "../models/productionSite.js";
 import { Request, Response } from "express";
 export class ProductionSiteController {
     public getAllProductionSites = async (req: Request, res: Response) => {

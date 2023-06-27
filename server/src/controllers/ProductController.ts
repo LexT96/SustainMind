@@ -1,4 +1,4 @@
-import { Product } from "../models/product";
+import { Product } from "../models/product.js";
 import { Request, Response } from "express";
 export class ProductController {
     public getAllProduct = async (req: Request, res: Response) => {

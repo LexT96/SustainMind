@@ -1,4 +1,4 @@
-import { RiskScore } from "../models/riskScore";
+import { RiskScore } from "../models/riskScore.js";
 import { Request, Response } from "express";
 export class RiskScoreController {
     public getAllRiskScore = async (req: Request, res: Response) => {
