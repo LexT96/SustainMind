@@ -1,4 +1,4 @@
-import { CorporationToDo } from "../models/corporationtodo";
+import { CorporationToDo } from "../models/corporationtodo.js";
 import { Request, Response } from "express";
 export class CorporationToDoController {
     public getAllCorporationToDo = async (req: Request, res: Response) => {
