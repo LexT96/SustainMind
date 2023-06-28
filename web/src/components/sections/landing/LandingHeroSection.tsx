@@ -4,6 +4,7 @@ import heroFg from '/hero-fg.png'
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import logo from "/logo.png";
 import { Link } from "react-scroll";
+import { Button } from '@mui/material';
 export function LandingHeroSection() {
   return (
     <ParallaxProvider>
@@ -35,14 +36,12 @@ export function LandingHeroSection() {
                   The collaborative ESG-Solution
                 </p>
                 <div className="mt-10 flex items-center text-white justify-center gap-x-6">
-                  <Link
-                    smooth
-                    spy
-                    to="signup"
+                  <button
+                    onClick={() => {window.location.href = "/register"}}
                     className="rounded-md bg-green-500 px-3.5 py-2.5 text-md font-semibold text-white shadow-sm hover:bg-green-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-400"
                   >
-                    Sign up for the waitlist
-                  </Link>
+                    Sign up now
+                  </button>
                 </div>
               </div>
             </div>

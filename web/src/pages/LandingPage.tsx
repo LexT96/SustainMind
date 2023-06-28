@@ -13,7 +13,6 @@ export const LandingPage = () => {
         <LandingProblemSection />
         <LandingMissionSection />
         <LandingFeaturesSection />
-        <LandingNewsletterSection />
       </>
     );
 }

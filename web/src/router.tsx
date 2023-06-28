@@ -25,7 +25,16 @@ const redirectToSignIn = (
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <LandingPage />,
+    element: (
+      <>
+        <SignedIn>
+          <CorporationMode />
+        </SignedIn>
+        <SignedOut>
+          <LandingPage />
+        </SignedOut>
+      </>
+    ),
   },
   {
     path: "/login/*",
@@ -37,7 +46,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/SupplierMode1",
-    element: <SupplierMode/>,
+    element: <SupplierMode />,
   },
 
   {

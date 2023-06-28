@@ -24,7 +24,11 @@ export function LandingNavBar() {
         }
     }, []);
   return (
-    <Disclosure as="nav" ref={navRef} className="bg-transparent fixed top-0 left-0 right-0 z-50">
+    <Disclosure
+      as="nav"
+      ref={navRef}
+      className="bg-transparent fixed top-0 left-0 right-0 z-50"
+    >
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -90,16 +94,15 @@ export function LandingNavBar() {
                   >
                     Features
                   </Link>
-                  <Link
-                    smooth
-                    spy
-                    to="signup"
-                    activeClass="text-green-700"
-                    className="inline-flex cursor-pointer items-center border-b-2 border-transparent px-1 pt-1 text-md font-medium text-black hover:text-gray-300"
-                  >
-                    Sign Up
-                  </Link>
                 </div>
+              </div>
+              <div className="flex">
+                <button className="inline-flex cursor-pointer items-center border-b-2 border-transparent px-1 pt-1 text-md font-medium text-black hover:text-gray-300"
+                onClick={() => {
+                    window.location.href = "/login";
+                }}>
+                  Dashboard
+                </button>
               </div>
             </div>
           </div>
@@ -134,17 +137,10 @@ export function LandingNavBar() {
               >
                 Features
               </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="#"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
-              >
-                Sign Up
-              </Disclosure.Button>
             </div>
           </Disclosure.Panel>
         </>
       )}
     </Disclosure>
-  )
+  );
 }
