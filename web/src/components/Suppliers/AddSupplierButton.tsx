@@ -1,4 +1,4 @@
-import { useState, useEffect, ChangeEvent, SetStateAction } from 'react';
+import { useState, useEffect, ChangeEvent } from 'react';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
@@ -10,6 +10,7 @@ const AddSupplierButton = () => {
   const [open, setOpen] = useState(false);
   const [supplierName, setSupplierName] = useState('');
   const [contractVolume, setContractVolume] = useState('');
+  const [contractVolumeError, setContractVolumeError] = useState('');
   const [searchResults, setSearchResults] = useState<string[]>([]);
 
   const handleClickOpen = () => {
@@ -46,16 +47,21 @@ const AddSupplierButton = () => {
   };
 
   const handleContractVolumeChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setContractVolume(event.target.value);
+    const value = event.target.value;
+    if (value === '' || parseInt(value) > 0) {
+      setContractVolume(value);
+      setContractVolumeError('');
+    } else {
+      setContractVolumeError('Please enter a value greater than zero.');
+    }
   };
 
   useEffect(() => {
     if (!open) {
-      // Clear the search results when the dialog is closed
       setSearchResults([]);
-      // Reset the field values when the dialog is closed
       setSupplierName('');
       setContractVolume('');
+      setContractVolumeError('');
     }
   }, [open]);
 
@@ -81,10 +87,12 @@ const AddSupplierButton = () => {
             margin="dense"
             id="contract-volume"
             label="Contract Volume"
-            type="text"
+            type="number"
             value={contractVolume}
             onChange={handleContractVolumeChange}
             fullWidth
+            error={contractVolumeError !== ''}
+            helperText={contractVolumeError}
           />
           <ul>
             {searchResults.map(result => (
