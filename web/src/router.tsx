@@ -14,6 +14,8 @@ import { SupplierDetailPage } from "./pages/SupplierDetailPage";
 import { OnboardingPage } from "./pages/OnboardingPage";
 import CorporationMode from "./pages/CorporationMode";
 import SupplierMode from "./pages/SupplierMode";
+import { ProductionSiteEditorPage } from "./pages/ProductionSiteEditorPage";
+
 const redirectToSignIn = (
   <SignedOut>
     <RedirectToSignIn />
@@ -41,6 +43,10 @@ export const router = createBrowserRouter([
   {
     path: "/CorporationMode",
     element: <CorporationMode />,
+  },
+  {
+    path: "/ProductionSiteEditor",
+    element: <ProductionSiteEditorPage />,
   },
   {
     path: "/onboarding",
