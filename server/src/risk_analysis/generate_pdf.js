@@ -2,13 +2,14 @@ import latex from 'node-latex';
 import fs from 'fs';
 import axios from "axios";
 
+/* Code for local pdf compilation
 //const source = fs.readFileSync('risk_analysis.tex').toString()
 const output = fs.createWriteStream('generated_pdfs/analysis_4.pdf')
 
 // multiple passes are needed for the table of contents
 const options = {
     passes: 2
-};
+};*/
 
 const currentDate = new Date();
 const formattedDate = currentDate.toLocaleDateString('en-GB', {
@@ -55,17 +56,24 @@ const source = construct_pdf("Company Name", formattedDate, supplierInfo)
 
 
 const get_pdf = async () => {
-    const request = await axios.post("https://latex.ytotech.com/builds/sync", {
+    axios.post("https://latex.ytotech.com/builds/sync", {
       resources: [
         {
-          content: source,
+            main: true,
+            content: source,
         },
       ],
     }, {
         responseType: "arraybuffer",
+    })
+    .then(response => {
+        const pdf = response.data;
+        fs.writeFileSync("generated_pdfs/analysis_4.pdf", pdf);
+        console.log('PDF file saved successfully!');
+    })
+    .catch(error => {
+        console.error('Error:', error.message);
     });
-    const pdf = request.data;
-    fs.writeFileSync("generated_pdfs/analysis_4.pdf", pdf);
 }
 
 get_pdf();
@@ -254,7 +262,7 @@ function construct_pdf(companyName, date, supplierInfo){
         text += String.raw`\end{itemize}
 
         \subsubsection*{Identified Risks}
-        Based on the production countries and our supplier's product offer, we calculated the following risk scores:
+        Based on the production countries and our supplier's product range, we calculated the following risk scores:
 
         \vspace{10px}
 
