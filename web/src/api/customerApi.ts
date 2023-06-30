@@ -40,3 +40,13 @@ export const getProductionSitesByCustomerId = async (customerId: string) => {
     const response = await fetch(`${API_URL}/${customerId}/productionSites/`);
     return await response.json();
 }
+
+export const createNewRiskAnalysis = async (customerId: string) => {
+    const response = await fetch(`${API_URL}/customer/${customerId}/risk-analysis`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+    return await response.json();
+}

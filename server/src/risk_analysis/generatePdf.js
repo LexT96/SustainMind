@@ -1,5 +1,5 @@
-import latex from 'node-latex';
 import fs from 'fs';
+import util from 'util';
 import axios from "axios";
 
 /* Code for local pdf compilation
@@ -52,32 +52,35 @@ const supplierInfo = [
         ]],
     ])
 ];
-const source = construct_pdf("Company Name", formattedDate, supplierInfo)
+const pathName = "public/risk_analysis/pdfs/"
 
-
-const get_pdf = async () => {
-    axios.post("https://latex.ytotech.com/builds/sync", {
+export const getPdf = async (companyName) => {
+const source = construct_pdf(companyName, formattedDate, supplierInfo);
+  const res = await axios.post(
+    "https://latex.ytotech.com/builds/sync",
+    {
       resources: [
         {
-            main: true,
-            content: source,
+          main: true,
+          content: source,
         },
       ],
-    }, {
-        responseType: "arraybuffer",
-    })
-    .then(response => {
-        const pdf = response.data;
-        fs.writeFileSync("generated_pdfs/analysis_4.pdf", pdf);
-        console.log('PDF file saved successfully!');
-    })
-    .catch(error => {
-        console.error('Error:', error.message);
-    });
+    },
+    {
+      responseType: "arraybuffer",
+    }
+  );
+  try {
+    const pdfData = res.data;
+    const fileName = "analysis_" + +new Date() + ".pdf";
+    const writeFile = util.promisify(fs.writeFile);
+    await writeFile(pathName + fileName, pdfData);
+    console.log("PDF file saved successfully!");
+    return pathName + fileName;
+  } catch (error) {
+    console.error("Error:", error.message);
+  }
 }
-
-get_pdf();
-
 
 // const pdf = latex(source, options)
 

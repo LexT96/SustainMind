@@ -25,3 +25,4 @@ userRouter.put("/:id", async (req, res) => {
 userRouter.delete("/:id",async (req, res) => {
     await userController.deleteUser(req, res);
 })
+
