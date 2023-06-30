@@ -1,5 +1,6 @@
 import latex from 'node-latex';
 import fs from 'fs';
+import axios from "axios";
 
 //const source = fs.readFileSync('risk_analysis.tex').toString()
 const output = fs.createWriteStream('generated_pdfs/analysis_4.pdf')
@@ -52,11 +53,29 @@ const supplierInfo = [
 ];
 const source = construct_pdf("Company Name", formattedDate, supplierInfo)
 
-const pdf = latex(source, options)
 
-pdf.pipe(output)
-pdf.on('error', err => console.error(err))
-pdf.on('finish', () => console.log('PDF generated!'))
+const get_pdf = async () => {
+    const request = await axios.post("https://latex.ytotech.com/builds/sync", {
+      resources: [
+        {
+          content: source,
+        },
+      ],
+    }, {
+        responseType: "arraybuffer",
+    });
+    const pdf = request.data;
+    fs.writeFileSync("generated_pdfs/analysis_4.pdf", pdf);
+}
+
+get_pdf();
+
+
+// const pdf = latex(source, options)
+
+// pdf.pipe(output)
+// pdf.on('error', err => console.error(err))
+// pdf.on('finish', () => console.log('PDF generated!'))
 
 
 function construct_pdf(companyName, date, supplierInfo){
