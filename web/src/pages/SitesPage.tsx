@@ -16,11 +16,11 @@ export const SitesPage = () => {
     const [matchingSites, setMatchingSites] = useState(productionSites);
 
     useEffect(() => {
-        if (!isLoading) setMatchingSites(productionSites);
+        if (!isLoading && productionSites.length > 0) setMatchingSites(productionSites);
     }, [isLoading])
     return (
       <PageLayout>
-        {productionSites && (
+        {productionSites?.length > 0 &&  matchingSites && (
           <>
             <Searchbar
               label="Production Site"

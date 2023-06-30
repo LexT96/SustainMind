@@ -3,6 +3,7 @@ import { Request, Response } from "express";
 import { IsSupplier } from "../models/isSupplier.js";
 // @ts-ignore
 import {getPdf} from "../risk_analysis/generatePdf.js"
+import { ProductionSite } from "../models/productionSite.js";
 
 const customers = [
     {
@@ -116,4 +117,55 @@ export class CustomerController {
       pdf: pdf,
     });
   };
+
+  public getAllProductSitesOfSupplier = async (req: Request, res: Response) => {
+    const supplierId: string = req.params.id;
+    // const productionSites = await ProductionSite.find({
+    //   company: supplierId,
+    // });
+    const productionSites = [{
+      id: 1,
+      name: "T-Shirt Factory",
+      location: "Dhaka, Bangladesh",
+      numberOfGoals: 3,
+      numberOfProducts: 3,
+  },
+  {
+      id: 2,
+      name: "Pant Factory",
+      location: "Dhaka, Bangladesh",
+      numberOfGoals: 3,
+      numberOfProducts: 3
+  },
+  {
+      id: 3,
+      name: "Hat Factory",
+      location: "Dhaka, Bangladesh",
+      numberOfGoals: 3,
+      numberOfProducts: 3
+  },
+  {
+      id: 4,
+      name: "Jacket Factory",
+      location: "Dhaka, Bangladesh",
+      numberOfGoals: 3,
+      numberOfProducts: 3
+  }];
+  
+    // const allSuppliersOfCurrentSupplier: typeof IsSupplier[] = await IsSupplier.find({ idCorporation: supplierId });
+    // // get all productionsites of suppliers of current supplier and of the current supplier
+    // const productionSites = await ProductionSite.find({
+    //   company: {
+    //     $or: [
+    //       {
+    //         $in: allSuppliersOfCurrentSupplier.map(
+    //           (supplier: any) => supplier.idSupplier
+    //         ),
+    //       },
+    //       supplierId,
+    //     ],
+    //   },
+    // });
+    res.send(productionSites);
+  }
 }

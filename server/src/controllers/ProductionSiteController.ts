@@ -5,11 +5,7 @@ export class ProductionSiteController {
         const productionSites = await ProductionSite.find();
         res.send(productionSites);
     }
-    public getAllProductSitesOfSupplier = async (req: Request, res: Response) => {
-        const supplierName = req.params.supplierName;
-        const productionSites = await ProductionSite.find({ company: supplierName });
-        res.send(productionSites);
-      }
+
     public getProductionSiteById = async (req: Request, res: Response) => {
         const id = req.params.id;
         if (!id) {

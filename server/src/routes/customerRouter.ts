@@ -26,4 +26,6 @@ customerRouter.delete("/:id",async (req, res) => {
 
 customerRouter.get("/:id/suppliers", customerController.getSuppliersOfCustomer);
 
+customerRouter.get("/:id/productionSites", customerController.getAllProductSitesOfSupplier);
+
 customerRouter.post("/:id/risk-analysis", customerController.createNewRiskAnalysis)

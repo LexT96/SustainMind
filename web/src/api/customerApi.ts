@@ -37,7 +37,7 @@ export const getSuppliersOfCustomer = async (id: string) => {
     return await response.json();
 }
 export const getProductionSitesByCustomerId = async (customerId: string) => {
-    const response = await fetch(`${API_URL}/${customerId}/productionSites/`);
+    const response = await fetch(`${API_URL}/customer/${customerId}/productionSites/`);
     return await response.json();
 }
 
@@ -48,5 +48,10 @@ export const createNewRiskAnalysis = async (customerId: string) => {
             'Content-Type': 'application/json'
         }
     });
+    return await response.json();
+}
+
+export const getAllProductionSitesForSupplier  = async (supplierId: string) => {
+    const response = await fetch(`${API_URL}/customer/${supplierId}/productionSites`);
     return await response.json();
 }
