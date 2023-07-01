@@ -55,6 +55,10 @@ class CustomBox extends React.Component<BoxProps, BoxState> {
 
     const boxClassName = isHovered ? 'box-hover' : '';
 
+    const titleStyle: CSSProperties = {
+      fontWeight: 'bold', // Make the title bold
+    };
+
     return (
       <div
         style={{ ...boxStyle, ...(isHovered ? hoverStyle : {}) }}
@@ -62,7 +66,7 @@ class CustomBox extends React.Component<BoxProps, BoxState> {
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
       >
-        <h3>{title}</h3>
+        <h3 style={titleStyle}>{title}</h3>
         <p style={{ textAlign: 'center' }}>{description}</p>
       </div>
     );
