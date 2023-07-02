@@ -6,6 +6,34 @@ import { SupplierRisk } from "../components/Suppliers/SupplierRisk";
 import { useCustomerQuery } from "../react-query/customerQueries";
 import Prevention from "../components/Suppliers/Prevention"
 
+
+const risks = [
+  {
+    _id: "ASD",
+    name: "Work safety",
+    score: 6,
+    explanation: "This is the work safety explanation",
+  },
+  {
+    _id: "ASAD",
+    name: "Child labor",
+    score: 3,
+    explanation: "This is the child labor explanation",
+  },
+  {
+    _id: "ASDASD",
+    name: "Environmental impact",
+    score: 8,
+    explanation: "This is the environmental impact explanation",
+  },
+  {
+    _id: "ASDASDASD",
+    name: "Corruption",
+    score: 2,
+    explanation: "This is the corruption explanation",
+  },
+];
+
 export const SupplierDetailPage = () => {
     const { id } = useParams();
     const {data: supplier} = useCustomerQuery(id ?? "");
@@ -23,7 +51,7 @@ export const SupplierDetailPage = () => {
                   mr: 7,
                 }}
               />
-              <Box className="space-y-4" sx={{minWidth: 300}}>
+              <Box className="space-y-4" sx={{ minWidth: 300 }}>
                 <Typography variant="h5" sx={{ fontWeight: "bold" }}>
                   {supplier.companyName}
                 </Typography>
@@ -38,21 +66,16 @@ export const SupplierDetailPage = () => {
               Potential risks identified based on production countries and
               product categories
             </Typography>
-            <Grid container spacing={3} sx={{ ml: 0 }}>
-              <Grid xs={12} md={6} lg={4}>
-                <SupplierRisk
-                  name={"Work safety"}
-                  score={6}
-                  explanation={"dasdasdsadsadsadsadsdsadsadsdsadsds"}
-                />
-              </Grid>
-              <Grid xs={12} md={6} lg={4}>
-                <SupplierRisk
-                  name={"Slave labour"}
-                  score={2}
-                  explanation={"dasdasdsadsadsadsadsdsadsadsdsadsds"}
-                />
-              </Grid>
+            <Grid container spacing={3} sx={{ ml: 0 }} columnSpacing={2} rowGap={3}>
+              {risks.map((risk: any) => (
+                <Grid xs={12} md={6} lg={4} key={risk._id}>
+                  <SupplierRisk
+                    name={risk.name}
+                    score={risk.score}
+                    explanation={risk.explanation}
+                  />
+                </Grid>
+              ))}
             </Grid>
             <Typography variant="h5" sx={{ fontWeight: "bold", mt: 5, mb: 3 }}>
               Negotiation Power
@@ -93,7 +116,7 @@ export const SupplierDetailPage = () => {
                 </Stack>
               </CardContent>
             </Card>
-            <Prevention/>
+            <Prevention />
           </>
         )}
       </PageLayout>
