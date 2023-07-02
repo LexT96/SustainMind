@@ -15,7 +15,6 @@ import { OnboardingPage } from "./pages/OnboardingPage";
 import CorporationMode from "./pages/CorporationMode";
 import SupplierMode from "./pages/SupplierMode";
 import { ProductionSiteEditorPage } from "./pages/ProductionSiteEditorPage";
-import Prevention from "./components/Suppliers/Prevention";
 
 const redirectToSignIn = (
   <SignedOut>
@@ -40,10 +39,6 @@ export const router = createBrowserRouter([
   {
     path: "/login/*",
     element: <SignIn routing="path" path="/login" />,
-  },
-  {
-    path: "/Prevention",
-    element: <Prevention/>,
   },
   {
     

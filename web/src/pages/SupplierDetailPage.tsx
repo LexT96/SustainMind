@@ -4,6 +4,7 @@ import { Avatar, Box, Card, CardContent, Divider, Grid, Stack, Typography } from
 import { ProductScore } from "../components/Products/ProductScore";
 import { SupplierRisk } from "../components/Suppliers/SupplierRisk";
 import { useCustomerQuery } from "../react-query/customerQueries";
+import Prevention from "../components/Suppliers/Prevention"
 
 export const SupplierDetailPage = () => {
     const { id } = useParams();
@@ -92,6 +93,7 @@ export const SupplierDetailPage = () => {
                 </Stack>
               </CardContent>
             </Card>
+            <Prevention/>
           </>
         )}
       </PageLayout>

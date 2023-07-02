@@ -81,14 +81,14 @@ export function MainNavbar() {
                   >
                     Production Sites
                   </a>
-                  <a
+                  {/* <a
                     href="/goals"
                     className={`${
                       pathName === "/goals" ? "text-green-700" : ""
                     } inline-flex cursor-pointer items-center border-b-2 border-transparent px-1 pt-1 text-md font-medium text-black hover:text-gray-500`}
                   >
                     Goals
-                  </a>
+                  </a> */}
                   <a
                     href="/analysis"
                     className={`${
