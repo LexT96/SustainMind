@@ -3,3 +3,18 @@
 @tailwind utilities;
 
 
+.right-side-auth-page {
+  transform: skewX(5deg);
+  width: 60%;
+  padding-Right: -10%;
+  transform-origin: top right;
+}
+
+.left-side-auth-page {
+  background-color: white;
+  width: 50%;
+  display: flex;
+  justify-Content: center;
+  align-Items: center;
+  transform-Origin: top left;
+}

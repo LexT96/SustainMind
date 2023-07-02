@@ -1,8 +1,13 @@
-import {
-  createBrowserRouter
-} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
-import { RedirectToSignIn, SignedIn, SignedOut, SignIn, SignUp, UserButton } from "@clerk/clerk-react";
+import {
+  RedirectToSignIn,
+  SignedIn,
+  SignedOut,
+  SignIn,
+  SignUp,
+  UserButton,
+} from "@clerk/clerk-react";
 import { AnalysisPage } from "./pages/AnalysisPage";
 import { LandingPage } from "./pages/LandingPage";
 import { ProductsPage } from "./pages/ProductsPage";
@@ -16,6 +21,8 @@ import CorporationMode from "./pages/CorporationMode";
 import SupplierMode from "./pages/SupplierMode";
 import { ProductionSiteEditorPage } from "./pages/ProductionSiteEditorPage";
 import Prevention from "./components/Suppliers/Prevention";
+import LoginPage from "./pages/LoginPage";
+import RegistrationsPage from "./pages/RegistrationPage";
 
 const redirectToSignIn = (
   <SignedOut>
@@ -39,16 +46,15 @@ export const router = createBrowserRouter([
   },
   {
     path: "/login/*",
-    element: <SignIn routing="path" path="/login" />,
+    element: <LoginPage />,
   },
   {
     path: "/Prevention",
-    element: <Prevention/>,
+    element: <Prevention />,
   },
   {
-    
     path: "/register/*",
-    element: <SignUp routing="path" path="/register" />,
+    element: <RegistrationsPage />,
   },
   {
     path: "/SupplierMode1",

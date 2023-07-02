@@ -13,3 +13,9 @@
 .rectangle:hover {
   background-color: lightgray;
 }
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
