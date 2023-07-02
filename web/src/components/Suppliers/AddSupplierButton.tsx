@@ -5,8 +5,9 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import TextField from '@mui/material/TextField';
+import { Searchbar } from '../Searchbar';
 
-const AddSupplierButton = () => {
+const AddSupplierButton = ({suppliers}: any) => {
   const [open, setOpen] = useState(false);
   const [supplierName, setSupplierName] = useState('');
   const [contractVolume, setContractVolume] = useState('');
@@ -27,10 +28,8 @@ const AddSupplierButton = () => {
     setOpen(false);
   };
 
-  const handleSupplierNameChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
+  const handleSupplierNameChange = (value: string) => {
     setSupplierName(value);
-    performSearch(value);
   };
 
   const performSearch = (query: string) => {
@@ -72,16 +71,14 @@ const AddSupplierButton = () => {
       </Button>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Add Supplier</DialogTitle>
-        <DialogContent>
-          <TextField
-            autoFocus
-            margin="dense"
-            id="supplier-name"
-            label="Supplier Name"
-            type="text"
-            value={supplierName}
-            onChange={handleSupplierNameChange}
-            fullWidth
+        <DialogContent sx={{minWidth: 300}}> 
+          <Searchbar
+            sx={{width: "100%"}}
+            label={"Supplier"}
+            options={suppliers.map((s: any) => s.companyName)}
+            onInputChange={(event: Event, value: string) => {
+              handleSupplierNameChange(value);
+            }}
           />
           <TextField
             margin="dense"
@@ -91,11 +88,11 @@ const AddSupplierButton = () => {
             value={contractVolume}
             onChange={handleContractVolumeChange}
             fullWidth
-            error={contractVolumeError !== ''}
+            error={contractVolumeError !== ""}
             helperText={contractVolumeError}
           />
           <ul>
-            {searchResults.map(result => (
+            {searchResults.map((result) => (
               <li key={result}>{result}</li>
             ))}
           </ul>

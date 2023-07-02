@@ -28,8 +28,9 @@ export const SuppliersPage = () => {
   return (
     <PageLayout>
       {suppliers && (
-        <Box display="flex" alignItems="center" marginBottom={0}>
+        <Box display="flex" alignItems="center" marginBottom={8}>
           <Searchbar
+            sx={{width: "75%"}}
             label={"Supplier"}
             options={suppliers.map((s: any) => s.companyName)}
             onInputChange={(event: Event, value: string) => {
@@ -40,7 +41,7 @@ export const SuppliersPage = () => {
               );
             }}
           />
-          <AddSupplierButton />
+          <AddSupplierButton suppliers={suppliers} />
         </Box>
       )}
       <Grid container rowSpacing={3} columnSpacing={3}>
