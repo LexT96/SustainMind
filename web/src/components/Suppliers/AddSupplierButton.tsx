@@ -67,7 +67,7 @@ const AddSupplierButton = () => {
 
   return (
     <div>
-      <Button variant="contained" color="primary" onClick={handleClickOpen}>
+      <Button variant="contained" color="success" onClick={handleClickOpen}>
         Add Supplier
       </Button>
       <Dialog open={open} onClose={handleClose}>
@@ -102,7 +102,7 @@ const AddSupplierButton = () => {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleSave} color="primary">
+          <Button onClick={handleSave} color="success">
             Save
           </Button>
         </DialogActions>

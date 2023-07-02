@@ -6,8 +6,8 @@ const Prevention: React.FC = () => {
   return (
     <PageLayout>
       <div>
-        <h3 style={{ fontSize: '24px', fontWeight: 'bold', textAlign: 'center' }}>Prevention Measures</h3>
-        <p style={{ textAlign: 'center' }}>Based on the result of the risk analysis, the severity of these risks and your negotiation power, the following prevention measures are required.</p>
+        <h3 style={{ fontSize: '24px', fontWeight: 'bold', textAlign: 'left' }}>Prevention Measures</h3>
+        <p style={{ textAlign: 'left' }}>Based on the result of the risk analysis, the severity of these risks and your negotiation power, the following prevention measures are required.</p>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '20px', marginTop: '20px' }}>
           <div className="rectangle">
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>

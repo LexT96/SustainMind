@@ -20,7 +20,6 @@ import { OnboardingPage } from "./pages/OnboardingPage";
 import CorporationMode from "./pages/CorporationMode";
 import SupplierMode from "./pages/SupplierMode";
 import { ProductionSiteEditorPage } from "./pages/ProductionSiteEditorPage";
-import Prevention from "./components/Suppliers/Prevention";
 import LoginPage from "./pages/LoginPage";
 import RegistrationsPage from "./pages/RegistrationPage";
 
@@ -49,10 +48,7 @@ export const router = createBrowserRouter([
     element: <LoginPage />,
   },
   {
-    path: "/Prevention",
-    element: <Prevention />,
-  },
-  {
+    
     path: "/register/*",
     element: <RegistrationsPage />,
   },

@@ -90,15 +90,14 @@ const source = construct_pdf(companyName, formattedDate, supplierInfo);
 
 
 function construct_pdf(companyName, date, supplierInfo){
-    let text = String.raw`
+    let text = "\\documentclass{article}\n"
+        + "\\usepackage{titlesec}\n"
+        + "\\usepackage{xcolor}\n"
+        + "\\usepackage{tikz}\n"
+        + "\\usetikzlibrary{calc}\n"
+        + "\\usepackage{ifthen}\n"
 
-    \documentclass{article}
-    \usepackage{titlesec}
-    \usepackage{xcolor}
-    \usepackage{tikz}
-    \usetikzlibrary{calc} 
-    \usepackage{ifthen}
-
+    text += String.raw`
     \definecolor{sustainblue}{HTML}{A3CDFF}
     \definecolor{sustaingrey}{HTML}{D9D9D9}`
 

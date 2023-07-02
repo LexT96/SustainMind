@@ -4,18 +4,18 @@ import { PageLayout } from '../components/PageLayout';
 
 function CorporationMode() {
   const boxContents = [
-    { title: 'My Products', description: 'Möglichkeit für eine Beschreibung' },
-    { title: 'Suppliers', description: 'Möglichkeit für eine Beschreibung' },
+    { title: 'My Products', description: 'View your products and their ESG scores' },
+    { title: 'Suppliers', description: 'View your suppliers and manage prevention measures' },
     {
       title: 'Supplier Marketplace',
-      description: 'Möglichkeit für eine Beschreibung',
+      description: 'Find new suppliers who value sustainability',
     },
     {
       title: 'Risk Analysis',
-      description: 'Möglichkeit für eine Beschreibung',
+      description: 'Analyze risks of all your suppliers',
     },
-    { title: "ESG To Do's", description: 'Möglichkeit für eine Beschreibung' },
-    { title: 'Production Sites', description: 'Möglichkeit für eine Beschreibung' },
+    //{ title: "ESG To Do's", description: 'Möglichkeit für eine Beschreibung' },
+    { title: 'Production Sites', description: 'View and add your production sites' },
   ];
 
   const gridContainerStyle: CSSProperties = {
