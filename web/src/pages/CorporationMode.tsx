@@ -7,24 +7,33 @@ function CorporationMode() {
     {
       title: "My Products",
       description: "View your products and their ESG scores",
+      bg_image: "src/res/products.jpg",
       path: "/products",
     },
     {
       title: "Suppliers",
-      description: "View your suppliers and manage prevention measures", path: "/suppliers",
+      description: "View your suppliers and manage prevention measures",
+      bg_image: "src/res/suppliers.jpg",
+      path: "/suppliers",
     },
     {
       title: "Supplier Marketplace",
-      description: "Find new suppliers who value sustainability", path: "/marketplace",
+      description: "Find new suppliers who value sustainability", 
+      bg_image: "src/res/marketplace.jpg",
+      path: "/marketplace",
     },
     {
       title: "Risk Analysis",
-      description: "Analyze risks of all your suppliers", path: "/analysis",
+      description: "Analyze risks of all your suppliers",
+      bg_image: "src/res/analysis.jpg",
+      path: "/analysis",
     },
     //{ title: "ESG To Do's", description: 'Möglichkeit für eine Beschreibung' },
     {
       title: "Production Sites",
-      description: "View and add your production sites", path: "/sites",
+      description: "View and add your production sites",
+      bg_image: "src/res/production_site.jpg",
+      path: "/sites",
     },
   ];
 
@@ -33,12 +42,12 @@ function CorporationMode() {
     flexWrap: "wrap",
     justifyContent: "center",
     alignItems: "flex-start",
-    maxWidth: "960px",
+    maxWidth: "1200px",
     margin: "0 auto",
-    height: "100vh",
+    //height: "100vh",
     overflowX: "hidden",
-    gap: "5px", // Gap between the boxes1
-    marginTop: "100px", // Vertical spacing between the rows
+    gap: "20px", // Gap between the boxes1
+    marginTop: "120px", // Vertical spacing between the rows
   };
 
   return (
@@ -50,6 +59,7 @@ function CorporationMode() {
             title={content.title}
             description={content.description}
             path={content.path}
+            backgroundImage={content.bg_image}
           />
         ))}
       </div>

@@ -32,16 +32,7 @@ const redirectToSignIn = (
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <>
-        <SignedIn>
-          <CorporationMode />
-        </SignedIn>
-        <SignedOut>
-          <LandingPage />
-        </SignedOut>
-      </>
-    ),
+    element: <LandingPage />,
   },
   {
     path: "/login/*",
@@ -52,18 +43,31 @@ export const router = createBrowserRouter([
     path: "/register/*",
     element: <RegistrationsPage />,
   },
-  {
+  /*{
     path: "/SupplierMode1",
     element: <SupplierMode />,
-  },
-
+  },*/
   {
-    path: "/CorporationMode",
-    element: <CorporationMode />,
+    path: "/home",
+    element: (
+      <>
+        <SignedIn>
+          <CorporationMode />
+        </SignedIn>
+        {redirectToSignIn}
+      </>
+    ),
   },
   {
     path: "/ProductionSiteEditor",
-    element: <ProductionSiteEditorPage />,
+    element: (
+      <>
+        <SignedIn>
+          <ProductionSiteEditorPage />
+        </SignedIn>
+        {redirectToSignIn}
+      </>
+    ),
   },
   {
     path: "/onboarding",
@@ -153,7 +157,7 @@ export const router = createBrowserRouter([
       </>
     ),
   },
-  {
+  /*{
     path: "/app",
     element: (
       <>
@@ -164,5 +168,5 @@ export const router = createBrowserRouter([
         {redirectToSignIn}
       </>
     ),
-  },
+  },*/
 ]);

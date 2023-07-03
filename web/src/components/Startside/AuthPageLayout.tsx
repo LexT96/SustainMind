@@ -57,7 +57,7 @@ export const AuthPageLayout = ({ leftSideContent }: any) => {
         {leftSideContent}
       </LeftSide>
       <RightSide className="center right-side-auth-page">
-        <Logo src={icon} alt="Learnify" className="icon-image" />
+        <Logo src={icon} alt="SustainMind" className="icon-image" />
       </RightSide>
     </Stack>
   );

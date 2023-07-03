@@ -42,9 +42,9 @@ export function MainNavbar() {
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                   <a
-                    href="/"
+                    href="/home"
                     className={`${
-                      pathName === "/" ? "text-green-700" : ""
+                      pathName === "/home" ? "text-green-700" : ""
                     } inline-flex cursor-pointer items-center border-b-2 border-transparent px-1 pt-1 text-md font-medium text-black hover:text-gray-500`}
                   >
                     Home
