@@ -7,32 +7,32 @@ function CorporationMode() {
     {
       title: "My Products",
       description: "View your products and their ESG scores",
-      bg_image: "src/res/products.jpg",
+      bg_image: "/products.jpg",
       path: "/products",
     },
     {
       title: "Suppliers",
       description: "View your suppliers and manage prevention measures",
-      bg_image: "src/res/suppliers.jpg",
+      bg_image: "/suppliers.jpg",
       path: "/suppliers",
     },
     {
       title: "Supplier Marketplace",
       description: "Find new suppliers who value sustainability", 
-      bg_image: "src/res/marketplace.jpg",
+      bg_image: "/marketplace.jpg",
       path: "/marketplace",
     },
     {
       title: "Risk Analysis",
       description: "Analyze risks of all your suppliers",
-      bg_image: "src/res/analysis.jpg",
+      bg_image: "/analysis.jpg",
       path: "/analysis",
     },
     //{ title: "ESG To Do's", description: 'Möglichkeit für eine Beschreibung' },
     {
       title: "Production Sites",
       description: "View and add your production sites",
-      bg_image: "src/res/production_site.jpg",
+      bg_image: "/production_site.jpg",
       path: "/sites",
     },
   ];
