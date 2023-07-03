@@ -1,27 +1,32 @@
 import express from "express";
 import { RiskAnalysisController } from "../controllers/RiskAnalysisController.js";
 
-export const riskScoreRouter = express.Router();
-const riskScoreController = new RiskAnalysisController();
+export const riskAnalysisRouter = express.Router();
+const riskAnalysisController = new RiskAnalysisController();
 
-riskScoreRouter.use(express.json());
+riskAnalysisRouter.use(express.json());
 
-riskScoreRouter.get("/", async (req, res) => {
-    await riskScoreController.getAllRiskAnalysis(req, res);
+riskAnalysisRouter.get("/", async (req, res) => {
+    await riskAnalysisController.getAllRiskAnalysis(req, res);
 });
   
-riskScoreRouter.get("/:id", async (req, res) => {
-    await riskScoreController.getRiskAnalysisById(req, res);
+riskAnalysisRouter.get("/:id", async (req, res) => {
+    await riskAnalysisController.getRiskAnalysisById(req, res);
 });
 
-riskScoreRouter.post("/", async (req, res) => {
-    await riskScoreController.addNewRiskAnalysis(req, res);
+riskAnalysisRouter.post("/", async (req, res) => {
+    await riskAnalysisController.addNewRiskAnalysis(req, res);
 });
 
-riskScoreRouter.put("/:id", async (req, res) => {
-    await riskScoreController.updateRiskAnalysis(req, res);
+riskAnalysisRouter.put("/:id", async (req, res) => {
+    await riskAnalysisController.updateRiskAnalysis(req, res);
 })
 
-riskScoreRouter.delete("/:id",async (req, res) => {
-    await riskScoreController.deleteRiskAnalysis(req, res);
+riskAnalysisRouter.delete("/:id",async (req, res) => {
+    await riskAnalysisController.deleteRiskAnalysis(req, res);
 })
+
+riskAnalysisRouter.get("/:maxriskscore",async (req, res) => {
+    await riskAnalysisController.getMaxRiskValues(req, res);
+})
+
