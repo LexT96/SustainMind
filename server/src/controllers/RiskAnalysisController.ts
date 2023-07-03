@@ -4,46 +4,37 @@ import fs from 'fs';
 import csvParser from 'csv-parser';
 
 interface Country {
-  _id: string;
-  name: string;
-  'alpha-2': string;
-  'alpha-3': string;
-  region: string;
-  'sub-region': string;
-  'Child Labor Percentage': string;
-  'Risk: Child Labor': string;
-  'Modern Slavery Prevalence': string;
-  'Risk: Modern Slavery': string;
-  'Risk: No Freedom of Association': string;
-  'Risk: Poor Labor Rights and Work Safety': string;
-  'Risk: Discrimination': string;
-  'Risk: Waste Water Pollution': string;
-  'Risk: Poor Air Quality': string;
-  'Risk: Inadequate Waste Disposal': string;
-  'Risk: Release of Heavy Metals': string;
-}
-
-const countries: Country[] = [];
-
-function parseCountriesFromCSV(): Promise<Country[]> {
-    return new Promise((resolve, reject) => {
-      const countries: Country[] = [];
-  
-      fs.createReadStream('data.csv')
-        .pipe(csvParser())
-        .on('data', (row) => {
-          countries.push(row);
-        })
-        .on('end', () => {
-          resolve(countries);
-        })
-        .on('error', (error) => {
-          reject(error);
-        });
-    });
+    _id: string;
+    name: string;
+    'alpha-2': string;
+    'alpha-3': string;
+    region: string;
+    'sub-region': string;
+    'Child Labor Percentage': string;
+    'Risk: Child Labor': string;
+    'Modern Slavery Prevalence': string;
+    'Risk: Modern Slavery': string;
+    'Risk: No Freedom of Association': string;
+    'Risk: Poor Labor Rights and Work Safety': string;
+    'Risk: Discrimination': string;
+    'Risk: Waste Water Pollution': string;
+    'Risk: Poor Air Quality': string;
+    'Risk: Inadequate Waste Disposal': string;
+    'Risk: Release of Heavy Metals': string;
   }
-
-export class RiskAnalysisController {
+  
+  export class RiskAnalysisController {
+    private countries: Country[] = [];
+  
+    constructor() {
+      this.parseCountriesFromCSV()
+        .then((countries) => {
+          this.countries = countries;
+        })
+        .catch((error) => {
+          console.error('An error occurred while parsing countries from CSV:', error);
+        });
+    }
     public getAllRiskAnalysis = async (req: Request, res: Response) => {
         const RiskAnalysiss = await RiskAnalysis.find();
         res.send(RiskAnalysiss);
@@ -100,6 +91,54 @@ export class RiskAnalysisController {
     }
 
     public executeRiskAnalysis = async (req: Request, res: Response) => {
-        
+    
+
+    
     }
+
+    public getMaxRiskValues = async (req: Request, res: Response) => {
+        try {
+          const countries = await this.parseCountriesFromCSV();
+          const maxRiskValues = this.calculateMaxRiskValues(countries);
+          res.send(maxRiskValues);
+        } catch (error) {
+          res.status(500).send('An error occurred while calculating max risk values');
+        }
+      }
+
+    private calculateMaxRiskValues(countries: Country[]): Record<string, number> {
+        const maxRiskValues: Record<string, number> = {};
+    
+        countries.forEach((country) => {
+          Object.keys(country).forEach((property) => {
+            if (property.startsWith('Risk: ')) {
+              const riskValue = parseFloat(country[property as keyof Country]);
+              const existingMaxValue = maxRiskValues[property] ?? -Infinity;
+    
+              if (riskValue > existingMaxValue) {
+                maxRiskValues[property] = riskValue;
+              }
+            }
+          });
+        });
+    
+        return maxRiskValues;
+      }
+    private parseCountriesFromCSV(): Promise<Country[]> {
+        return new Promise((resolve, reject) => {
+          const countries: Country[] = [];
+    
+          fs.createReadStream('data.csv')
+            .pipe(csvParser())
+            .on('data', (row) => {
+              countries.push(row);
+            })
+            .on('end', () => {
+              resolve(countries);
+            })
+            .on('error', (error) => {
+              reject(error);
+            });
+        });
+      }
 }
