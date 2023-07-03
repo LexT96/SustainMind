@@ -1,5 +1,48 @@
 import { RiskAnalysis } from "../models/riskAnalysis.js";
 import { Request, Response } from "express";
+import fs from 'fs';
+import csvParser from 'csv-parser';
+
+interface Country {
+  _id: string;
+  name: string;
+  'alpha-2': string;
+  'alpha-3': string;
+  region: string;
+  'sub-region': string;
+  'Child Labor Percentage': string;
+  'Risk: Child Labor': string;
+  'Modern Slavery Prevalence': string;
+  'Risk: Modern Slavery': string;
+  'Risk: No Freedom of Association': string;
+  'Risk: Poor Labor Rights and Work Safety': string;
+  'Risk: Discrimination': string;
+  'Risk: Waste Water Pollution': string;
+  'Risk: Poor Air Quality': string;
+  'Risk: Inadequate Waste Disposal': string;
+  'Risk: Release of Heavy Metals': string;
+}
+
+const countries: Country[] = [];
+
+function parseCountriesFromCSV(): Promise<Country[]> {
+    return new Promise((resolve, reject) => {
+      const countries: Country[] = [];
+  
+      fs.createReadStream('data.csv')
+        .pipe(csvParser())
+        .on('data', (row) => {
+          countries.push(row);
+        })
+        .on('end', () => {
+          resolve(countries);
+        })
+        .on('error', (error) => {
+          reject(error);
+        });
+    });
+  }
+
 export class RiskAnalysisController {
     public getAllRiskAnalysis = async (req: Request, res: Response) => {
         const RiskAnalysiss = await RiskAnalysis.find();
