@@ -37,42 +37,42 @@ interface Country {
     }
     public getAllRiskAnalysis = async (req: Request, res: Response) => {
         const RiskAnalysiss = await RiskAnalysis.find();
-        res.send(RiskAnalysiss);
+        res.json(RiskAnalysiss);
     }
     public getRiskAnalysisById = async (req: Request, res: Response) => {
         const id = req.params.id;
         if (!id) {
-            res.status(400).send("Please provide a RiskAnalysis id");
+            res.status(400).json("Please provide a RiskAnalysis id");
             return;
         }
         const riskScore = await RiskAnalysis.findById(id);
         if (!riskScore) {
-            res.status(404).send("RiskAnalysis not found");
+            res.status(404).json("RiskAnalysis not found");
             return;
         }
-        res.send(riskScore);
+        res.json(riskScore);
     }
     public addNewRiskAnalysis = async (req: Request, res: Response) => {
         const newRiskAnalysis = new RiskAnalysis(req.params);
         if (!newRiskAnalysis) {
-            res.status(400).send("Please provide RiskAnalysis");
+            res.status(400).json("Please provide RiskAnalysis");
             return;
         }
           else {
             await newRiskAnalysis.save();
-            res.status(201).send("New Risk Score has been added");
+            res.status(201).json("New Risk Score has been added");
             return;
         }
         }
     public deleteRiskAnalysis = async (req: Request, res: Response) => {
         const id = req.params.id;
         if (!id) {
-            res.status(400).send("Please provide a RiskAnalysis id");
+            res.status(400).json("Please provide a RiskAnalysis id");
             return;
         }
         const deletedRiskAnalysis = await RiskAnalysis.findByIdAndDelete(id);
         if (deletedRiskAnalysis) {
-            res.status(200).send(`RiskAnalysis with id: ${id} has been deleted`);
+            res.status(200).json(`RiskAnalysis with id: ${id} has been deleted`);
         }
     }
     public updateRiskAnalysis = async (req: Request, res: Response) => {
@@ -80,14 +80,14 @@ interface Country {
         const updateRiskAnalysisId = req.params.id;
 
         if (!updateRiskAnalysisId) {
-            res.status(400).send("Please provide a RiskAnalysis id");
+            res.status(400).json("Please provide a RiskAnalysis id");
             return;
         } else if (!updatedRiskAnalysis) {
-            res.status(400).send("Please provide RiskAnalysis");
+            res.status(400).json("Please provide RiskAnalysis");
             return;
         }
         await RiskAnalysis.findByIdAndUpdate(updateRiskAnalysisId, updatedRiskAnalysis);
-        res.status(200).send("RiskAnalysis has been updated succesfully");
+        res.status(200).json("RiskAnalysis has been updated succesfully");
     }
 
     public executeRiskAnalysis = async (req: Request, res: Response) => {
@@ -100,9 +100,9 @@ interface Country {
         try {
           const countries = await this.parseCountriesFromCSV();
           const maxRiskValues = this.calculateMaxRiskValues(countries);
-          res.send(maxRiskValues);
+          res.json(maxRiskValues);
         } catch (error) {
-          res.status(500).send('An error occurred while calculating max risk values');
+          res.status(500).json('An error occurred while calculating max risk values');
         }
       }
 
