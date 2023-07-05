@@ -53,12 +53,12 @@ export class CustomerController {
   public getCustomerById = async (req: Request, res: Response) => {
     // const id = req.params.id;
     // if (!id) {
-    //     res.status(400).json("Please provide a Customer id");
+    //     res.status(400).json({ error: "Please provide a Customer id"});
     //     return;
     // }
     // const customer = await Customer.findById(id);
     // if (!Customer) {
-    //     res.status(404).json("Customer not found");
+    //     res.status(404).json({ error: "Customer not found"});
     //     return;
     // }
     res.json(customers[0]);
@@ -66,7 +66,7 @@ export class CustomerController {
   public addNewCustomer = async (req: Request, res: Response) => {
     const newCustomer = new Customer(req.body);
     if (!newCustomer) {
-      return res.status(400).json("Please provide Customer");
+      return res.status(400).json({ error: "Please provide Customer"});
     }
     const newCreatedCustomer = await newCustomer.save();
     res.json(newCreatedCustomer);
@@ -74,12 +74,12 @@ export class CustomerController {
   public deleteCustomer = async (req: Request, res: Response) => {
     const id = req.params.id;
     if (!id) {
-      res.status(400).json("Please provide a Customer id");
+      res.status(400).json({ error: "Please provide a Customer id"});
       return;
     }
     const deletedCustomer = await Customer.findByIdAndDelete(id);
     if (deletedCustomer) {
-      res.status(200).json(`Customer with id: ${id} has been deleted`);
+      res.status(200).json({ error: `Customer with id: ${id} has been deleted`});
     }
   };
   public updateCustomer = async (req: Request, res: Response) => {
@@ -87,14 +87,14 @@ export class CustomerController {
     const updateCustomerId = req.params.id;
 
     if (!updateCustomerId) {
-      res.status(400).json("Please provide a Customer id");
+      res.status(400).json({ error: "Please provide a Customer id"});
       return;
     } else if (!updatedCustomer) {
-      res.status(400).json("Please provide Customer");
+      res.status(400).json({ error: "Please provide Customer"});
       return;
     }
     await Customer.findByIdAndUpdate(updateCustomerId, updatedCustomer);
-    res.status(200).json("Customer has been updated succesfully");
+    res.status(200).json({ error: "Customer has been updated succesfully"});
   };
   public getCustomersForMarketplace = async (req: Request, res: Response) => {
     //TODO: remove above code and uncomment the one below
@@ -169,3 +169,4 @@ export class CustomerController {
     res.json(productionSites);
   }
 }
+

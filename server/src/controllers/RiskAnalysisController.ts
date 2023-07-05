@@ -36,60 +36,65 @@ interface Country {
         });
     }
     public getAllRiskAnalysis = async (req: Request, res: Response) => {
-        const RiskAnalysiss = await RiskAnalysis.find();
-        res.json(RiskAnalysiss);
-    }
-    public getRiskAnalysisById = async (req: Request, res: Response) => {
-        const id = req.params.id;
-        if (!id) {
-            res.status(400).json("Please provide a RiskAnalysis id");
-            return;
-        }
-        const riskScore = await RiskAnalysis.findById(id);
-        if (!riskScore) {
-            res.status(404).json("RiskAnalysis not found");
-            return;
-        }
-        res.json(riskScore);
-    }
-    public addNewRiskAnalysis = async (req: Request, res: Response) => {
-        const newRiskAnalysis = new RiskAnalysis(req.params);
-        if (!newRiskAnalysis) {
-            res.status(400).json("Please provide RiskAnalysis");
-            return;
-        }
-          else {
-            await newRiskAnalysis.save();
-            res.status(201).json("New Risk Score has been added");
-            return;
-        }
-        }
-    public deleteRiskAnalysis = async (req: Request, res: Response) => {
-        const id = req.params.id;
-        if (!id) {
-            res.status(400).json("Please provide a RiskAnalysis id");
-            return;
-        }
-        const deletedRiskAnalysis = await RiskAnalysis.findByIdAndDelete(id);
-        if (deletedRiskAnalysis) {
-            res.status(200).json(`RiskAnalysis with id: ${id} has been deleted`);
-        }
-    }
-    public updateRiskAnalysis = async (req: Request, res: Response) => {
-        const updatedRiskAnalysis = new RiskAnalysis(req.params);
-        const updateRiskAnalysisId = req.params.id;
+      const riskAnalyses = await RiskAnalysis.find();
+      res.json(riskAnalyses);
+  }
 
-        if (!updateRiskAnalysisId) {
-            res.status(400).json("Please provide a RiskAnalysis id");
-            return;
-        } else if (!updatedRiskAnalysis) {
-            res.status(400).json("Please provide RiskAnalysis");
-            return;
-        }
-        await RiskAnalysis.findByIdAndUpdate(updateRiskAnalysisId, updatedRiskAnalysis);
-        res.status(200).json("RiskAnalysis has been updated succesfully");
-    }
+  public getRiskAnalysisById = async (req: Request, res: Response) => {
+      const id = req.params.id;
+      if (!id) {
+          res.status(400).json({ error: "Please provide a RiskAnalysis id" });
+          return;
+      }
+      const riskAnalysis = await RiskAnalysis.findById(id);
+      if (!riskAnalysis) {
+          res.status(404).json({ error: "RiskAnalysis not found" });
+          return;
+      }
+      res.json(riskAnalysis);
+  }
 
+  public addNewRiskAnalysis = async (req: Request, res: Response) => {
+      const newRiskAnalysis = new RiskAnalysis(req.body);
+      if (!newRiskAnalysis) {
+          res.status(400).json({ error: "Please provide RiskAnalysis" });
+          return;
+      } else {
+          await newRiskAnalysis.save();
+          res.status(201).json({ message: "New Risk Score has been added" });
+          return;
+      }
+  }
+  public deleteRiskAnalysis = async (req: Request, res: Response) => {
+      const id = req.params.id;
+      if (!id) {
+          res.status(400).json({ error: "Please provide a RiskAnalysis id" });
+          return;
+      }
+      const deletedRiskAnalysis = await RiskAnalysis.findByIdAndDelete(id);
+      if (deletedRiskAnalysis) {
+          res.status(200).json({ message: `RiskAnalysis with id: ${id} has been deleted` });
+      } else {
+          res.status(404).json({ error: "RiskAnalysis not found" });
+      }
+  }
+
+  public updateRiskAnalysis = async (req: Request, res: Response) => {
+      const updateRiskAnalysisId = req.params.id;
+      if (!updateRiskAnalysisId) {
+          res.status(400).json({ error: "Please provide a RiskAnalysis id" });
+          return;
+      }
+
+      const updatedRiskAnalysis = req.body;
+      if (!updatedRiskAnalysis) {
+          res.status(400).json({ error: "Please provide RiskAnalysis data" });
+          return;
+      }
+
+      await RiskAnalysis.findByIdAndUpdate(updateRiskAnalysisId, updatedRiskAnalysis);
+      res.status(200).json({ message: "RiskAnalysis has been updated successfully" });
+  }
     public executeRiskAnalysis = async (req: Request, res: Response) => {
     
 
