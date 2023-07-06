@@ -16,11 +16,11 @@ function createData(
 }
 
 const rows = [
-  createData('Frozen yoghurt', 159, "6.0"),
-  createData('Ice cream sandwich', 237, "9.0"),
-  createData('Eclair', 262, ""),
-  createData('Cupcake', 305, ""),
-  createData('Gingerbread', 356, ""),
+  createData("06.07.2023", 61, "6.0"),
+  createData('08.06.2023', 40, "9.0"),
+  createData('01.06.2023', 23, ""),
+  createData('25.05.2023', 20, ""),
+  createData('22.04.2023', 8, ""),
 ];
 
 export function AnalysisTable() {
