@@ -6,7 +6,7 @@ export const SiteCard = ({site}: {site: any}) => {
     return (
       <Card>
         <CardActionArea>
-          <a href={"/sites/" + site.id}>
+          <a href={"/sites/" + site._id}>
             <CardContent className="space-y-4 py-8">
               <div className="flex items-center justify-evenly">
                 <div className="flex items-center space-x-2">

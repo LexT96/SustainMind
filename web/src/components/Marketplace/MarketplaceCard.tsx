@@ -62,7 +62,7 @@ export const MarketplaceCard = ({supplier, forMarketplace=true}: any) => {
             variant="contained"
             color="success"
             sx={{ width: "100%" }}
-            href={"/suppliers/" + supplier.id}
+            href={"/suppliers/" + supplier._id}
           >
             View this supplier
           </Button>

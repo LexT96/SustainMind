@@ -51,17 +51,17 @@ export class CustomerController {
     res.send(customers);
   };
   public getCustomerById = async (req: Request, res: Response) => {
-    // const id = req.params.id;
-    // if (!id) {
-    //     res.status(400).json({ error: "Please provide a Customer id"});
-    //     return;
-    // }
-    // const customer = await Customer.findById(id);
-    // if (!Customer) {
-    //     res.status(404).json({ error: "Customer not found"});
-    //     return;
-    // }
-    res.json(null);
+    const id = req.params.id;
+    if (!id) {
+        res.status(400).json({ error: "Please provide a Customer id"});
+        return;
+    }
+    const customer = await Customer.findById(id);
+    if (!Customer) {
+        res.status(404).json({ error: "Customer not found"});
+        return;
+    }
+    res.json(customer);
   };
   public addNewCustomer = async (req: Request, res: Response) => {
     const newCustomer = new Customer(req.body);
@@ -99,7 +99,7 @@ export class CustomerController {
     res.status(200).json({ error: "Customer has been updated succesfully" });
   };
   public getCustomersForMarketplace = async (req: Request, res: Response) => {
-    const customers = await Customer.find({ showOnMarketplace: true }).populate("productCategories");
+    const customers = (await Customer.find({ showOnMarketplace: true }).populate("productCategories")).map(c => c.toJSON());
     return res.send(customers);
   };
 
@@ -123,39 +123,11 @@ export class CustomerController {
 
   public getAllProductSitesOfSupplier = async (req: Request, res: Response) => {
     const supplierId: string = req.params.id;
-    // const productionSites = await ProductionSite.find({
-    //   company: supplierId,
-    // });
-    const productionSites = [
-      {
-        id: 1,
-        name: "T-Shirt Factory",
-        location: "Dhaka, Bangladesh",
-        numberOfGoals: 3,
-        numberOfProducts: 3,
-      },
-      {
-        id: 2,
-        name: "Pant Factory",
-        location: "Dhaka, Bangladesh",
-        numberOfGoals: 3,
-        numberOfProducts: 3,
-      },
-      {
-        id: 3,
-        name: "Hat Factory",
-        location: "Dhaka, Bangladesh",
-        numberOfGoals: 3,
-        numberOfProducts: 3,
-      },
-      {
-        id: 4,
-        name: "Jacket Factory",
-        location: "Dhaka, Bangladesh",
-        numberOfGoals: 3,
-        numberOfProducts: 3,
-      },
-    ];
+    console.log(supplierId)
+    const productionSites = await ProductionSite.find({
+      company: supplierId
+    });
+    console.log(productionSites)
 
     // const allSuppliersOfCurrentSupplier: typeof IsSupplier[] = await IsSupplier.find({ idCorporation: supplierId });
     // // get all productionsites of suppliers of current supplier and of the current supplier
