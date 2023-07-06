@@ -5,7 +5,7 @@ import { IsSupplier } from "../models/isSupplier.js";
 import {getPdf} from "../risk_analysis/generatePdf.js"
 import { ProductionSite } from "../models/productionSite.js";
 
-const customers = [
+const mockCustomers = [
     {
       id: "648db5cc159cc359f22a64e9",
       companyName: "TestSupp",
@@ -47,8 +47,8 @@ const customers = [
 
 export class CustomerController {
   public getAllCustomer = async (req: Request, res: Response) => {
-    const Customers = await Customer.find();
-    res.json(Customers);
+    const customers = await Customer.find();
+    res.send(customers);
   };
   public getCustomerById = async (req: Request, res: Response) => {
     // const id = req.params.id;
@@ -61,12 +61,12 @@ export class CustomerController {
     //     res.status(404).json({ error: "Customer not found"});
     //     return;
     // }
-    res.json(customers[0]);
+    res.json(null);
   };
   public addNewCustomer = async (req: Request, res: Response) => {
     const newCustomer = new Customer(req.body);
     if (!newCustomer) {
-      return res.status(400).json({ error: "Please provide Customer"});
+      return res.status(400).json({ error: "Please provide Customer" });
     }
     const newCreatedCustomer = await newCustomer.save();
     res.json(newCreatedCustomer);
@@ -74,12 +74,14 @@ export class CustomerController {
   public deleteCustomer = async (req: Request, res: Response) => {
     const id = req.params.id;
     if (!id) {
-      res.status(400).json({ error: "Please provide a Customer id"});
+      res.status(400).json({ error: "Please provide a Customer id" });
       return;
     }
     const deletedCustomer = await Customer.findByIdAndDelete(id);
     if (deletedCustomer) {
-      res.status(200).json({ error: `Customer with id: ${id} has been deleted`});
+      res
+        .status(200)
+        .json({ error: `Customer with id: ${id} has been deleted` });
     }
   };
   public updateCustomer = async (req: Request, res: Response) => {
@@ -87,24 +89,25 @@ export class CustomerController {
     const updateCustomerId = req.params.id;
 
     if (!updateCustomerId) {
-      res.status(400).json({ error: "Please provide a Customer id"});
+      res.status(400).json({ error: "Please provide a Customer id" });
       return;
     } else if (!updatedCustomer) {
-      res.status(400).json({ error: "Please provide Customer"});
+      res.status(400).json({ error: "Please provide Customer" });
       return;
     }
     await Customer.findByIdAndUpdate(updateCustomerId, updatedCustomer);
-    res.status(200).json({ error: "Customer has been updated succesfully"});
+    res.status(200).json({ error: "Customer has been updated succesfully" });
   };
   public getCustomersForMarketplace = async (req: Request, res: Response) => {
-    //TODO: remove above code and uncomment the one below
-    // const customers = await Customer.find({ showOnMarketplace: true });
-    res.json(customers);
+    const customers = await Customer.find({ showOnMarketplace: true }).populate("productCategories");
+    return res.send(customers);
   };
 
   public getSuppliersOfCustomer = async (req: Request, res: Response) => {
-    // const suppliers = await IsSupplier.find({ idCorporation: req.params.id }).populate("idSupplier");
-    res.json(customers);
+    const suppliers = await IsSupplier.find({
+      idCorporation: req.params.id,
+    }).populate("idSupplier");
+    res.send(suppliers);
   };
 
   public createNewRiskAnalysis = async (req: Request, res: Response) => {
@@ -123,35 +126,37 @@ export class CustomerController {
     // const productionSites = await ProductionSite.find({
     //   company: supplierId,
     // });
-    const productionSites = [{
-      id: 1,
-      name: "T-Shirt Factory",
-      location: "Dhaka, Bangladesh",
-      numberOfGoals: 3,
-      numberOfProducts: 3,
-  },
-  {
-      id: 2,
-      name: "Pant Factory",
-      location: "Dhaka, Bangladesh",
-      numberOfGoals: 3,
-      numberOfProducts: 3
-  },
-  {
-      id: 3,
-      name: "Hat Factory",
-      location: "Dhaka, Bangladesh",
-      numberOfGoals: 3,
-      numberOfProducts: 3
-  },
-  {
-      id: 4,
-      name: "Jacket Factory",
-      location: "Dhaka, Bangladesh",
-      numberOfGoals: 3,
-      numberOfProducts: 3
-  }];
-  
+    const productionSites = [
+      {
+        id: 1,
+        name: "T-Shirt Factory",
+        location: "Dhaka, Bangladesh",
+        numberOfGoals: 3,
+        numberOfProducts: 3,
+      },
+      {
+        id: 2,
+        name: "Pant Factory",
+        location: "Dhaka, Bangladesh",
+        numberOfGoals: 3,
+        numberOfProducts: 3,
+      },
+      {
+        id: 3,
+        name: "Hat Factory",
+        location: "Dhaka, Bangladesh",
+        numberOfGoals: 3,
+        numberOfProducts: 3,
+      },
+      {
+        id: 4,
+        name: "Jacket Factory",
+        location: "Dhaka, Bangladesh",
+        numberOfGoals: 3,
+        numberOfProducts: 3,
+      },
+    ];
+
     // const allSuppliersOfCurrentSupplier: typeof IsSupplier[] = await IsSupplier.find({ idCorporation: supplierId });
     // // get all productionsites of suppliers of current supplier and of the current supplier
     // const productionSites = await ProductionSite.find({
@@ -167,6 +172,6 @@ export class CustomerController {
     //   },
     // });
     res.json(productionSites);
-  }
+  };
 }
 

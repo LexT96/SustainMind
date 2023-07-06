@@ -29,15 +29,15 @@ export const MarketplaceCard = ({supplier, forMarketplace=true}: any) => {
               <Box sx={{ display: "flex" }}>
                 <FactoryIcon sx={{ width: 20, height: 20 }} />
                 <Typography sx={{ ml: 1 }}>
-                  {supplier.numberOfProductionSites}
+                  {supplier.productionSites?.length || 0}
                 </Typography>
               </Box>
             </Box>
           </Box>
           <ProductScore score={supplier.score} />
           <Stack direction="row" spacing={1} sx={{ mt: 1 }}>
-            {supplier.productCategories.map((category: string) => (
-              <ProductCategory category={category} />
+            {supplier.productCategories.map((category: any) => (
+              <ProductCategory category={category.name} />
             ))}
           </Stack>
         </CardContent>

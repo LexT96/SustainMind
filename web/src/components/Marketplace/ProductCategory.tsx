@@ -6,8 +6,8 @@ export const ProductCategory = ({ category }: {category: string}) => {
     const width = 20;
     const height = 20;
     let icon;
-    if (category === "Textiles") icon = <DryCleaningOutlinedIcon sx={{width, height}} />
-    if (category === "Food and Beverage") icon = <RestaurantMenuOutlinedIcon sx={{width, height}} />
+    if (category === "Apparel and Fashion") icon = <DryCleaningOutlinedIcon sx={{width, height}} />
+    if (category === "Home and Kitchen") icon = <RestaurantMenuOutlinedIcon sx={{width, height}} />
     if (category === "Automotive") icon = <DirectionsCarFilledOutlinedIcon sx={{width, height}} />
     if (category === "Consumer Electronics") icon = <DevicesOutlinedIcon sx={{width, height}} />
     return (

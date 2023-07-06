@@ -13,7 +13,7 @@ function LoginPage() {
           <Typography variant="h5" className="form-Logintitle1" sx={{ mb: 3 }}>
             Login to your account
           </Typography>
-          <SignIn routing="path" path="/login" />{" "}
+          <SignIn routing="path" path="/login" />
         </Box>
       }
     />
