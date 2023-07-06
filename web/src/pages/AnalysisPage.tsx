@@ -6,8 +6,8 @@ import { useCreateNewRiskAnalysisMutation } from "../react-query/customerQueries
 import { useUser } from "@clerk/clerk-react"
 
 const mockData = {
-    score: 5,
-    lastAnalysis: "12.03.2023"
+    score: 5.2,
+    lastAnalysis: "06.07.2023"
 }
 
 export const AnalysisPage = () => {
