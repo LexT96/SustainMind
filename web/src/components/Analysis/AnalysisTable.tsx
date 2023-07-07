@@ -45,7 +45,7 @@ export function AnalysisTable() {
               </TableCell>
               <TableCell align="center">{row.number}</TableCell>
               <TableCell align="right">
-                <img src={"../../../public/pdf.png"} className="h-8 w-8 ml-auto cursor-pointer"/>
+                <img src={"/pdf.png"} className="h-8 w-8 ml-auto cursor-pointer"/>
               </TableCell>
             </TableRow>
           ))}
