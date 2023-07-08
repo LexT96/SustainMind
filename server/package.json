@@ -10,12 +10,12 @@
     "start": "pm2-runtime start build/index.js --watch"
   },
   "dependencies": {
+    "axios": "^1.4.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongodb": "^5.2.0",
-    "mongoose": "^7.0.3",
-    "pm2": "^5.3.0"
+    "mongoose": "^7.0.3"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",

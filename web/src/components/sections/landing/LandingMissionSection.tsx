@@ -1,8 +1,8 @@
-const stats = [
+/*const stats = [
     { label: 'Transactions every 24 hours', value: '44 million' },
     { label: 'Assets under holding', value: '$119 trillion' },
     { label: 'New users annually', value: '46,000' },
-  ]
+  ]*/
   
   export function LandingMissionSection() {
     return (
@@ -22,7 +22,7 @@ const stats = [
                 With our solution, you can effortlessly identify and mitigate risks, ensure ethical sourcing, eliminate labor exploitation, reduce environmental impact, and enhance social responsibility throughout your supply chain. Collaborate seamlessly with your suppliers, exchange vital data, and gain valuable insights to make informed decisions that align with both your sustainability goals and legal obligations under the LSKG.
 </p>
               </div>
-              <div className="lg:flex lg:flex-auto lg:justify-center">
+              {/* <div className="lg:flex lg:flex-auto lg:justify-center">
                 <dl className="w-64 space-y-8 xl:w-80">
                   {stats.map((stat) => (
                     <div key={stat.label} className="flex flex-col-reverse gap-y-4">
@@ -31,7 +31,7 @@ const stats = [
                     </div>
                   ))}
                 </dl>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

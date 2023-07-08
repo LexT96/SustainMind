@@ -16,11 +16,10 @@ function createData(
 }
 
 const rows = [
-  createData('Frozen yoghurt', 159, "6.0"),
-  createData('Ice cream sandwich', 237, "9.0"),
-  createData('Eclair', 262, ""),
-  createData('Cupcake', 305, ""),
-  createData('Gingerbread', 356, ""),
+  createData('30.06.2023', 3, "6.6"),
+  createData('01.05.2023', 2, "5.9"),
+  createData('16.04.2023', 1, "4.7"),
+  createData('04.03.2023', 1, "4.4"),
 ];
 
 export function AnalysisTable() {
@@ -45,7 +44,9 @@ export function AnalysisTable() {
               </TableCell>
               <TableCell align="center">{row.number}</TableCell>
               <TableCell align="right">
-                <img src={"../../../public/pdf.png"} className="h-8 w-8 ml-auto cursor-pointer"/>
+                <a href="/analysis_christina_3263281.pdf" target="_blank">
+                  <img src={"../../../public/pdf.png"} className="h-8 w-8 ml-auto cursor-pointer"/>
+                </a>
               </TableCell>
             </TableRow>
           ))}
