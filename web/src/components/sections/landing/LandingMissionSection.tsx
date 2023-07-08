@@ -19,7 +19,7 @@ const stats = [
 
 export function LandingMissionSection() {
   return (
-    <section id="mission" className="bg-white py-32">
+    <section id="features" className="bg-white py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <Grid container spacing={20}>
           <Grid item xs={12} md={7}>

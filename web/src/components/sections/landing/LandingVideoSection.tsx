@@ -2,7 +2,7 @@ import { Card } from '@mui/material';
 
 function LandingVideoSection() {
     return (
-        <section id="mission" className="bg-white py-32">
+        <section id="solution" className="bg-white py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
                     <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">All-in-one software for sustainable supply chains</h2>

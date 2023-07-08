@@ -1,7 +1,7 @@
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import AutoModeIcon from '@mui/icons-material/AutoMode';
 import HandshakeIcon from '@mui/icons-material/Handshake';
-import screenshot from "/screenshot.jpg";
+import screenshot from "/screenshot.png";
 import { Slide } from '@mui/material';
 import { useState } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
@@ -28,7 +28,7 @@ const features = [
 export function LandingFeaturesSection() {
     const [slideIn, setSlideIn] = useState(false);
   return (
-    <section id="features" className="overflow-hidden bg-white py-24 sm:py-32">
+    <section id="user_interface" className="overflow-hidden bg-white py-24 sm:py-22">
         <VisibilitySensor minTopValue={300} partialVisibility={true} delayedCall scrollCheck onChange={(isVisible: boolean) => (isVisible) && setSlideIn(isVisible)}>
 
       <div className="mx-auto max-w-7xl md:px-6 lg:px-8">
@@ -39,7 +39,7 @@ export function LandingFeaturesSection() {
             <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
               <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Intuitive workflow</p>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                SustainMind allows you and your company to consider all the relevant aspects of building sustainable supply chains without requiring you to have any prior knowledge of ESG.
+                SustainMind allows you and your company to consider all the relevant aspects of building sustainable supply chains with little effort thanks to our intuitive user interface.
               </p>
               <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
                 {features.map((feature) => (
@@ -55,9 +55,6 @@ export function LandingFeaturesSection() {
             </div>
           </div>
           </Slide>
-
-
-
 
           <div className="sm:px-6 lg:px-0 ">
             <div className="relative isolate overflow-hidden bg-green-500 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pl-16 sm:pr-0 sm:pt-16 lg:mx-0 lg:max-w-none">
