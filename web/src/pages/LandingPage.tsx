@@ -6,6 +6,7 @@ import { LandingNewsletterSection } from "../components/sections/landing/Landing
 import { LandingProblemSection } from "../components/sections/landing/LandingProblemSection"
 import LandingVideoSection from "../components/sections/landing/LandingVideoSection"
 import LandingValuePropositionSection from "../components/sections/landing/LandingValuePropositionSection"
+import { LandingCallToActionSection } from "../components/sections/landing/CallToActionSection"
 
 export const LandingPage = () => {
     return (
@@ -16,6 +17,7 @@ export const LandingPage = () => {
         <LandingValuePropositionSection />
         <LandingMissionSection />
         <LandingFeaturesSection />
+        <LandingCallToActionSection/>
       </>
     );
 }
