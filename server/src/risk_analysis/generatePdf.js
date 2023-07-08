@@ -76,7 +76,8 @@ const source = construct_pdf(companyName, formattedDate, supplierInfo);
     const writeFile = util.promisify(fs.writeFile);
     await writeFile(pathName + fileName, pdfData);
     console.log("PDF file saved successfully!");
-    return pathName + fileName;
+    const path = pathName + fileName;
+    return {path, numberOfSuppliers: supplierInfo.length};
   } catch (error) {
     console.error("Error:", error.message);
   }

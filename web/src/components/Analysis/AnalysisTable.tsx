@@ -6,24 +6,14 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import dayjs from 'dayjs';
+import { API_URL } from '../../config';
 
-function createData(
-  date: string,
-  number: number,
-  link: string,
-) {
-  return { date, number, link};
-}
 
-const rows = [
-  createData('Frozen yoghurt', 159, "6.0"),
-  createData('Ice cream sandwich', 237, "9.0"),
-  createData('Eclair', 262, ""),
-  createData('Cupcake', 305, ""),
-  createData('Gingerbread', 356, ""),
-];
-
-export function AnalysisTable() {
+export function AnalysisTable({riskAnalysis}: {riskAnalysis: any}) {
+  const sortedRiskAnalysis = riskAnalysis.sort((a: any, b: any) => {
+    return dayjs(b.date).diff(dayjs(a.date));
+  })
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -35,17 +25,22 @@ export function AnalysisTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {sortedRiskAnalysis.map((row: any) => (
             <TableRow
               key={row.date}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {row.date}
+                {dayjs(row.date).format("DD.MM.YYYY")}
               </TableCell>
-              <TableCell align="center">{row.number}</TableCell>
+              <TableCell align="center">{row.numberOfSuppliers}</TableCell>
               <TableCell align="right">
-                <img src={"../../../public/pdf.png"} className="h-8 w-8 ml-auto cursor-pointer"/>
+                <a href={API_URL + "/" + row.path}>
+                  <img
+                    src={"../../../public/pdf.png"}
+                    className="h-8 w-8 ml-auto cursor-pointer"
+                  />
+                </a>
               </TableCell>
             </TableRow>
           ))}

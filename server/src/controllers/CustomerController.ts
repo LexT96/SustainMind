@@ -112,13 +112,22 @@ export class CustomerController {
 
   public createNewRiskAnalysis = async (req: Request, res: Response) => {
     const customerId = req.params.id;
-    // const customer = await Customer.findById(customerId);
-    const date = new Date();
-    const pdf = await getPdf("Testname");
-    res.json({
-      date: date,
-      pdf: pdf,
-    });
+    const customer = await Customer.findById(customerId);
+    if (!customer) {
+      return res.status(404).json({ error: "Customer not found" });
+    }
+    const pdfData = await getPdf(customer.companyName);
+    if (!pdfData) {
+      return res.status(500).json({ error: "Could not create pdf" });
+    }
+    const newRiskAnalysis = {
+      numberOfSuppliers: pdfData.numberOfSuppliers,
+      date: new Date(),
+      path: pdfData.path.replace("public/", "")
+    }
+    customer.riskAnalysis.push(newRiskAnalysis);
+    const result = await customer.save();
+    res.json(result);
   };
 
   public getAllProductSitesOfSupplier = async (req: Request, res: Response) => {

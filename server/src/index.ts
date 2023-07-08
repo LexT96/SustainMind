@@ -27,6 +27,8 @@ app.use('/riskscore', riskScoreRouter)
 app.use('/suppliertodo', supplierToDoRouter)
 app.use('/corporationtodo', corporationtodoRouter)
 
+app.use(express.static('public'))
+
 app.get('/', async (req: Request, res: Response) => {
     res.send("Server is alive and healthy");
 });

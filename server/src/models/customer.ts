@@ -15,6 +15,15 @@ const customerSchema = new Schema({
   showOnMarketplace: { type: Boolean },
   image: String,
   description: String,
+  riskAnalysis: {
+    type: [
+      {
+        numberOfSuppliers: Number,
+        date: Date,
+        path: String,
+      },
+    ],
+  },
   productionSites: {
     ref: "ProductionSite",
     type: [Types.ObjectId],
