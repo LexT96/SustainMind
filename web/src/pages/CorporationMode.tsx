@@ -11,7 +11,7 @@ function CorporationMode() {
       path: "/products",
     },
     {
-      title: "Suppliers",
+      title: "My Suppliers",
       description: "View your suppliers and manage prevention measures",
       bg_image: "/suppliers.jpg",
       path: "/suppliers",
