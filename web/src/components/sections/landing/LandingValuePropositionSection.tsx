@@ -15,9 +15,10 @@ export default function LandingValuePropositionSection() {
         <Box sx={{ flexGrow: 1, p: 2 }}>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6} md={3}>
-              <Paper sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', p: 2, textAlign: 'center', color: 'text.secondary', backgroundColor: '#FFEBEE', transition: '0.3s', ':hover': { transform: 'scale(1.02)', boxShadow: 3 }, height: '100%' }}>
+              {/*backgroundColor: '#FFEBEE'*/}
+              <Paper sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', p: 2, textAlign: 'center', color: 'text.secondary', backgroundColor: '#E8F5E9', transition: '0.3s', ':hover': { transform: 'scale(1.02)', boxShadow: 3 }, height: '100%' }}>
                 <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                  <Icon2 style={{ fontSize: 50 , color: '#E53935' }} />
+                  <Icon2 style={{ fontSize: 50 , color: '#16a34a' }} /> {/*color: '#E53935'*/}
                 </Box>
                 <Typography variant="h5" component="div">
                   Avoid Penalties
@@ -28,9 +29,10 @@ export default function LandingValuePropositionSection() {
               </Paper>
             </Grid>
             <Grid item xs={12} sm={6} md={3}>
-              <Paper sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', p: 2, textAlign: 'center', color: 'text.secondary', backgroundColor: '#FFF3E0', transition: '0.3s', ':hover': { transform: 'scale(1.02)', boxShadow: 3 }, height: '100%' }}>
+              {/*backgroundColor: '#FFF3E0'*/}
+              <Paper sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', p: 2, textAlign: 'center', color: 'text.secondary', backgroundColor: '#E8F5E9', transition: '0.3s', ':hover': { transform: 'scale(1.02)', boxShadow: 3 }, height: '100%' }}>
                 <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                  <Icon4 style={{ fontSize: 50, color: '#FF6D00' }} />
+                  <Icon4 style={{ fontSize: 50, color: '#16a34a' }} /> {/*color: '#FF6D00'*/}
                 </Box>
                 <Typography variant="h5" component="div">
                   Reduce Legal Costs
@@ -40,9 +42,10 @@ export default function LandingValuePropositionSection() {
                 </Typography>
               </Paper>
             </Grid><Grid item xs={12} sm={6} md={3}>
-              <Paper sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', p: 2, textAlign: 'center', color: 'text.secondary', backgroundColor: '#E0F7FA', transition: '0.3s', ':hover': { transform: 'scale(1.02)', boxShadow: 3 }, height: '100%' }}>
+              {/*backgroundColor: '#E0F7FA'*/}
+              <Paper sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', p: 2, textAlign: 'center', color: 'text.secondary', backgroundColor: '#E8F5E9', transition: '0.3s', ':hover': { transform: 'scale(1.02)', boxShadow: 3 }, height: '100%' }}>
                 <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                  <Icon1 style={{ fontSize: 50, color: '#0097A7'}} />
+                  <Icon1 style={{ fontSize: 50, color: '#16a34a'}} /> {/*color: '#0097A7'*/}
                 </Box>
                 <Typography variant="h5" component="div">
                   Save Time
@@ -55,7 +58,7 @@ export default function LandingValuePropositionSection() {
             <Grid item xs={12} sm={6} md={3}>
               <Paper sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', p: 2, textAlign: 'center', color: 'text.secondary', backgroundColor: '#E8F5E9', transition: '0.3s', ':hover': { transform: 'scale(1.02)', boxShadow: 3 }, height: '100%' }}>
                 <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                  <Icon3 style={{ fontSize: 50, color: '#2E7D32' }} />
+                  <Icon3 style={{ fontSize: 50, color: '#16a34a' }} />  {/*color: '#2E7D32'*/}
                 </Box>
                 <Typography variant="h5" component="div">
                   Clear ToDos
