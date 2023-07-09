@@ -57,12 +57,20 @@ export class CustomerController {
         res.status(400).json({ error: "Please provide a Customer id"});
         return;
     }
-    const customer = await Customer.findById(id);
+    const customer = await Customer.findById(id).populate({
+      path: "productionSites",
+      populate: {
+        path: "riskScores",
+        populate: {
+          path: "riskType",
+        },
+      },
+    });
     if (!Customer) {
         res.status(404).json({ error: "Customer not found"});
         return;
     }
-    res.json(customer);
+    res.json({...customer!.toJSON(), riskScores: customer!.productionSites.map((p: any) => p.riskScores).flat()});
   };
   public addNewCustomer = async (req: Request, res: Response) => {
     const newCustomer = new Customer(req.body);

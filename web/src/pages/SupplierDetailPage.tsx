@@ -67,12 +67,12 @@ export const SupplierDetailPage = () => {
               product categories
             </Typography>
             <Grid container spacing={3} sx={{ ml: 0 }} columnSpacing={2} rowGap={3}>
-              {risks.map((risk: any) => (
+              {supplier.riskScores && supplier.riskScores.map((risk: any) => (
                 <Grid xs={12} md={6} lg={4} key={risk._id}>
                   <SupplierRisk
-                    name={risk.name}
-                    score={risk.score}
-                    explanation={risk.explanation}
+                    name={risk.riskType.name}
+                    score={parseInt(risk.riskScore)}
+                    explanation={risk.riskType.description}
                   />
                 </Grid>
               ))}
