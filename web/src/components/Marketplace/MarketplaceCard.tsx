@@ -36,7 +36,7 @@ export const MarketplaceCard = ({supplier, forMarketplace=true}: any) => {
           </Box>
           <ProductScore score={supplier.score} />
           <Stack direction="row" spacing={1} sx={{ mt: 1 }}>
-            {supplier.productCategories.map((category: any) => (
+            {supplier.productCategories && supplier.productCategories.map((category: any) => (
               <ProductCategory category={category.name} />
             ))}
           </Stack>

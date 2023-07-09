@@ -13,6 +13,7 @@ const productionSiteSchema = new Schema({
     city: String,
     zipcode: String,
     address: String,
+    riskScores: [{ type: Schema.Types.ObjectId, ref: "RiskScore" }],
     });
 
 export const ProductionSite = model("ProductionSite", productionSiteSchema);
