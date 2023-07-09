@@ -107,7 +107,7 @@ export class CustomerController {
   public getSuppliersOfCustomer = async (req: Request, res: Response) => {
     const suppliers = await IsSupplier.find({
       idCorporation: req.params.id,
-    }).populate("idSupplier");
+    }).populate({ path: "idSupplier", populate: { path: "productCategories" } });
     res.send(suppliers.map((s) => s.idSupplier));
   };
 
