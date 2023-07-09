@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from "react-query";
+import { useMutation, useQuery, useQueryClient } from "react-query";
 import { getAllSuppliersForMarketplace, createCustomer, updateCustomer, getCustomer, getProductionSitesByCustomerId, getSuppliersOfCustomer, createNewRiskAnalysis } from "../api/customerApi";
 
 export const useAllSuppliersForMarketplace = () => {
@@ -37,7 +37,14 @@ export const useProductionSitesByCustomerIdQuery = (customerId: string) => {
 }
 
 export const useCreateNewRiskAnalysisMutation = (customerId: string) => {
-    return useMutation("createNewRiskAnalysis", () =>
-      createNewRiskAnalysis(customerId)
+  const queryClient = useQueryClient();
+    return useMutation(
+      "createNewRiskAnalysis",
+      () => createNewRiskAnalysis(customerId),
+      {
+        onSuccess: () => {
+          queryClient.invalidateQueries(["customer", customerId]);
+        },
+      }
     );
 }

@@ -54,8 +54,8 @@ const supplierInfo = [
 ];
 const pathName = "public/risk_analysis/pdfs/"
 
-export const getPdf = async (companyName) => {
-const source = construct_pdf(companyName, formattedDate, supplierInfo);
+export const getPdf = async (companyName, suppliers) => {
+const source = construct_pdf(companyName, formattedDate, suppliers);
   const res = await axios.post(
     "https://latex.ytotech.com/builds/sync",
     {
@@ -77,7 +77,7 @@ const source = construct_pdf(companyName, formattedDate, supplierInfo);
     await writeFile(pathName + fileName, pdfData);
     console.log("PDF file saved successfully!");
     const path = pathName + fileName;
-    return {path, numberOfSuppliers: supplierInfo.length};
+    return {path};
   } catch (error) {
     console.error("Error:", error.message);
   }
@@ -90,7 +90,7 @@ const source = construct_pdf(companyName, formattedDate, supplierInfo);
 // pdf.on('finish', () => console.log('PDF generated!'))
 
 
-function construct_pdf(companyName, date, supplierInfo){
+function construct_pdf(companyName, date, suppliers){
     let text = "\\documentclass{article}\n"
         + "\\usepackage{titlesec}\n"
         + "\\usepackage{xcolor}\n"
@@ -240,10 +240,18 @@ function construct_pdf(companyName, date, supplierInfo){
 
     \section{Supplier Analysis}
     `
-
-    supplierInfo.forEach((supplier) => {
+    // console.log(suppliers);
+    suppliers.forEach((supplier) => {
+        const locations = supplier.productionSites.map((p) => {
+            return p.city + ', ' + p.country
+        })
+        const risks = supplier.productionSites.map((p) => {
+            return p.riskScores.map((r) => {
+              return [r.riskType.name, parseInt(r.riskScore)];
+            });
+        }).flat();
         text += String.raw`
-        \subsection{` + supplier.get('name') + `}`
+        \subsection{` + supplier.get('companyName') + `}`
 
         text += String.raw`
         \subsubsection*{Supplier Self Description}
@@ -255,10 +263,10 @@ function construct_pdf(companyName, date, supplierInfo){
 
         \subsubsection*{Production Sites}
         `
-        text += supplier.get('name') + String.raw` has production sites in the following countries/regions:
+        text += supplier.get('companyName') + String.raw` has production sites in the following countries/regions:
         \begin{itemize}
         `
-        supplier.get('locations').forEach((location) => {
+        locations.forEach((location) => {
             text += String.raw`\item ` + location + `\n`
         })
 
@@ -271,7 +279,7 @@ function construct_pdf(companyName, date, supplierInfo){
 
         `
 
-        supplier.get('risks').forEach((risk) => {
+        risks.forEach((risk) => {
             text += String.raw`\risk{` + risk[0] + `}{` + risk[1].toFixed(1).toString() + `}\n`
         })
 
@@ -280,23 +288,23 @@ function construct_pdf(companyName, date, supplierInfo){
         \vspace{10px}
 
         Interviews conducted with our employees that had direct contact with the supplier revealed no further knowledge about worker right violations or
-        environmental pollution. Also, the SustainMind database didn't include records of these violations. In addition, we received no complaints from employees of ` + supplier.get('name') + String.raw ` via our complaint platform. Thus, we proceeded with the stated scores.
+        environmental pollution. Also, the SustainMind database didn't include records of these violations. In addition, we received no complaints from employees of ` + supplier.get('companyName') + String.raw ` via our complaint platform. Thus, we proceeded with the stated scores.
 
         \subsubsection*{Implemented Prevention Measures}
 
-        Our supplier, ` + supplier.get('name') + String.raw`, has implemented stringent prevention measures to help us comply with the requirements of the Lieferkettengesetz.
+        Our supplier, ` + supplier.get('companyName') + String.raw`, has implemented stringent prevention measures to help us comply with the requirements of the Lieferkettengesetz.
         They maintain comprehensive record-keeping and traceability systems at each supply chain stage, ensuring transparency. Regular audits and assessments
-        verify the accuracy of their documentation. ` + supplier.get('name') + String.raw` demonstrates a commitment to responsible business practices and compliance with the legislation.
+        verify the accuracy of their documentation. ` + supplier.get('companyName') + String.raw` demonstrates a commitment to responsible business practices and compliance with the legislation.
         We are proud to partner with them, as they prioritize documentation to promote transparency and accountability.
 
-        To put down our efforts on writing, we concluded a human rights and environmental protection supplementary agreement with ` + supplier.get('name') + String.raw`. It commits ` + supplier.get('name') + String.raw` to improve their worker's rights and to increase their environmental standards, otherwise contract penalties or the end of our business relationship are possible.
-        We strongly support ` + supplier.get('name') + String.raw` with all resources within the scope of our possibilities with their change management.
+        To put down our efforts on writing, we concluded a human rights and environmental protection supplementary agreement with ` + supplier.get('companyName') + String.raw`. It commits ` + supplier.get('companyName') + String.raw` to improve their worker's rights and to increase their environmental standards, otherwise contract penalties or the end of our business relationship are possible.
+        We strongly support ` + supplier.get('companyName') + String.raw` with all resources within the scope of our possibilities with their change management.
 
         Furthermore, we established a complaint plafform for our supplier's workers to report inadequate working conditions and environmental violations. The complaint plafform
         is realizzed with the help of SustainMind and publicly accessible. To lower the hurdle of complaints and to eliminate the likelihood of negative consequences for the reporter,
         an anonymous reporting option is available. All complaints are carefully considered and further investigated.
 
-        In addition, we are offering recurrent and mandatory seminars for the employees of ` + supplier.get('name') + String.raw` Based on the identified risks, the following topics are covered during
+        In addition, we are offering recurrent and mandatory seminars for the employees of ` + supplier.get('companyName') + String.raw` Based on the identified risks, the following topics are covered during
         the seminars:
         \begin{itemize}
             \item Prevention of Child Labor and Human Trafficking
@@ -305,7 +313,7 @@ function construct_pdf(companyName, date, supplierInfo){
         \end{itemize}
 
         What is more, as a response to the high risks of child labor and modern slavery, we implemented the SustainMind employee registration software at our supplier.
-        Each factory worker of ` + supplier.get('name') + String.raw` is assigned a unique employee ID. Only people with a valid employee ID (or guest ID) and a valid identity document are
+        Each factory worker of ` + supplier.get('companyName') + String.raw` is assigned a unique employee ID. Only people with a valid employee ID (or guest ID) and a valid identity document are
         allowed to enter the factory. During unannounced audits, the auditor will check the employee IDs and identity documents of the factory workers. Unregistered employees
         will lead to severe consequences for the supplier companies, including a possible end of business relations.
 

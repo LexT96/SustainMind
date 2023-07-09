@@ -4,7 +4,8 @@ import { IsSupplier } from "../models/isSupplier.js";
 // @ts-ignore
 import {getPdf} from "../risk_analysis/generatePdf.js"
 import { ProductionSite } from "../models/productionSite.js";
-
+import { RiskScore } from "../models/riskScore.js";
+import { RiskType } from "../models/riskType.js";
 const mockCustomers = [
     {
       id: "648db5cc159cc359f22a64e9",
@@ -107,7 +108,7 @@ export class CustomerController {
     const suppliers = await IsSupplier.find({
       idCorporation: req.params.id,
     }).populate("idSupplier");
-    res.send(suppliers);
+    res.send(suppliers.map((s) => s.idSupplier));
   };
 
   public createNewRiskAnalysis = async (req: Request, res: Response) => {
@@ -116,14 +117,34 @@ export class CustomerController {
     if (!customer) {
       return res.status(404).json({ error: "Customer not found" });
     }
-    const pdfData = await getPdf(customer.companyName);
+    const types = await RiskType.find({});
+    const suppliers = await IsSupplier.find({
+      idCorporation: customerId,
+    })
+      .populate({
+        path: "idSupplier",
+        populate: {
+          path: "productionSites",
+          populate: {
+            path: "riskScores",
+            populate: {
+              path: "riskType",
+            },
+          },
+        },
+      })
+      .select("idSupplier");
+    const pdfData = await getPdf(customer.companyName, suppliers.map(s => s.idSupplier));
     if (!pdfData) {
       return res.status(500).json({ error: "Could not create pdf" });
     }
     const newRiskAnalysis = {
-      numberOfSuppliers: pdfData.numberOfSuppliers,
+      numberOfSuppliers: suppliers.length,
       date: new Date(),
       path: pdfData.path.replace("public/", "")
+    }
+    if (!customer.riskAnalysis) {
+      customer.riskAnalysis = [];
     }
     customer.riskAnalysis.push(newRiskAnalysis);
     const result = await customer.save();
@@ -132,12 +153,9 @@ export class CustomerController {
 
   public getAllProductSitesOfSupplier = async (req: Request, res: Response) => {
     const supplierId: string = req.params.id;
-    console.log(supplierId)
     const productionSites = await ProductionSite.find({
       company: supplierId
     });
-    console.log(productionSites)
-
     // const allSuppliersOfCurrentSupplier: typeof IsSupplier[] = await IsSupplier.find({ idCorporation: supplierId });
     // // get all productionsites of suppliers of current supplier and of the current supplier
     // const productionSites = await ProductionSite.find({

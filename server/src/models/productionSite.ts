@@ -6,14 +6,14 @@ const productionSiteSchema = new Schema({
     description: String,
     company:  {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'customer',
+        ref: 'Customer',
       },
     country: String,
     region: String,
     city: String,
     zipcode: String,
     address: String,
-    riskScores: [{ type: Schema.Types.ObjectId, ref: "RiskScore" }],
+    riskScores: { type: [Schema.Types.ObjectId], ref: "RiskScore" },
     });
 
 export const ProductionSite = model("ProductionSite", productionSiteSchema);

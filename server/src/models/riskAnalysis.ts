@@ -7,4 +7,4 @@ const riskAnalysisSchema = new Schema({
     pdfFilePath: String
     });
 
-export const RiskAnalysis = model("RiskType", riskAnalysisSchema);
+export const RiskAnalysis = model("RiskAnalysis", riskAnalysisSchema);
