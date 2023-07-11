@@ -7,12 +7,14 @@ import { LandingProblemSection } from "../components/sections/landing/LandingPro
 import LandingVideoSection from "../components/sections/landing/LandingVideoSection"
 import LandingValuePropositionSection from "../components/sections/landing/LandingValuePropositionSection"
 import { LandingCallToActionSection } from "../components/sections/landing/CallToActionSection"
+import LandingQuizSection from "../components/sections/landing/LandingQuizSection"
 
 export const LandingPage = () => {
     return (
       <>
         <LandingNavBar />
         <LandingHeroSection />
+        <LandingQuizSection />
         <LandingVideoSection />
         <LandingValuePropositionSection />
         <LandingMissionSection />
