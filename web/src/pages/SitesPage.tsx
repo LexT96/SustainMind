@@ -18,20 +18,20 @@ export const SitesPage = () => {
     const [matchingSites, setMatchingSites] = useState(productionSites);
 
     useEffect(() => {
-        if (!isLoading && productionSites.length > 0) setMatchingSites(productionSites);
+        if (!isLoading && (productionSites?.length ?? 0 > 0)) setMatchingSites(productionSites);
     }, [isLoading])
     return (
       <PageLayout>
-        {productionSites?.length > 0 && matchingSites && (
+        {(productionSites?.length ?? 0 > 0) && matchingSites && (
           <>
             <Stack direction="row" spacing={3} alignItems={"center"}>
               <Searchbar
                 sx={{ width: "100%" }}
                 label="Production Site"
-                options={productionSites.map((p: any) => p.name)}
+                options={(productionSites as any)?.map((p: any) => p.name)}
                 onInputChange={(event: Event, value: string) => {
                   setMatchingSites(
-                    productionSites.filter((p: any) => p.name.includes(value))
+                    productionSites?.filter((p: any) => p.name.includes(value))
                   );
                 }}
               />

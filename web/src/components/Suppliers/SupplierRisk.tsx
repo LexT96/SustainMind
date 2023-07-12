@@ -3,7 +3,6 @@ import HelpIcon from '@mui/icons-material/Help';
 export const SupplierRisk = ({ name, score, explanation }: { name: string, score: number, explanation: string}) => {
     const riskWidth = 320;
     const riskPosition = (score / 100) * riskWidth - 6 + "px";
-    console.log(score)
     return (
       <Card sx={{ width: 350, p: 1 }}>
         <Stack spacing={1} justifyContent="space-between" height="100%">

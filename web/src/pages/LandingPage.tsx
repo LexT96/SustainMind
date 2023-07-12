@@ -4,15 +4,22 @@ import { LandingHeroSection } from "../components/sections/landing/LandingHeroSe
 import { LandingMissionSection } from "../components/sections/landing/LandingMissionSection"
 import { LandingNewsletterSection } from "../components/sections/landing/LandingNewsletterSection"
 import { LandingProblemSection } from "../components/sections/landing/LandingProblemSection"
+import LandingVideoSection from "../components/sections/landing/LandingVideoSection"
+import LandingValuePropositionSection from "../components/sections/landing/LandingValuePropositionSection"
+import { LandingCallToActionSection } from "../components/sections/landing/CallToActionSection"
+import LandingQuizSection from "../components/sections/landing/LandingQuizSection"
 
 export const LandingPage = () => {
     return (
       <>
         <LandingNavBar />
         <LandingHeroSection />
-        <LandingProblemSection />
+        <LandingQuizSection />
+        <LandingVideoSection />
+        <LandingValuePropositionSection />
         <LandingMissionSection />
         <LandingFeaturesSection />
+        <LandingCallToActionSection/>
       </>
     );
 }

@@ -9,28 +9,58 @@ import Prevention from "../components/Suppliers/Prevention"
 
 const risks = [
   {
-    _id: "ASD",
-    name: "Work safety",
-    score: 6,
-    explanation: "This is the work safety explanation",
-  },
-  {
-    _id: "ASAD",
-    name: "Child labor",
-    score: 3,
+    _id: "1",
+    name: "Child Labor",
+    score: 5.6,
     explanation: "This is the child labor explanation",
   },
   {
-    _id: "ASDASD",
-    name: "Environmental impact",
-    score: 8,
-    explanation: "This is the environmental impact explanation",
+    _id: "2",
+    name: "Modern Slavery",
+    score: 4.816167,
+    explanation: "This is the modern slavery explanation",
   },
   {
-    _id: "ASDASDASD",
-    name: "Corruption",
-    score: 2,
-    explanation: "This is the corruption explanation",
+    _id: "3",
+    name: "No Freedom of Association",
+    score: 9.61,
+    explanation: "This is an explanation",
+  },
+  {
+    _id: "4",
+    name: "Poor Labor Rights & Work Safety",
+    score: 8.44,
+    explanation: "This is an explanation",
+  },
+  {
+    _id: "5",
+    name: "Discrimination",
+    score: 9.79,
+    explanation: "This is an explanation",
+  },
+  {
+    _id: "6",
+    name: "Waste Water Pollution",
+    score: 10,
+    explanation: "This is an explanation",
+  },
+  {
+    _id: "7",
+    name: "Poor Air Quality",
+    score: 8.56,
+    explanation: "This is an explanation",
+  },
+  {
+    _id: "8",
+    name: "Inadequate Waste Disposal",
+    score: 8.85,
+    explanation: "This is an explanation",
+  },
+  {
+    _id: "9",
+    name: "Release of Heavy Metals",
+    score: 7.72,
+    explanation: "This is an explanation",
   },
 ];
 
@@ -43,7 +73,7 @@ export const SupplierDetailPage = () => {
           <>
             <Stack direction={{ xs: "column", sm: "row" }}>
               <Avatar
-                src={supplier.image}
+                src="../../public/logos/logo2.jpg"//{supplier.image}
                 sx={{
                   height: 200,
                   width: 200,

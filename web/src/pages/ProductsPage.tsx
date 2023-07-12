@@ -15,38 +15,45 @@ import { AddProductModal } from "../components/Products/AddProductModal";
 const mockProducts = [
     {
     id: 1,
-    name: "ProductName",
-    image: "https://picsum.photos/300",
+    name: "Black T-Shirt Men",
+    image: "products/black_tshirt.jpeg",
     description: "Test description",
-    score: 3.5
+    score: 6.7
 },
 {
     id: 2,
-    name: "ProductName2",
-    image: "https://picsum.photos/300",
+    name: "White T-Shirt Women",
+    image: "products/white_tshirt_women.jpeg",
     description: "Test description",
-    score: 8
+    score: 8.8
 },
 {
     id: 3,
-    name: "ProductName3",
-    image: "https://picsum.photos/300",
+    name: "White T-Shirt Men",
+    image: "products/white_tshirt.jpeg",
     description: "Test description",
-    score: 1
+    score: 8.6
 },
 {
     id: 4,
-    name: "ProductName4",
-    image: "https://picsum.photos/300",
+    name: "Women Business Shirt",
+    image: "products/women_business_shirt.jpg",
     description: "Test description",
-    score: 1
+    score: 2.9
 },
 {
     id: 5,
-    name: "ProductName5",
-    image: "https://picsum.photos/300",
+    name: "Jeans Blue Men",
+    image: "products/jeans_men.jpg",
     description: "Test description",
-    score: 1
+    score: 6.0
+},
+{
+    id: 6,
+    name: "Ripped Jeans Women",
+    image: "products/ripped_jeans_women.jpeg",
+    description: "Test description",
+    score: 7.4
 }
 ]
 export function ProductsPage () {

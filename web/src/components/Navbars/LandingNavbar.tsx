@@ -70,20 +70,20 @@ export function LandingNavBar() {
                   <Link
                     smooth
                     spy
-                    to="problem"
+                    to="solution"
                     activeClass="text-green-700"
                     className="inline-flex cursor-pointer items-center border-b-2 border-transparent px-1 pt-1 text-md font-medium text-black hover:text-gray-300"
                   >
-                    Problem
+                    ESG Software
                   </Link>
                   <Link
                     smooth
                     spy
-                    to="mission"
+                    to="value_propositions"
                     activeClass="text-green-700"
                     className="inline-flex cursor-pointer items-center border-b-2 border-transparent px-1 pt-1 text-md font-medium text-black hover:text-gray-300"
                   >
-                    Mission
+                    Why SustainMind?
                   </Link>
                   <Link
                     smooth
@@ -93,6 +93,15 @@ export function LandingNavBar() {
                     className="inline-flex cursor-pointer items-center border-b-2 border-transparent px-1 pt-1 text-md font-medium text-black hover:text-gray-300"
                   >
                     Features
+                  </Link>
+                  <Link
+                    smooth
+                    spy
+                    to="user_interface"
+                    activeClass="text-green-700"
+                    className="inline-flex cursor-pointer items-center border-b-2 border-transparent px-1 pt-1 text-md font-medium text-black hover:text-gray-300"
+                  >
+                    User Interface
                   </Link>
                 </div>
               </div>
@@ -109,7 +118,7 @@ export function LandingNavBar() {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 pb-4 pt-2">
-              <Disclosure.Button
+            <Disclosure.Button
                 as="a"
                 href="#"
                 className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
@@ -121,14 +130,14 @@ export function LandingNavBar() {
                 href="#"
                 className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
               >
-                Problem
+                ESG Software
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="#"
                 className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
               >
-                Mission
+                Why SustainMind?
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
@@ -136,6 +145,13 @@ export function LandingNavBar() {
                 className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
               >
                 Features
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="#"
+                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+              >
+                User Interface
               </Disclosure.Button>
             </div>
           </Disclosure.Panel>

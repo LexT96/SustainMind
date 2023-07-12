@@ -7,8 +7,8 @@ import { useUser } from "@clerk/clerk-react"
 import dayjs from "dayjs";
 
 const mockData = {
-    score: 5,
-    lastAnalysis: "12.03.2023"
+    score: 6.6,
+    lastAnalysis: "30.06.2023"
 }
 
 export const AnalysisPage = () => {
