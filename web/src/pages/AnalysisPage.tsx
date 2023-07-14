@@ -25,7 +25,7 @@ export const AnalysisPage = () => {
             <ProductScore score={mockData.score} />
             <Typography>
               Last risk analysis:{" "}
-              {dayjs(customer?.riskAnalysis?.slice(-1)[0].date).format(
+              {dayjs(customer?.riskAnalysis?.slice(-1)[0]?.date).format(
                 "DD.MM.YYYY"
               )}
             </Typography>
