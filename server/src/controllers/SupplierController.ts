@@ -80,7 +80,8 @@ export class SupplierController {
       // Update the supplier with the negotiation power
       supplier.negotiationPowerWithOwnContractVolume =
         negotiationPowerWithOwnContractVolume;
-      await supplier.save();
+
+      await IsSupplier.findByIdAndUpdate(supplier.id, supplier);
 
       // Return the negotiation power in the response
       res.json({ negotiationPowerWithOwnContractVolume });
@@ -126,7 +127,8 @@ export class SupplierController {
       // Update the supplier with the negotiation power
       supplier.negotiationPowerWithTotalContractVolume =
         negotiationPowerWithTotalContractVolume;
-      await supplier.save();
+
+      await IsSupplier.findByIdAndUpdate(supplier.id, supplier);
 
       // Return the negotiation power in the response
       res.json({ negotiationPowerWithTotalContractVolume });
