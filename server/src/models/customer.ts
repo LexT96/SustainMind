@@ -32,6 +32,7 @@ const customerSchema = new Schema({
     ref: "ProductCategory",
     type: [Types.ObjectId],
   },
+  score: Number
 });
 
 export const findMaxRiskScores = (allRiskScores: any) => {
