@@ -7,9 +7,11 @@
   "scripts": {
     "dev": "nodemon --exec ts-node --esm src/index.ts",
     "build": "tsc",
-    "start": "pm2-runtime start build/index.js --watch"
+    "start": "pm2-runtime start build/index.js --watch",
+    "seed": "ts-node --esm src/db/seeders/index.ts"
   },
   "dependencies": {
+    "@ngneat/falso": "^6.4.0",
     "axios": "^1.4.0",
     "cors": "^2.8.5",
     "csv-parser": "^3.0.0",
