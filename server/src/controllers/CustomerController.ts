@@ -1,4 +1,4 @@
-import { Customer } from "../models/customer.js";
+import { Customer, findMaxRiskScores } from "../models/customer.js";
 import { Request, Response } from "express";
 import { IsSupplier } from "../models/isSupplier.js";
 // @ts-ignore
@@ -27,32 +27,12 @@ export class CustomerController {
         },
       },
     });
-    if (!Customer) {
+    if (!customer) {
         res.status(404).json({ error: "Customer not found"});
         return;
     }
-    const allRiskScores = customer!.productionSites
-      .map((p: any) => p.riskScores)
-      .flat();
-    // get the max score for every risk type
-    const maxRiskScore = allRiskScores
-      .reduce((acc: any, curr: any) => {
-        if (!acc[curr.riskType.name]) {
-          acc[curr.riskType.name] = curr.riskScore;
-        } else if (acc[curr.riskType.name] < curr.riskScore) {
-          acc[curr.riskType.name] = curr.riskScore;
-        }
-        return acc;
-      }, {});
-    const matchingMaxRiskScores = Object.entries(maxRiskScore).map(
-      ([key, value]: any) => {
-        const score = allRiskScores.find(
-          (score: any) =>
-            score.riskScore === value && score.riskType.name === key
-        );
-        return score;
-      }
-    );
+    const matchingMaxRiskScores = findMaxRiskScores(customer!.productionSites.map((p: any) => p.riskScores).flat());
+
     res.json({...customer!.toJSON(), riskScores: matchingMaxRiskScores});
   };
   public addNewCustomer = async (req: Request, res: Response) => {

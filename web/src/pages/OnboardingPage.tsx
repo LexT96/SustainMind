@@ -21,7 +21,6 @@ export const OnboardingPage = () => {
 
     useEffect(() => {
         if (!user) return;
-        console.log(user.unsafeMetadata)
         if (user && user.unsafeMetadata?.onboardingCompleted && user.unsafeMetadata?.customerId) {
             navigate('/products')
         }

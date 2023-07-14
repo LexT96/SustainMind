@@ -34,4 +34,25 @@ const customerSchema = new Schema({
   },
 });
 
+export const findMaxRiskScores = (allRiskScores: any) => {
+  // get the max score for every risk type
+  const maxRiskScore = allRiskScores.reduce((acc: any, curr: any) => {
+    if (!acc[curr.riskType.name]) {
+      acc[curr.riskType.name] = curr.riskScore;
+    } else if (acc[curr.riskType.name] < curr.riskScore) {
+      acc[curr.riskType.name] = curr.riskScore;
+    }
+    return acc;
+  }, {});
+  const matchingMaxRiskScores = Object.entries(maxRiskScore).map(
+    ([key, value]: any) => {
+      const score = allRiskScores.find(
+        (score: any) => score.riskScore === value && score.riskType.name === key
+      );
+      return score;
+    }
+  );
+  return matchingMaxRiskScores;
+};
+
 export const Customer = model("Customer", customerSchema);

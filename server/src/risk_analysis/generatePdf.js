@@ -1,6 +1,7 @@
 import fs from 'fs';
 import util from 'util';
 import axios from "axios";
+import { findMaxRiskScores } from '../models/customer.js';
 
 /* Code for local pdf compilation
 //const source = fs.readFileSync('risk_analysis.tex').toString()
@@ -18,40 +19,6 @@ const formattedDate = currentDate.toLocaleDateString('en-GB', {
   year: 'numeric'
 });
 
-const supplierInfo = [
-    new Map([
-        ['name', 'IronWorks Inc.'],
-        ['description', `SteelWorks Inc. is a leading steel company based in Asia, specializing in the manufacturing and distribution of high-quality steel products. With a rich history spanning over four decades, SteelWorks Inc. has established itself as a trusted name in the steel industry, catering to diverse sectors such as construction, infrastructure development, automotive, and manufacturing.`],
-        ['locations', [`Shanghai, China`, `Mumbai, India`, `Busan, South Korea`]],
-        ['risks', [
-            ['Child Labor', 71.2],
-            ['Modern Slavery', 82.4],
-            ['No Freedom of Association', 100],
-            ['Poor Labor Rights and Work Safety', 66.2],
-            ['Discrimination', 98],
-            ['Waste Water Pollution', 23],
-            ['Poor Air Quality', -1],
-            ['Release of Heavy Metals', 45],
-            ['Inadequate Waste Disposal', 54.512],
-        ]],
-    ]),
-    new Map([
-        ['name', 'XYZ Furniture'],
-        ['description', `We specialize in crafting stunning and functional furniture pieces that elevate spaces with style and sophistication. Our dedicated team of skilled artisans and designers meticulously create each piece, ensuring superior craftsmanship and attention to detail.`],
-        ['locations', [`Stockholm, Sweden`, `Malmö, Sweden`]],
-        ['risks', [
-            ['Child Labor', 0],
-            ['Modern Slavery', 0],
-            ['No Freedom of Association', 7.2],
-            ['Poor Labor Rights and Work Safety', 4.2],
-            ['Discrimination', 12],
-            ['Waste Water Pollution', 0],
-            ['Poor Air Quality', 0],
-            ['Release of Heavy Metals', 0.5],
-            ['Inadequate Waste Disposal', 4],
-        ]],
-    ])
-];
 const pathName = "public/risk_analysis/pdfs/"
 
 export const getPdf = async (companyName, suppliers) => {
@@ -79,16 +46,8 @@ const source = construct_pdf(companyName, formattedDate, suppliers);
     const path = pathName + fileName;
     return {path};
   } catch (error) {
-    console.error("Error:", error.message);
   }
 }
-
-// const pdf = latex(source, options)
-
-// pdf.pipe(output)
-// pdf.on('error', err => console.error(err))
-// pdf.on('finish', () => console.log('PDF generated!'))
-
 
 function construct_pdf(companyName, date, suppliers){
     let text = "\\documentclass{article}\n"
@@ -240,71 +199,99 @@ function construct_pdf(companyName, date, suppliers){
 
     \section{Supplier Analysis}
     `
-    // console.log(suppliers);
     suppliers.forEach((supplier) => {
-        const locations = supplier.productionSites.map((p) => {
-            return p.city + ', ' + p.country
-        })
-        const risks = supplier.productionSites.map((p) => {
-            return p.riskScores.map((r) => {
-              return [r.riskType.name, parseInt(r.riskScore)];
-            });
-        }).flat();
-        text += String.raw`
-        \subsection{` + supplier.get('companyName') + `}`
+      const locations = supplier.productionSites.map((p) => {
+        return p.city + ", " + p.country;
+      });
 
-        text += String.raw`
+      const risks = findMaxRiskScores(
+        supplier.productionSites
+          .map((p) => {
+            return p.riskScores;
+          })
+          .flat()
+      ).map((s) => [s.riskType.name, s.riskScore]);
+
+      text +=
+        String.raw`
+        \subsection{` +
+        supplier.get("companyName") +
+        `}`;
+
+      text += String.raw`
         \subsubsection*{Supplier Self Description}
-        `
-        
-        text += supplier.get('description')
+        `;
 
-        text += String.raw`
+      text += supplier.get("description");
+
+      text += String.raw`
 
         \subsubsection*{Production Sites}
-        `
-        text += supplier.get('companyName') + String.raw` has production sites in the following countries/regions:
+        `;
+      text +=
+        supplier.get("companyName") +
+        String.raw` has production sites in the following countries/regions:
         \begin{itemize}
-        `
-        locations.forEach((location) => {
-            text += String.raw`\item ` + location + `\n`
-        })
+        `;
+      locations.forEach((location) => {
+        text += String.raw`\item ` + location + `\n`;
+      });
 
-        text += String.raw`\end{itemize}
+      text += String.raw`\end{itemize}
 
         \subsubsection*{Identified Risks}
         Based on the production countries and our supplier's product range, we calculated the following risk scores:
 
         \vspace{10px}
 
-        `
+        `;
 
-        risks.forEach((risk) => {
-            text += String.raw`\risk{` + risk[0] + `}{` + risk[1].toFixed(1).toString() + `}\n`
-        })
+      risks.forEach((risk) => {
+        text +=
+          String.raw`\risk{` +
+          risk[0] +
+          `}{` +
+          parseInt(risk[1]).toFixed(1).toString() +
+          `}\n`;
+      });
 
-        text += String.raw`
+      text +=
+        String.raw`
 
         \vspace{10px}
 
         Interviews conducted with our employees that had direct contact with the supplier revealed no further knowledge about worker right violations or
-        environmental pollution. Also, the SustainMind database didn't include records of these violations. In addition, we received no complaints from employees of ` + supplier.get('companyName') + String.raw ` via our complaint platform. Thus, we proceeded with the stated scores.
+        environmental pollution. Also, the SustainMind database didn't include records of these violations. In addition, we received no complaints from employees of ` +
+        supplier.get("companyName") +
+        String.raw` via our complaint platform. Thus, we proceeded with the stated scores.
 
         \subsubsection*{Implemented Prevention Measures}
 
-        Our supplier, ` + supplier.get('companyName') + String.raw`, has implemented stringent prevention measures to help us comply with the requirements of the Lieferkettengesetz.
+        Our supplier, ` +
+        supplier.get("companyName") +
+        String.raw`, has implemented stringent prevention measures to help us comply with the requirements of the Lieferkettengesetz.
         They maintain comprehensive record-keeping and traceability systems at each supply chain stage, ensuring transparency. Regular audits and assessments
-        verify the accuracy of their documentation. ` + supplier.get('companyName') + String.raw` demonstrates a commitment to responsible business practices and compliance with the legislation.
+        verify the accuracy of their documentation. ` +
+        supplier.get("companyName") +
+        String.raw` demonstrates a commitment to responsible business practices and compliance with the legislation.
         We are proud to partner with them, as they prioritize documentation to promote transparency and accountability.
 
-        To put down our efforts on writing, we concluded a human rights and environmental protection supplementary agreement with ` + supplier.get('companyName') + String.raw`. It commits ` + supplier.get('companyName') + String.raw` to improve their worker's rights and to increase their environmental standards, otherwise contract penalties or the end of our business relationship are possible.
-        We strongly support ` + supplier.get('companyName') + String.raw` with all resources within the scope of our possibilities with their change management.
+        To put down our efforts on writing, we concluded a human rights and environmental protection supplementary agreement with ` +
+        supplier.get("companyName") +
+        String.raw`. It commits ` +
+        supplier.get("companyName") +
+        String.raw` to improve their worker's rights and to increase their environmental standards, otherwise contract penalties or the end of our business relationship are possible.
+        We strongly support ` +
+        supplier.get("companyName") +
+        String.raw` with all resources within the scope of our possibilities with their change management.
 
         Furthermore, we established a complaint plafform for our supplier's workers to report inadequate working conditions and environmental violations. The complaint plafform
         is realizzed with the help of SustainMind and publicly accessible. To lower the hurdle of complaints and to eliminate the likelihood of negative consequences for the reporter,
         an anonymous reporting option is available. All complaints are carefully considered and further investigated.
 
-        In addition, we are offering recurrent and mandatory seminars for the employees of ` + supplier.get('companyName') + String.raw` Based on the identified risks, the following topics are covered during
+        In addition, we are offering recurrent and mandatory seminars for the employees of ` +
+        supplier.get("companyName") +
+        String.raw` Based on the identified risks, the following topics are covered during
         the seminars:
         \begin{itemize}
             \item Prevention of Child Labor and Human Trafficking
@@ -313,7 +300,9 @@ function construct_pdf(companyName, date, suppliers){
         \end{itemize}
 
         What is more, as a response to the high risks of child labor and modern slavery, we implemented the SustainMind employee registration software at our supplier.
-        Each factory worker of ` + supplier.get('companyName') + String.raw` is assigned a unique employee ID. Only people with a valid employee ID (or guest ID) and a valid identity document are
+        Each factory worker of ` +
+        supplier.get("companyName") +
+        String.raw` is assigned a unique employee ID. Only people with a valid employee ID (or guest ID) and a valid identity document are
         allowed to enter the factory. During unannounced audits, the auditor will check the employee IDs and identity documents of the factory workers. Unregistered employees
         will lead to severe consequences for the supplier companies, including a possible end of business relations.
 
@@ -332,7 +321,7 @@ function construct_pdf(companyName, date, suppliers){
         identify areas for improvement, and verify the accuracy of supplier-provided information. By conducting audits, we maintain accountability and promote continuous
         improvement within our supply chain, thereby safeguarding the rights and well-being of workers and minimizing environmental impact.
 
-        `
+        `;
     });
 
     text += String.raw`
