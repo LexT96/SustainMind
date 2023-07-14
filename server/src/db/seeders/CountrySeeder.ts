@@ -22,6 +22,10 @@ export const seedCountries = async () => {
   const rows = await readCSV;
   return await Promise.all(
     (rows as any).map(async (row: any) => {
+      const countryExists = await Country.findOne({ name: row[1] });
+        if (countryExists) {
+          return;
+        }
       await Country.create({
         name: row[1],
         alpha2: row[2],

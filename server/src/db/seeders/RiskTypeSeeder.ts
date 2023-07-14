@@ -52,6 +52,10 @@ export const seedRiskTypes = async () => {
     console.log("seeding RiskTypes...");
     return await Promise.all(riskTypes.map(async (type, index) => {
       try {
+        const typeExists = await RiskType.findById(type._id);
+        if (typeExists) {
+          return typeExists;
+        }
         await type.save();
         return type;
       } catch (error) {
