@@ -20,6 +20,9 @@ export const seedProductCategories = async () => {
     return await Promise.all(
       categories.map(async (category, index) => {
         try {
+          if (await ProductCategory.findOne({ name: category.name })) {
+            return;
+          }
           await category.save();
           return category;
         } catch (error) {
