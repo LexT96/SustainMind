@@ -74,10 +74,16 @@ export class SupplierController {
         res.status(404).json({ error: "Supplier not found" });
         return;
       }
-      const negotiationPower = supplier.contractVolume! / supplier.revenue!;
+      const negotiationPowerWithOwnContractVolume =
+        supplier.contractVolume! / supplier.revenue!;
+
+      // Update the supplier with the negotiation power
+      supplier.negotiationPowerWithOwnContractVolume =
+        negotiationPowerWithOwnContractVolume;
+      await supplier.save();
 
       // Return the negotiation power in the response
-      res.json({ negotiationPower });
+      res.json({ negotiationPowerWithOwnContractVolume });
     } catch (error) {
       res.status(500).json({ error: "Internal server error" });
     }
@@ -114,10 +120,16 @@ export class SupplierController {
       }
 
       const sumContractVolume = totalContractVolume[0].total;
-      const negotiationPower = sumContractVolume / supplier.revenue!;
+      const negotiationPowerWithTotalContractVolume =
+        sumContractVolume / supplier.revenue!;
+
+      // Update the supplier with the negotiation power
+      supplier.negotiationPowerWithTotalContractVolume =
+        negotiationPowerWithTotalContractVolume;
+      await supplier.save();
 
       // Return the negotiation power in the response
-      res.json({ negotiationPower });
+      res.json({ negotiationPowerWithTotalContractVolume });
     } catch (error) {
       res.status(500).json({ error: "Internal server error" });
     }

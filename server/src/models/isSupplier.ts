@@ -14,6 +14,15 @@ const isSupplierSchema = new Schema({
   },
   revenue: {
     type: Number,
+    required: false,
+  },
+  negotiationPowerWithOwnContractVolume: {
+    type: Number,
+    required: false,
+  },
+  negotiationPowerWithTotalContractVolume: {
+    type: Number,
+    required: false,
   },
 });
 
