@@ -31,7 +31,29 @@ export class CustomerController {
         res.status(404).json({ error: "Customer not found"});
         return;
     }
-    res.json({...customer!.toJSON(), riskScores: customer!.productionSites.map((p: any) => p.riskScores).flat()});
+    const allRiskScores = customer!.productionSites
+      .map((p: any) => p.riskScores)
+      .flat();
+    // get the max score for every risk type
+    const maxRiskScore = allRiskScores
+      .reduce((acc: any, curr: any) => {
+        if (!acc[curr.riskType.name]) {
+          acc[curr.riskType.name] = curr.riskScore;
+        } else if (acc[curr.riskType.name] < curr.riskScore) {
+          acc[curr.riskType.name] = curr.riskScore;
+        }
+        return acc;
+      }, {});
+    const matchingMaxRiskScores = Object.entries(maxRiskScore).map(
+      ([key, value]: any) => {
+        const score = allRiskScores.find(
+          (score: any) =>
+            score.riskScore === value && score.riskType.name === key
+        );
+        return score;
+      }
+    );
+    res.json({...customer!.toJSON(), riskScores: matchingMaxRiskScores});
   };
   public addNewCustomer = async (req: Request, res: Response) => {
     const newCustomer = new Customer(req.body);
