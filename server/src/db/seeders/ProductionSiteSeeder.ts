@@ -44,27 +44,29 @@ const productionSites: any = [
 
 const generateProductionSites = async () => {
     const companies = await Customer.find({});
-    return await Promise.all(companies.map( async (company) => {
+    return await Promise.all(
+      companies.map(async (company) => {
         const createdSites: any = [];
         productionSites.forEach(async (site: any) => {
           site.company = company._id;
           const randomLocation =
             locations[Math.floor(Math.random() * locations.length)];
           const randomname = randCompanyName();
-          const newSite = await ProductionSite.create({
+          const newSite =await ProductionSite.create({
             ...site,
             ...randomLocation,
             name: randomname,
             description: `Description of ${randomname}`,
           });
-          createdSites.push(newSite);
+          await Customer.findByIdAndUpdate(
+            company._id,
+            { $push: { productionSites: newSite._id } },
+            { new: true }
+          );
         });
-        await Customer.findByIdAndUpdate(
-          company._id,
-          { productionSites: createdSites },
-          { new: true }
-        );
-    }));
+
+      })
+    );
 }
 
 export const seedProductionSites = async () => {

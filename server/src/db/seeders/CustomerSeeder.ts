@@ -7,7 +7,7 @@ const customers = [
     companyName: "NovaraTech",
     country: "France",
     region: "Normandy",
-    cty: "Rouen",
+    city: "Rouen",
     zipcode: "76000",
     adress: "Rue de Rouen",
     contactPersonName: "Leon",
@@ -18,9 +18,7 @@ const customers = [
     showOnMarketplace: true,
     image: "https://picsum.photos/id/237/200/300",
     description: "Description of NovaraTech",
-    productCategories: {
-      _id: "6499ca2153037565702d91bd",
-    },
+    productCategories: {},
     score: 3.5,
   },
   {
@@ -39,9 +37,7 @@ const customers = [
     showOnMarketplace: true,
     image: "https://picsum.photos/id/237/200/300",
     description: "Description of Vortexa",
-    productCategories: {
-      _id: "6499ca2153037565702d91bd",
-    },
+    productCategories: {},
     score: 6,
   },
   {
@@ -60,9 +56,7 @@ const customers = [
     showOnMarketplace: true,
     image: "https://picsum.photos/id/237/200/300",
     description: "Description of Solara",
-    productCategories: {
-      _id: "6499ca4d53037565702d91be",
-    },
+    productCategories: {},
     score: 4.5,
   },
   {

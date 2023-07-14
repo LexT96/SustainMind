@@ -6,45 +6,6 @@ import {getPdf} from "../risk_analysis/generatePdf.js"
 import { ProductionSite } from "../models/productionSite.js";
 import { RiskScore } from "../models/riskScore.js";
 import { RiskType } from "../models/riskType.js";
-const mockCustomers = [
-    {
-      id: "648db5cc159cc359f22a64e9",
-      companyName: "Hossain Clothing Company",
-      image: "logos/logo2.jpg",
-      numberOfProductionSites: 2,
-      productCategories: ["Textiles", "Consumer Electronics"],
-      score: 3.6,
-      city: "Chittagong",
-      country: "Bangladesh",
-      description:
-        "Hossain Clothing Company, located at the heart of Bangladesh's vibrant textile industry, is a premier apparel manufacturer renowned for its quality, craftsmanship, and sustainable practices. With decades of experience, we specialize in creating a diverse range of clothing items - from daily wear to high-fashion ensembles. Our commitment to excellence and adherence to ethical sourcing and manufacturing have positioned us as a trusted supplier to brands worldwide. Proudly Bangladeshi, Hossain Clothing Company continues to push the boundaries in garment production, integrating traditional techniques with innovative technologies to offer top-quality, stylish, and affordable fashion.",
-    },
-    {
-      id: "648db5cc159cc359f22a64e9",
-      companyName: "Mumbai Shirts&Coffee",
-      image: "logos/logo3.jpg",
-      numberOfProductionSites: 7,
-      productCategories: ["Textiles", "Food and Beverage"],
-      score: 5.4,
-      city: "Mumbai",
-      country: "India",
-      description:
-        "Mumbai Shirts&More is an emblem of Indian ingenuity and diversity, serving as a leading textile and food company nestled in the bustling heart of Mumbai. Our textile division excels in the crafting of exquisite shirts, a testament to the skilled craftsmanship and rich textile heritage of India. Simultaneously, our food division caters to the diverse palate of Mumbai, offering an eclectic mix of local and international flavors. At Mumbai Shirts&More, we blend tradition with innovation, offering our customers quality garments and delectable food that capture the vibrant spirit of Mumbai. Experience the blend of style and taste with us, and delve into the essence of Mumbai like never before.",
-    },
-    {
-      id: "648db5cc159cc359f22a64e9",
-      companyName: "British Style Ltd.",
-      image: "logos/logo1.jpg",
-      numberOfProductionSites: 3,
-      score: 8.1,
-      productCategories: ["Textiles"],
-      city: "London",
-      country: "United Kingdom",
-      description:
-        "British Style Ltd. is a cutting-edge fashion startup based in the dynamic city of London. We are dedicated to capturing the quintessential British charm in our unique and innovative designs. From sophisticated trench coats to edgy punk-inspired pieces, our creations draw inspiration from London's rich cultural tapestry and its iconic fashion history. As we navigate the intersection of tradition and modernity, our mission is to deliver style and quality to our customers while embracing sustainable and ethical practices. British Style Ltd. - where London's timeless elegance meets contemporary fashion.",
-    },
-  ];
-
 
 export class CustomerController {
   public getAllCustomer = async (req: Request, res: Response) => {
