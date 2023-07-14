@@ -10,11 +10,13 @@ import { seedCustomers } from "./CustomerSeeder.js";
 import { seedProductionSites } from "./ProductionSiteSeeder.js";
 import { seedRiskScores } from "./RiskScoreSeeder.js";
 import { seedIsSuppliers } from "./IsSupplierSeeder.js";
+import { seedCountries } from "./CountrySeeder.js";
 
 export const seedAll = async () => {
   console.log("connecting to database...");
   try {
     await connectToDatabase();
+    await seedCountries();
     await seedRiskTypes();
     await seedProductCategories();
     await seedProducts();
