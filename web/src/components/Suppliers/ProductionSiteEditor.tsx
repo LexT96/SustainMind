@@ -43,6 +43,7 @@ const ProductionSiteEditor = () => {
       address
       ); 
     console.log('Daten speichern:', data);
+    window.location.href = '/sites';
   };
 
   const handleZipChange = (e: React.ChangeEvent<HTMLInputElement>) => {
