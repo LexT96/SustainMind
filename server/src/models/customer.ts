@@ -55,4 +55,4 @@ export const findMaxRiskScores = (allRiskScores: any) => {
   return matchingMaxRiskScores;
 };
 
-export const Customer = model("Customer", customerSchema);
+export const Customer = model("customer", customerSchema);
