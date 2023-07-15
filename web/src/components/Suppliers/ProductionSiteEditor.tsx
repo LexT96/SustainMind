@@ -3,6 +3,9 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
+import mongoose from 'mongoose';
+import { addNewProductionSite } from '../../api/productionSitesApi';
+import { useUser } from '@clerk/clerk-react';
 
 const ProductionSiteEditor = () => {
   const [productionSiteName, setProductionSiteName] = useState('');
@@ -13,19 +16,32 @@ const ProductionSiteEditor = () => {
   const [zip, setZip] = useState('');
   const [address, setAddress] = useState('');
   const [description, setDescription] = useState('');
+  const {user} = useUser();
+  const companyId = new mongoose.Schema.Types.ObjectId(user!.id);
 
   const handleSave = () => {
     const data = {
       productionSiteName,
+      description,
       productCategory,
+      companyId,
       country,
       state,
       city,
       zip,
       address,
-      description,
     };
-
+     addNewProductionSite(
+      productionSiteName,
+      description,
+      productCategory,
+      companyId,
+      country,
+      state,
+      city,
+      zip,
+      address
+      ); 
     console.log('Daten speichern:', data);
   };
 
