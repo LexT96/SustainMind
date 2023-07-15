@@ -17,9 +17,9 @@ const ProductionSiteEditor = () => {
   const [address, setAddress] = useState('');
   const [description, setDescription] = useState('');
   const {user} = useUser();
-  const companyId = new mongoose.Schema.Types.ObjectId(user!.id);
 
   const handleSave = () => {
+    const companyId = user!.unsafeMetadata!.customerId  as string
     const data = {
       productionSiteName,
       description,

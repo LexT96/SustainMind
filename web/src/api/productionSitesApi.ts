@@ -15,7 +15,7 @@ export const addNewProductionSite = async (
   name: String,
   description: String,
   productCategory: String,
-  company: ObjectId,
+  company: String,
   country: String,
   region: String,
   city: String,
