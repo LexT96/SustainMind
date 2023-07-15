@@ -12,10 +12,10 @@ export const getProductionSiteById = async (id: string) => {
 };
 
 export const addNewProductionSite = async (
-  id: String,
   name: String,
   description: String,
-  company: ObjectId,
+  productCategory: String,
+  company: String,
   country: String,
   region: String,
   city: String,
@@ -23,9 +23,9 @@ export const addNewProductionSite = async (
   address: String
 ) => {
   const requestBody = {
-    id,
     name,
     description,
+    productCategory,
     company,
     country,
     region,
