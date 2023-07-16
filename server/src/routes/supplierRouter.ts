@@ -26,16 +26,22 @@ supplierRouter.delete("/:id", async (req, res) => {
   await supplierController.deleteSupplier(req, res);
 });
 
-supplierRouter.get("/:id", async (req, res) => {
-  await supplierController.calculateNegotiationPowerWithOwnContractVolume(
-    req,
-    res
-  );
-});
+supplierRouter.get(
+  "/:id/negotiationPowerWithOwnContractVolume",
+  async (req, res) => {
+    await supplierController.calculateNegotiationPowerWithOwnContractVolume(
+      req,
+      res
+    );
+  }
+);
 
-supplierRouter.get("/:id", async (req, res) => {
-  await supplierController.calculateNegotiationPowerWithTotalContractVolume(
-    req,
-    res
-  );
-});
+supplierRouter.get(
+  "/:id/negotiationPowerWithTotalContractVolume",
+  async (req, res) => {
+    await supplierController.calculateNegotiationPowerWithTotalContractVolume(
+      req,
+      res
+    );
+  }
+);
