@@ -60,13 +60,24 @@ function escapeLatexSpecialCharacters(text) {
     return text
   }
 
-  const latexSpecialCharacters = /([#$%&~_^\\{}])/g; // list of LaTeX special characters
+  let str = String(text);
+  
+  const latexSpecialCharacters = {
+    '#': '\\#',
+    '$': '\\$',
+    '%': '\\%',
+    '&': '\\&',
+    '~': '\\textasciitilde{}',
+    '_': '\\_',
+    '^': '\\textasciicircum{}',
+    '\\': '\\textbackslash{}',
+    '{': '\\{',
+    '}': '\\}'
+  };
 
-  console.log("text:", String(text))
-  // Add a backslash in front of any LaTeX special characters
-  const escapedText = String(text).replace(latexSpecialCharacters, '\\$1');
-
-  return escapedText;
+  return str.replace(/[#\$%&~_^\\{}]/g, function(match) {
+    return latexSpecialCharacters[match];
+  });
 }
 
 function construct_pdf(companyName, date, suppliers){
@@ -224,6 +235,7 @@ function construct_pdf(companyName, date, suppliers){
     `
     
     suppliers.forEach((supplier) => {
+
       const locations = supplier.productionSites.map((p) => {
         let city = escapeLatexSpecialCharacters(p.city)
         let country = escapeLatexSpecialCharacters(p.country)
@@ -278,8 +290,10 @@ function construct_pdf(companyName, date, suppliers){
         `;
 
       risks.forEach((risk) => {
+        console.log("risk0: ", risk[0], ", score: ", risk[1])
         let risk_name = escapeLatexSpecialCharacters(risk[0])
         let risk_score = escapeLatexSpecialCharacters(risk[1])
+        console.log("risk: ", risk_name, ", score: ", risk_score)
         text += '\\risk{' + risk_name + `}{` + parseInt(risk_score).toFixed(1).toString() + '}\n';
       });
 
@@ -319,7 +333,7 @@ function construct_pdf(companyName, date, suppliers){
 
         In addition, we are offering recurrent and mandatory seminars for the employees of ` +
         supplierCompany +
-        String.raw` Based on the identified risks, the following topics are covered during
+        String.raw`. Based on the identified risks, the following topics are covered during
         the seminars:
         \begin{itemize}
             \item Prevention of Child Labor and Human Trafficking
