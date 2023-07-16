@@ -15,6 +15,7 @@ const customerSchema = new Schema({
   showOnMarketplace: { type: Boolean },
   image: String,
   description: String,
+  score: Number,
   riskAnalysis: {
     type: [
       {
