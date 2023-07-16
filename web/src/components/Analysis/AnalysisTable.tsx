@@ -37,7 +37,7 @@ export function AnalysisTable({riskAnalysis}: {riskAnalysis: any}) {
               <TableCell align="right">
                 <a href={API_URL + "/" + row.path}>
                   <img
-                    src={"../../../public/pdf.png"}
+                    src={"/pdf.png"}
                     className="h-8 w-8 ml-auto cursor-pointer"
                   />
                 </a>

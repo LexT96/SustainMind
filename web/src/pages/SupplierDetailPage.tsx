@@ -4,65 +4,9 @@ import { Avatar, Box, Card, CardContent, Divider, Grid, Stack, Typography } from
 import { ProductScore } from "../components/Products/ProductScore";
 import { SupplierRisk } from "../components/Suppliers/SupplierRisk";
 import { useCustomerQuery } from "../react-query/customerQueries";
+import PlaceIcon from '@mui/icons-material/Place';
 import Prevention from "../components/Suppliers/Prevention"
-
-
-const risks = [
-  {
-    _id: "1",
-    name: "Child Labor",
-    score: 5.6,
-    explanation: "This is the child labor explanation",
-  },
-  {
-    _id: "2",
-    name: "Modern Slavery",
-    score: 4.816167,
-    explanation: "This is the modern slavery explanation",
-  },
-  {
-    _id: "3",
-    name: "No Freedom of Association",
-    score: 9.61,
-    explanation: "This is an explanation",
-  },
-  {
-    _id: "4",
-    name: "Poor Labor Rights & Work Safety",
-    score: 8.44,
-    explanation: "This is an explanation",
-  },
-  {
-    _id: "5",
-    name: "Discrimination",
-    score: 9.79,
-    explanation: "This is an explanation",
-  },
-  {
-    _id: "6",
-    name: "Waste Water Pollution",
-    score: 10,
-    explanation: "This is an explanation",
-  },
-  {
-    _id: "7",
-    name: "Poor Air Quality",
-    score: 8.56,
-    explanation: "This is an explanation",
-  },
-  {
-    _id: "8",
-    name: "Inadequate Waste Disposal",
-    score: 8.85,
-    explanation: "This is an explanation",
-  },
-  {
-    _id: "9",
-    name: "Release of Heavy Metals",
-    score: 7.72,
-    explanation: "This is an explanation",
-  },
-];
+import { ReactElement, JSXElementConstructor, ReactFragment, ReactPortal } from "react";
 
 export const SupplierDetailPage = () => {
     const { id } = useParams();
@@ -77,7 +21,6 @@ export const SupplierDetailPage = () => {
                 sx={{
                   height: 200,
                   width: 200,
-                  border: "1px solid black",
                   mr: 7,
                 }}
               />
@@ -87,6 +30,15 @@ export const SupplierDetailPage = () => {
                 </Typography>
                 <ProductScore score={supplier.score} />
                 <Typography>{supplier.description}</Typography>
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <PlaceIcon sx={{ width: 20, height: 20 }} />
+                  <Typography className="italic" variant="body2">
+                    Production Site Locations:
+                  {supplier.productionSites.map((site: any, index: any) => (
+                    <span> {site.city}, {site.country}{index !== supplier.productionSites.length - 1 ? "; " : ""}</span>
+                  ))}
+                  </Typography>
+                </Box>
               </Box>
             </Stack>
             <Typography variant="h5" sx={{ fontWeight: "bold", mt: 5 }}>

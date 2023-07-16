@@ -19,16 +19,20 @@ export const AnalysisPage = () => {
   const {mutate: newRiskAnalysisMutate, isLoading: creatingPdf } = useCreateNewRiskAnalysisMutation(user?.unsafeMetadata?.customerId as string ?? "649424265080088e66c99bce");
     return (
       <PageLayout>
-        <div className="flex justify-between">
-          <Box className="w-60 space-y-2" sx={{ mb: 6 }}>
-            <Typography variant="h5">Risks</Typography>
-            <ProductScore score={mockData.score} />
-            <Typography>
+        <img src="/score_graphics.png" alt="ESG Score Image" style={{width: '300px', margin: '0 auto', paddingTop: '30px'}}/>
+        <Typography variant="h6" align="center" style={{margin: '0', padding: '0'}}>7.5/10.0</Typography>
+        <Typography align="center" style={{margin: '0', padding: '0'}}>Your Overall ESG Score</Typography>
+
+        <div className="flex justify-between" style={{marginTop: '80px', marginBottom: '0px'}}>
+          <Box className="w-200 space-y-2" sx={{ mb: 3 }}>
+            <Typography variant="h5">Risk Analysis</Typography>
+            {/* <ProductScore score={mockData.score} /> */}
+            {/*<Typography>
               Last risk analysis:{" "}
               {dayjs(customer?.riskAnalysis?.slice(-1)[0]?.date).format(
                 "DD.MM.YYYY"
               )}
-            </Typography>
+              </Typography>*/}
           </Box>
           <div>
             <Button
@@ -43,6 +47,7 @@ export const AnalysisPage = () => {
             </Button>
           </div>
         </div>
+
         {customer?.riskAnalysis && (
           <AnalysisTable riskAnalysis={customer.riskAnalysis} />
         )}

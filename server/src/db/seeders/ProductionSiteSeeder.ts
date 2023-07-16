@@ -1,3 +1,4 @@
+import { ObjectId } from "mongodb";
 import { Customer } from "../../models/customer.js";
 import { ProductionSite } from "../../models/productionSite.js";
 import { randCompanyName } from '@ngneat/falso';
@@ -42,30 +43,85 @@ const productionSites: any = [
   },
 ];
 
+const productionSiteNames: any = [
+  "Bavarian Craftsmanship Facility", "Rheinland Manufacturing", "Brandenburg Production Center"
+]
+
 const generateProductionSites = async () => {
     const companies = await Customer.find({});
     return await Promise.all(
       companies.map(async (company) => {
-        const createdSites: any = [];
-        await Promise.all(
-          productionSites.map(async (site: any) => {
-            site.company = company._id;
-            const randomLocation =
-              locations[Math.floor(Math.random() * locations.length)];
-            const randomname = randCompanyName();
+        if(company._id.equals(new ObjectId("7a26d68b1230b1e9b6543210")) || company._id.equals(new ObjectId("9f85d32a129040f9b2509798")) || company._id.equals(new ObjectId("9c35d78e1341c2f0b7976422")) || company._id.equals(new ObjectId("8853d75a927858f9c3409059"))){
+          let site = productionSites[0];
+          site.company = company._id;
+          let ps_location = {}
+          if(company._id.equals(new ObjectId("7a26d68b1230b1e9b6543210"))){
+            // Best Shirts India
+            ps_location = {
+              country: "India",
+              city: "Mumbai",
+            };
+          }else if (company._id.equals(new ObjectId("9f85d32a129040f9b2509798"))){
+            // Twists and Ties
+            ps_location = {
+              country: "London",
+              city: "United Kingdom",
+            };
+          }else if (company._id.equals(new ObjectId("9c35d78e1341c2f0b7976422"))){
+            // Premium Shirts Turkey
+            ps_location = {
+              country: "Turkey",
+              city: "Istanbul",
+            };
+          }else{
+            // Shirts of Tomorrow
+            ps_location = {
+              country: "Bangladesh",
+              city: "Dhaka",
+            };
+          }
+          const ps_name = randCompanyName();
+
+          await new Promise(async (resolve, reject) => {
             const newSite = await ProductionSite.create({
               ...site,
-              ...randomLocation,
-              name: randomname,
-              description: `Description of ${randomname}`,
+              ...ps_location,
+              name: ps_name,
+              description: `Description of ${ps_name}`,
             });
-            await Customer.findByIdAndUpdate(
+
+            const updatedCompany = await Customer.findByIdAndUpdate(
               company._id,
               { $push: { productionSites: newSite._id } },
               { new: true }
             );
-          })
-        );
+
+            if (updatedCompany) {
+              resolve(updatedCompany);
+            } else {
+              reject(new Error("Company not found"));
+            }
+          });
+        }else{
+          await Promise.all(
+            productionSites.map(async (site: any, index: any) => {
+              site.company = company._id;
+              const ps_location = locations[Math.floor(Math.random() * locations.length)];
+              const ps_name = productionSiteNames[index];
+              const newSite = await ProductionSite.create({
+                ...site,
+                ...ps_location,
+                name: ps_name,
+                description: `Description of ${ps_name}`,
+              });
+              await Customer.findByIdAndUpdate(
+                company._id,
+                { $push: { productionSites: newSite._id } },
+                { new: true }
+              );
+            })
+          );
+        }
       })
     );
 }
