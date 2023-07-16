@@ -2,12 +2,12 @@ import mongoose, { ObjectId } from "mongoose";
 import { API_URL } from "../config";
 
 export const getSuppliers = async () => {
-  const response = await fetch(`${API_URL}/suppliers`);
+  const response = await fetch(`${API_URL}/supplier`);
   return await response.json();
 };
 
 export const getSupplierById = async (id: string) => {
-  const response = await fetch(`${API_URL}/suppliers/${id}`);
+  const response = await fetch(`${API_URL}/supplier/${id}`);
   return await response.json();
 };
 
@@ -24,7 +24,7 @@ export const addNewSupplier = async (
     revenue,
   };
 
-  const response = await fetch(`${API_URL}/suppliers`, {
+  const response = await fetch(`${API_URL}/supplier`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -48,7 +48,7 @@ export const updateSupplier = async (
     contractVolume,
     revenue,
   };
-  const response = await fetch(`${API_URL}/suppliers/${id}`, {
+  const response = await fetch(`${API_URL}/supplier/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -59,7 +59,7 @@ export const updateSupplier = async (
 };
 
 export const deleteSupplier = async (id: string) => {
-  const response = await fetch(`${API_URL}/suppliers/${id}`, {
+  const response = await fetch(`${API_URL}/supplier/${id}`, {
     method: "DELETE",
   });
   return await response.json();
@@ -69,7 +69,7 @@ export const calculateNegotiationPowerWithOwnContractVolume = async (
   id: string
 ) => {
   const response = await fetch(
-    `${API_URL}/suppliers/${id}/calculateNegotiationPowerWithOwnContractVolume`
+    `${API_URL}/supplier/calculateNegotiationPowerWithOwnContractVolume/${id}`
   );
   return await response.json();
 };
@@ -78,7 +78,7 @@ export const calculateNegotiationPowerWithTotalContractVolume = async (
   id: string
 ) => {
   const response = await fetch(
-    `${API_URL}/suppliers/${id}/calculateNegotiationPowerWithTotalContractVolume`
+    `${API_URL}/supplier/calculateNegotiationPowerWithTotalContractVolume/${id}`
   );
   return await response.json();
 };

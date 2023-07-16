@@ -5,9 +5,10 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import TextField from '@mui/material/TextField';
-import { Searchbar } from '../Searchbar';
+import Autocomplete from '@mui/material/Autocomplete';
+import { getAllSuppliersForMarketplace } from '../../api/customerApi';
 
-const AddSupplierButton = ({suppliers}: any) => {
+const AddSupplierButton = ({ suppliers }: any) => {
   const [open, setOpen] = useState(false);
   const [supplierName, setSupplierName] = useState('');
   const [contractVolume, setContractVolume] = useState('');
@@ -28,21 +29,9 @@ const AddSupplierButton = ({suppliers}: any) => {
     setOpen(false);
   };
 
-  const handleSupplierNameChange = (value: string) => {
-    setSupplierName(value);
-  };
-
-  const performSearch = (query: string) => {
-    // Simulating a backend search
-    // Replace this code with your actual backend API call
-    // Here, we are using a setTimeout to simulate an asynchronous API call
-    setTimeout(() => {
-      // Simulated search results
-      const results: string[] = ['Supplier A', 'Supplier B', 'Supplier C'].filter(supplier =>
-        supplier.toLowerCase().includes(query.toLowerCase())
-      );
-      setSearchResults(results);
-    }, 300);
+  const handleSupplierNameChange = (event: ChangeEvent<{}>, value: string | null) => {
+    setSupplierName(value || '');
+    performSearch(value || '');
   };
 
   const handleContractVolumeChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -53,6 +42,13 @@ const AddSupplierButton = ({suppliers}: any) => {
     } else {
       setContractVolumeError('Please enter a value greater than zero.');
     }
+  };
+
+  const performSearch = async (query: string) => {
+    const possibleSuppliers = await getAllSuppliersForMarketplace();
+    const companyNames = possibleSuppliers.map((supplier: any) => supplier.companyName);
+    console.log(possibleSuppliers);
+    setSearchResults(companyNames);
   };
 
   useEffect(() => {
@@ -71,14 +67,18 @@ const AddSupplierButton = ({suppliers}: any) => {
       </Button>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Add Supplier</DialogTitle>
-        <DialogContent sx={{minWidth: 300}}> 
-          <Searchbar
-            sx={{width: "100%"}}
-            label={"Supplier"}
-            options={suppliers.map((s: any) => s.companyName)}
-            onInputChange={(event: Event, value: string) => {
-              handleSupplierNameChange(value);
-            }}
+        <DialogContent sx={{ minWidth: 300 }}>
+          <Autocomplete
+            sx={{ width: '100%' }}
+            options={[...suppliers.map((s: any) => s.companyName), ...searchResults]}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                label="Supplier"
+                onFocus={() => performSearch('')}
+              />
+            )}
+            onInputChange={handleSupplierNameChange}
           />
           <TextField
             margin="dense"
@@ -88,14 +88,9 @@ const AddSupplierButton = ({suppliers}: any) => {
             value={contractVolume}
             onChange={handleContractVolumeChange}
             fullWidth
-            error={contractVolumeError !== ""}
+            error={contractVolumeError !== ''}
             helperText={contractVolumeError}
           />
-          <ul>
-            {searchResults.map((result) => (
-              <li key={result}>{result}</li>
-            ))}
-          </ul>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
