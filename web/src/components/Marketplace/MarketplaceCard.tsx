@@ -36,16 +36,21 @@ export const MarketplaceCard = ({supplier, forMarketplace=true}: any) => {
           </Box>
           <ProductScore score={supplier.score} />
           <Stack direction="row" spacing={1} sx={{ mt: 1 }}>
-            {supplier.productCategories && supplier.productCategories.map((category: any) => (
-              <ProductCategory category={category.name} />
-            ))}
+            {supplier.productCategories &&
+              supplier.productCategories.map((category: any) => (
+                <ProductCategory category={category.name} />
+              ))}
           </Stack>
         </CardContent>
         <Divider />
         {forMarketplace && (
           <>
             <CardContent>
-              <Typography variant="body2">{supplier.description}</Typography>
+              <Typography variant="body2">
+                {supplier.description.length >= 350
+                  ? supplier.description.substring(0, 350) + "..."
+                  : supplier.description}
+              </Typography>
             </CardContent>
             <Divider />
           </>
