@@ -131,7 +131,7 @@ Database: MongoDB
 - Backend: Render
 - Database: MongoDB Atlas
 
-<img style="mx: auto" alt="Infrastucture" src="./pitch/infra.png" width="600" height="800" />
+<img style="mx: auto" alt="Infrastucture" src="./pitch/infra.png" width="650" height="800" />
 
 
 ### Deployment
