@@ -47,14 +47,12 @@ Our team, consisting of students from various disciplines, was excited to take o
 
 A lot of companies currently use excel tables to identify risks and to manage prevention measures, which is very time consuming and error prone. Existing software solutions for supply chain compliance are often only targeted towards larger companies. Our software, on the other hand, also targets medium sized companies. Furthermore, we are the only company that allows collaboration with other companies who have the same suppliers to jointly conduct prevention measures and to share costs. We furthermore generate sustainability certificates to prove supply chain sustainability to customers.
 
-| | SustainMind |  Excel Table  | Compliance Solutions | EcoVadis | Workiva | Risk Cloud ESG software | AuditBoard | 
-|:-----||:-----|:--------:|------:| ------:| ------:| ------:| ------:|
-|Automated Reporting|  yes   |no | yes |yes| yes | yes | yes |
-|Own Risk Analysis  |  yes   |  yes  |   yes | yes |yes | yes|yes |
-| Supplier Risk Analysis | yes   | yes|    yes |yes | no |no | no|
-| Targeted towards|  Meidum sized and large companies   |Meidum sized and large companies | only large corporations  |only large corporations | only large corporations  | only large corporations  | only large corporations  |
-|Collaboration possible|  yes  |no | no |no| no | no | no |
-|  Sustainability certificates|  yes   |no | no |no| no | no | no |
+| Value Propositions | Explanation     | 
+| :-------- | :------- |
+| Save Time | string | 
+| Reduce Legal Costs | string | 
+| Avoid Penalties | string | 
+| Clear ToDos, Less Uncertainty | string | 
 
 ## Pricing
 
