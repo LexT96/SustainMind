@@ -49,10 +49,13 @@ A lot of companies currently use excel tables to identify risks and to manage pr
 
 |  | SustainMind     |  Excel Table| Compliance Solutions | EcoVadis | Workive | Risk Cloud ESG software |AutidBoard | 
 | :-------- | :------- | :------- |  :------- | :------- | :------- | :------- | :------- |
-| Automated Reporting | string | |  |  |  |  |  | 
-| Own Risk Analysis| string | |  |  |  |  |  | 
-| Supplier Risk Analysis| string | |  |  |  |  |  | 
-| CTargeted towards | string | |  |  |  |  |  | 
+| Automated Reporting | yes | no| yes  | yes | yes | yes | yes | 
+| Own Risk Analysis| yes |yes | yes | yes | yes |  yes|  yes| 
+| Supplier Risk Analysis | yes |yes |yes  | yes  | no |  no| no | 
+| Targeted towards | Meidum sized and large companies  |Meidum sized and large companies  | only large corporations | only large corporations |only large corporations|  only large corporations| only large corporations | 
+| Collaboration possible | yes |no |no  | no  | no |  no| no | 
+| Sustainability certificates | yes |no |no  | no  | no |  no| no | 
+
 
 ## Pricing
 
