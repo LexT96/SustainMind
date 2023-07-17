@@ -12,16 +12,14 @@ export const getSupplierById = async (id: string) => {
 };
 
 export const addNewSupplier = async (
-  idCorporation: ObjectId,
-  idSupplier: ObjectId,
-  contractVolume: number,
-  revenue: number
+  idCorporation: string,
+  idSupplier: string,
+  contractVolume: number
 ) => {
   const requestBody = {
     idCorporation,
     idSupplier,
     contractVolume,
-    revenue,
   };
 
   const response = await fetch(`${API_URL}/supplier`, {

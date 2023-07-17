@@ -7,6 +7,8 @@ import DialogActions from '@mui/material/DialogActions';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { getAllSuppliersForMarketplace } from '../../api/customerApi';
+import { useUser } from '@clerk/clerk-react';
+import { addNewSupplier } from '../../api/supplierApi';
 
 const AddSupplierButton = ({ suppliers }: any) => {
   const [open, setOpen] = useState(false);
@@ -14,6 +16,7 @@ const AddSupplierButton = ({ suppliers }: any) => {
   const [contractVolume, setContractVolume] = useState('');
   const [contractVolumeError, setContractVolumeError] = useState('');
   const [searchResults, setSearchResults] = useState<string[]>([]);
+  const {user} = useUser();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -23,15 +26,24 @@ const AddSupplierButton = ({ suppliers }: any) => {
     setOpen(false);
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
+    const companyId = user!.unsafeMetadata!.customerId  as string
+    const suppliers = await getAllSuppliersForMarketplace();
+    const selectedSupplier = suppliers.find((supplier: { companyName: string; }) => supplier.companyName === supplierName);
+    const idSupplier = selectedSupplier._id;
+  
+    const newSupplier = await addNewSupplier(companyId, idSupplier, parseInt(contractVolume));
+
+    console.log(newSupplier);
     console.log('Supplier Name:', supplierName);
     console.log('Contract Volume:', contractVolume);
     setOpen(false);
   };
 
-  const handleSupplierNameChange = (event: ChangeEvent<{}>, value: string | null) => {
+  const handleSupplierNameChange = (event: ChangeEvent<{}>, value: string | null) => {    
     setSupplierName(value || '');
     performSearch(value || '');
+
   };
 
   const handleContractVolumeChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -46,10 +58,17 @@ const AddSupplierButton = ({ suppliers }: any) => {
 
   const performSearch = async (query: string) => {
     const possibleSuppliers = await getAllSuppliersForMarketplace();
-    const companyNames = possibleSuppliers.map((supplier: any) => supplier.companyName);
-    console.log(possibleSuppliers);
-    setSearchResults(companyNames);
-  };
+    const filteredSuppliers = possibleSuppliers.filter(
+      (supplier: any) => supplier.companyName.toLowerCase().includes(query.toLowerCase())
+    );
+  
+    const existingSupplierNames = suppliers.map((s: any) => s.companyName);
+    const uniqueCompanyNames = filteredSuppliers
+      .filter((supplier: any) => !existingSupplierNames.includes(supplier.companyName))
+      .map((supplier: any) => supplier.companyName);
+  
+    setSearchResults(uniqueCompanyNames);
+  };  
 
   useEffect(() => {
     if (!open) {

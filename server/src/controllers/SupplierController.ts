@@ -23,11 +23,13 @@ export class SupplierController {
 
   public addNewSupplier = async (req: Request, res: Response) => {
     const newSupplier = new IsSupplier(req.body);
+    console.log(newSupplier);
     if (!newSupplier) {
       res.status(400).json({ error: "Please provide Supplier" });
       return;
     }
     await newSupplier.save();
+    res.status(201).json("New Supplier was saved successfully");
   };
 
   public deleteSupplier = async (req: Request, res: Response) => {
