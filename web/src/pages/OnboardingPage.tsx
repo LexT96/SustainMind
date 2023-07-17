@@ -35,7 +35,7 @@ export const OnboardingPage = () => {
               onboardingCompleted: true,
             },
           });
-          navigate("/");          
+          navigate("/home");          
         } catch (err) {
           console.error(err);
         }

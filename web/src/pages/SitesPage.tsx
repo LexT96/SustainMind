@@ -22,8 +22,6 @@ export const SitesPage = () => {
     }, [isLoading])
     return (
       <PageLayout>
-        {(productionSites?.length ?? 0 > 0) && matchingSites && (
-          <>
             <Stack direction="row" spacing={3} alignItems={"center"}>
               <Searchbar
                 sx={{ width: "100%" }}
@@ -45,7 +43,8 @@ export const SitesPage = () => {
                 </Button>
               </Box>
             </Stack>
-            <p className="mb-2">{matchingSites.length} Results</p>
+            <p className="mb-2">{matchingSites?.length ?? 0} Results</p>
+            {(productionSites?.length > 0) && matchingSites && (
             <Grid container rowSpacing={3} columnSpacing={3}>
               {matchingSites.map((site: any) => (
                 <Grid className="sm:block" item xs={12} sm={6} md={4}>
@@ -53,7 +52,6 @@ export const SitesPage = () => {
                 </Grid>
               ))}
             </Grid>
-          </>
         )}
       </PageLayout>
     );
