@@ -37,10 +37,10 @@ Our team, consisting of students from various disciplines, was excited to take o
 
 | Value Propositions | Explanation     | 
 | :-------- | :------- |
-| Save Time | string | 
-| Reduce Legal Costs | string | 
-| Avoid Penalties | string | 
-| Clear ToDos, Less Uncertainty | string | 
+| Save Time | Juggle no more with daunting heaps of data from countless suppliers. Our solution does the heavy lifting for you, streamlining collection and analysis, liberating you from time-consuming processes, and freeing up countless hours. Now you can focus on what really matters: scaling your business and driving innovation.| 
+| Reduce Legal Costs | Why let avoidable legal costs eat into your profits? Our tool empowers you to slash these expenditures. We equip you with the strategies and resources needed to sidestep potential legal landmines, ensuring a financially healthy business future. | 
+| Avoid Penalties | The sting of non-compliance with laws like LkSG can be brutal, with penalties reaching an eye-watering 8 million € or 2% of yearly gross income. But fear no more! Our tool ensures your business practices stay within the legal bounds, thereby saving you from potential financial catastrophe. | 
+| Clear ToDos, Less Uncertainty | Say goodbye to tedious training sessions and laborious documentation. Our tool is the epitome of user-friendliness, offering clear, intuitive action points to navigate through your ESG commitments. No confusion, no uncertainties, only crystal-clear direction to steer your enterprise towards sustainable growth. | 
 ## Prototype
 
 [Link to prototype](https://www.sustainmind.de/)
