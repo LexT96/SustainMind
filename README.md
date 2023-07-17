@@ -6,9 +6,7 @@
 We develop a cloud-based supply chain software that enables corporations to analyze their supply chains, to identify risks, and to jointly conduct prevention measures
 ([Link to landingpage](https://www.sustainmind.de/)).
 
-![Logo](https://www.sustainmind.de/logo.png)
-
-<img src="https://www.sustainmind.de/logo.png" width="200" height="200" />
+<img src="https://www.sustainmind.de/logo.png" width="300" height="300" />
 
 ## Deployment Status
 [![Netlify Status](https://api.netlify.com/api/v1/badges/26994758-d413-4aaa-8b10-7467c7c0b8fb/deploy-status)](https://app.netlify.com/sites/grand-fenglisu-52932d/deploys)
