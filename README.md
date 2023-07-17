@@ -141,7 +141,7 @@ Pushing changes in the /server folder on the main branch will lead to a deployme
 We use Clerk for authentication & user management
 
 ## Database Schema
-tbd
+![DatabaseSchema](./pitch/database.png)
 
 ## Appendix
 
