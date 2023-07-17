@@ -8,6 +8,8 @@ We develop a cloud-based supply chain software that enables corporations to anal
 
 ![Logo](https://www.sustainmind.de/logo.png)
 
+<img src="[Img](https://www.sustainmind.de/logo.png)" width="200" height="200" />
+
 ## Deployment Status
 [![Netlify Status](https://api.netlify.com/api/v1/badges/26994758-d413-4aaa-8b10-7467c7c0b8fb/deploy-status)](https://app.netlify.com/sites/grand-fenglisu-52932d/deploys)
 
