@@ -131,8 +131,7 @@ Database: MongoDB
 - Backend: Render
 - Database: MongoDB Atlas
 
-![Infrastucture](./pitch/infra.png)
-<img style="mx: auto" alt="Infrastucture" src="./pitch/infra.png" width="600" height="600" />
+<img style="mx: auto" alt="Infrastucture" src="./pitch/infra.png" width="600" height="800" />
 
 
 ### Deployment
