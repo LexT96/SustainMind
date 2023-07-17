@@ -132,6 +132,8 @@ Database: MongoDB
 - Backend: Render
 - Database: MongoDB Atlas
 
+### Deployment
+
 Pushing changes in the /web folder on the main branch will lead to a deployment on www.SustainMind.de (running on Netlify)
 
 Pushing changes in the /server folder on the main branch will lead to a deployment on https://sustainmind.onrender.com/ (running on Render)
