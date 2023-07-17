@@ -9,14 +9,15 @@ We develop a cloud-based supply chain software that enables corporations to anal
 ## Deployment Status
 [![Netlify Status](https://api.netlify.com/api/v1/badges/26994758-d413-4aaa-8b10-7467c7c0b8fb/deploy-status)](https://app.netlify.com/sites/grand-fenglisu-52932d/deploys)
 
-
-## Pitch Deck
-
-[Link to Pitch Deck](https://app.pitch.com/app/presentation/a3e4d2b3-91b3-4d28-b7ad-3c9a854581c0/04592aaf-1616-4c72-b173-320963c01031)
-## Explainer Video
+## Marketing Video
 
 [![Link to explainer video](https://img.youtube.com/vi/ZDqw2COKLmg/0.jpg
 )](https://www.youtube.com/watch?v=ZDqw2COKLmg)
+
+## Demo Video
+
+[![Link to functionality video](https://img.youtube.com/vi/CXnRSlJv0Ls/0.jpg
+)](https://www.youtube.com/watch?v=CXnRSlJv0Ls)
 
 
 ## Pitch Deck
