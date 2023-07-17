@@ -1,72 +1,21 @@
 
 # SustainMind
 
-We develop a cloud-based supply chain software that enables corporations to analyze their supply chains, to identify risks, and to jointly conduct prevention measures
-([Link to landingpage](https://www.sustainmind.de/)).
-
-![Logo](https://www.sustainmind.de/logo.png)
-
-
-## Pitch Deck
-
-[Link to Pitch Deck](https://app.pitch.com/app/presentation/a3e4d2b3-91b3-4d28-b7ad-3c9a854581c0/04592aaf-1616-4c72-b173-320963c01031)
-## Explainer Video
-
-
-[Link to explainer video](https://www.youtube.com/watch?v=ZDqw2COKLmg&t=2s&ab_channel=SustainMind)
-
-
-
-## Pitch Deck
-
-[Link to Pitch Deck](https://app.pitch.com/app/presentation/a3e4d2b3-91b3-4d28-b7ad-3c9a854581c0/04592aaf-1616-4c72-b173-320963c01031)
-## Prototype
-
-[Link to prototype](https://www.sustainmind.de/)
-## Background
-
-In the summer semester of 2023, our team participated in a significant challenge aimed at addressing a pressing issue in the business world. The challenge focused on empowering small and middle-sized enterprises (SMEs) to navigate the complex landscape of Environmental, Social, and Governance (ESG) regulations. This challenge presented an opportunity to develop a solution that could revolutionize how SMEs approach sustainability and responsible business practices.
-
-Our team, consisting of students from various disciplines, was excited to take on this task and create a meaningful impact. We named our software solution "SustainMind" - a cloud-based supply chain software designed to help corporations analyze their supply chains, identify risks, and collaborate on implementing ESG compliance measures.
-## What added value do we deliver?
-
-| Value Propositions | Explanation     | 
-| :-------- | :------- |
-| Save Time | string | 
-| Reduce Legal Costs | string | 
-| Avoid Penalties | string | 
-| Clear ToDos, Less Uncertainty | string | 
-## Prototype
-
-[Link to prototype](https://www.sustainmind.de/)
-
-## Our Solution: Short explantion Video for the prototype
-
-[Link to explantionvideo](https://www.youtube.com/watch?v=CXnRSlJv0Ls&t=8s&ab_channel=SustainMind)
-## Competitor Analysis
-
-A lot of companies currently use excel tables to identify risks and to manage prevention measures, which is very time consuming and error prone. Existing software solutions for supply chain compliance are often only targeted towards larger companies. Our software, on the other hand, also targets medium sized companies. Furthermore, we are the only company that allows collaboration with other companies who have the same suppliers to jointly conduct prevention measures and to share costs. We furthermore generate sustainability certificates to prove supply chain sustainability to customers.
-
-|  | SustainMind     |  Excel Table| Compliance Solutions | EcoVadis | Workive | Risk Cloud ESG software |AutidBoard | 
-| :-------- | :------- | :------- |  :------- | :------- | :------- | :------- | :------- |
-| Automated Reporting | yes | no| yes  | yes | yes | yes | yes | 
-| Own Risk Analysis| yes |yes | yes | yes | yes |  yes|  yes| 
-| Supplier Risk Analysis | yes |yes |yes  | yes  | no |  no| no | 
-| Targeted towards | Meidum sized and large companies  |Meidum sized and large companies  | only large corporations | only large corporations |only large corporations|  only large corporations| only large corporations | 
-| Collaboration possible | yes |no |no  | no  | no |  no| no | 
-| Sustainability certificates | yes |no |no  | no  | no |  no| no | 
-
-
-## Pricing
-
-Our Sustainmind pricing model offers flexibility and scalability to meet the different needs of companies. The basic fee is 40,000 euros and already includes 100 suppliers. In addition, we offer a discount to small companies to help them get started.For an additional 50 suppliers beyond the included 100, there is a fee of 15,000 euros. This allows companies to expand their supplier network and extend a comprehensive risk analysis to a larger number of partners. In addition, we offer the option of an on-site audit, where we review various items to ensure that all relevant specifications and standards are met. We charge a separate fee of 500 euros for this audit. It ensures that companies receive a thorough review and can further strengthen their compliance efforts.
-## Settings
-
-
-
 [![Netlify Status](https://api.netlify.com/api/v1/badges/26994758-d413-4aaa-8b10-7467c7c0b8fb/deploy-status)](https://app.netlify.com/sites/grand-fenglisu-52932d/deploys)
 
-## Run Locally
+SustainMind is a cloud-based supply chain due diligence software that enables corporations to analyze their supply chains, to identify risks, and to jointly conduct prevention measures. The live built can be visited at: [https://www.sustainmind.de/](https://www.sustainmind.de/).
+
+<img src="https://www.sustainmind.de/logo.png" alt="SustainMind Logo" style="width:100px;"/>
+
+# Background
+
+The German Supply Chain Due Diligence Act (Lieferkettensorgfaltspflichtengesetz) commits large corporations to prevent human right violations and environmental pollution in their supply chains, which includes identifying risks and conducting prevention programs for all their direct suppliers. These steps take a lot of time and need to be documented carefully. Violations can be punished with fines of up to 8 million euros or 2% of global revenue.
+
+We have developed an all-in-one supply chain software that helps corporations affected by the German Supply Chain Due Diligence Act to comply. Our software reduces costs and temporal expenditure as well as the likelihood of fines.
+
+Our product video can be found [here](https://www.youtube.com/watch?v=ZDqw2COKLmg).
+
+# Run Locally
 
 Clone the project
 
@@ -80,7 +29,7 @@ Go to the project directory
   cd SustainMind
 ```
 
-### Server
+## Server
 
 Navigate to the directory
 
@@ -96,13 +45,19 @@ Install dependencies
   yarn
 ```
 
+Seed sample data into database:
+
+```bash
+  yarn seed
+```
+
 Start the server
 
 ```bash
   yarn dev
 ```
 
-### Frontend
+## Frontend
 
 Navigate to the directory
 
@@ -124,7 +79,29 @@ Start the server
   yarn dev
 ```
 
-## Infrastructure
+# Website Structure
+
+Our website consists of the following pages:
+- Landing Page (path: "."): The landing page informs new users about the advantages of our software and convinces them to register
+- Dashboard (path: "/home"): Users see the an overview of the most relevant SustainMind features: My Products, My Suppliers, Supplier Marketplace, Risk Analysis, Production Sites
+- Products (path: "/products"): Users can view their own products with respective ESG scores. The scores are calculated based on the ESG scores of all suppliers involved in the supply chain. In future, our users will be able to generate QR codes to prove the sustainability of their products to their customers.
+- Suppliers (path: "/suppliers"): All suppliers of the current user are listed. After registration, a company has zero suppliers and adds suppliers from the SustainMind database with the "Add Supplier" button. In future, the list of suppliers can be automatically imported from ERP systems like SAP.
+- Supplier Details (path: "/suppliers/<SUPPLIER_ID>"): Allows the risk scores and suggested prevention measures for a specific supplier
+- Marketplace (path: "/marketplace"): The supplier marketplace lists all suppliers registered on our platform. It can be used by corporations to find new suppliers that value sustainability.
+- Production Sites (path: "/sites"): Allows to add and view production sites. Information about production sites is required for the automatic risk analysis.
+- Risk Analysis (path: "/analysis"): Corporations can see their own ESG score and document the identified risks and conducted prevention measures.
+
+# Features
+Feature | Implemented
+:------------ | :-------------
+Supplier Marketplace | :heavy_check_mark:
+Supplier Data Collection | :heavy_check_mark:
+Risk Analysis | :heavy_check_mark:
+Suggest Prevention Measures | :heavy_check_mark:
+Conduct Prevention Measures | In Progress
+Automatic Reporting | :heavy_check_mark:
+
+# Infrastructure
 Pushing changes in the /web folder on the main branch will lead to a deployment on www.SustainMind.de (running on Netlify)
 
 Pushing changes in the /server folder on the main branch will lead to a deployment on https://sustainmind.onrender.com/ (running on Render)
@@ -132,14 +109,14 @@ Pushing changes in the /server folder on the main branch will lead to a deployme
 We use Clerk for authentication & user management
 
 
+# 
 
 
-
-## Appendix
+# Appendix
 
 Our Team:
 
-Florian Weißer,
+Florian Weiser,
 Thorsten Lex,
-Burhan Yesilöz und
+Burhan Yesilöz and
 Omar Metwally
