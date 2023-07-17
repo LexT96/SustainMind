@@ -1,5 +1,7 @@
 
 # SustainMind
+[![forthebadge](https://forthebadge.com/images/badges/made-with-typescript.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/powered-by-responsibility.svg)](https://forthebadge.com)
 
 We develop a cloud-based supply chain software that enables corporations to analyze their supply chains, to identify risks, and to jointly conduct prevention measures
 ([Link to landingpage](https://www.sustainmind.de/)).
