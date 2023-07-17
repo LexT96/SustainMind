@@ -17,7 +17,7 @@ export const SupplierDetailPage = () => {
           <>
             <Stack direction={{ xs: "column", sm: "row" }}>
               <Avatar
-                src={supplier.image}
+                src={"/" + supplier.image}
                 sx={{
                   height: 200,
                   width: 200,
