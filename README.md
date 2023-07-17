@@ -15,9 +15,8 @@ We develop a cloud-based supply chain software that enables corporations to anal
 [Link to Pitch Deck](https://app.pitch.com/app/presentation/a3e4d2b3-91b3-4d28-b7ad-3c9a854581c0/04592aaf-1616-4c72-b173-320963c01031)
 ## Explainer Video
 
-
-[Link to explainer video](https://www.youtube.com/watch?v=ZDqw2COKLmg&t=2s&ab_channel=SustainMind)
-
+[![Link to explainer video](https://img.youtube.com/vi/ZDqw2COKLmg/0.jpg
+)](https://www.youtube.com/watch?v=ZDqw2COKLmg)
 
 
 ## Pitch Deck
