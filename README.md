@@ -17,6 +17,9 @@ We develop a cloud-based supply chain software that enables corporations to anal
 
 
 
+## Pitch Deck
+
+[Link to Pitch Deck](https://app.pitch.com/app/presentation/a3e4d2b3-91b3-4d28-b7ad-3c9a854581c0/04592aaf-1616-4c72-b173-320963c01031)
 ## Prototype
 
 [Link to prototype](https://www.sustainmind.de/)
@@ -33,6 +36,9 @@ Our team, consisting of students from various disciplines, was excited to take o
 | Reduce Legal Costs | string | 
 | Avoid Penalties | string | 
 | Clear ToDos, Less Uncertainty | string | 
+## Prototype
+
+[Link to prototype](https://www.sustainmind.de/)
 
 ## Our Solution: Short explantion Video for the prototype
 
