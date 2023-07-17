@@ -33,7 +33,7 @@ We develop a cloud-based supply chain software that enables corporations to anal
 In the summer semester of 2023, our team participated in a significant challenge aimed at addressing a pressing issue in the business world. The challenge focused on empowering small and middle-sized enterprises (SMEs) to navigate the complex landscape of Environmental, Social, and Governance (ESG) regulations. This challenge presented an opportunity to develop a solution that could revolutionize how SMEs approach sustainability and responsible business practices.
 
 Our team, consisting of students from various disciplines, was excited to take on this task and create a meaningful impact. We named our software solution "SustainMind" - a cloud-based supply chain software designed to help corporations analyze their supply chains, identify risks, and collaborate on implementing ESG compliance measures.
-## What added value do we deliver?
+## What value do we provide for our customers?
 
 | Value Propositions | Explanation     | 
 | :-------- | :------- |
