@@ -1,5 +1,7 @@
 
 # SustainMind
+[![forthebadge](https://forthebadge.com/images/badges/made-with-typescript.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/powered-by-responsibility.svg)](https://forthebadge.com)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/26994758-d413-4aaa-8b10-7467c7c0b8fb/deploy-status)](https://app.netlify.com/sites/grand-fenglisu-52932d/deploys)
 
@@ -37,7 +39,7 @@ Navigate to the directory
   cd server
 ```
 
-Fill your credentials according to the .env.example
+Fill your credentials according to the .env
 
 Install dependencies
 
@@ -65,7 +67,7 @@ Navigate to the directory
   cd web
 ```
 
-Fill your credentials according to the .env.example
+Fill your credentials according to the .env
 
 Install dependencies
 
@@ -94,25 +96,44 @@ Our website consists of the following pages:
 # Features
 Feature | Implemented
 :------------ | :-------------
-Supplier Marketplace | :heavy_check_mark:
-Supplier Data Collection | :heavy_check_mark:
-Risk Analysis | :heavy_check_mark:
-Suggest Prevention Measures | :heavy_check_mark:
+Landing Page | ✅
+Registration System | ✅
+Dashboard | ✅
+Supplier Marketplace | ✅
+Supplier Data Collection | ✅
+Risk Analysis | ✅
+Suggest Prevention Measures | ✅
 Conduct Prevention Measures | In Progress
-Automatic Reporting | :heavy_check_mark:
+Automatic Reporting | ✅
+Multiple Logins per Company | Coming Soon
+Certificates (with QR Codes) | Coming Soon
 
 # Infrastructure
+## TechStack
+Frontend: React (Typescript)  
+Backend: Express (Node)  
+Database: MongoDB
+
+## Infrastructure
+- Frontend: Netlify
+- Backend: Render
+- Database: MongoDB Atlas
+
+<img style="mx: auto" alt="Infrastucture" src="./pitch/infra.png" width="650" height="800" />
+
+
+### Deployment
+
 Pushing changes in the /web folder on the main branch will lead to a deployment on www.SustainMind.de (running on Netlify)
 
 Pushing changes in the /server folder on the main branch will lead to a deployment on https://sustainmind.onrender.com/ (running on Render)
 
 We use Clerk for authentication & user management
 
+## Database Schema
+![DatabaseSchema](./pitch/database.png)
 
-# 
-
-
-# Appendix
+## Appendix
 
 Our Team:
 
