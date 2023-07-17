@@ -85,7 +85,7 @@ Navigate to the directory
   cd server
 ```
 
-Fill your credentials according to the .env.example
+Fill your credentials according to the .env
 
 Install dependencies
 
@@ -107,7 +107,7 @@ Navigate to the directory
   cd web
 ```
 
-Fill your credentials according to the .env.example
+Fill your credentials according to the .env
 
 Install dependencies
 
