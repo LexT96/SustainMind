@@ -132,6 +132,7 @@ Database: MongoDB
 - Database: MongoDB Atlas
 
 ![Infrastucture](./pitch/infra.png)
+<img style="mx: auto" alt="Infrastucture" src="./pitch/infra.png" width="600" height="600" />
 
 
 ### Deployment
