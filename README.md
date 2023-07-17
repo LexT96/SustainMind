@@ -45,9 +45,6 @@ Our team, consisting of students from various disciplines, was excited to take o
 
 [Link to prototype](https://www.sustainmind.de/)
 
-## Our Solution: Short explantion Video for the prototype
-
-[Link to explantionvideo](https://www.youtube.com/watch?v=CXnRSlJv0Ls&t=8s&ab_channel=SustainMind)
 ## Competitor Analysis
 
 A lot of companies currently use excel tables to identify risks and to manage prevention measures, which is very time consuming and error prone. Existing software solutions for supply chain compliance are often only targeted towards larger companies. Our software, on the other hand, also targets medium sized companies. Furthermore, we are the only company that allows collaboration with other companies who have the same suppliers to jointly conduct prevention measures and to share costs. We furthermore generate sustainability certificates to prove supply chain sustainability to customers.
