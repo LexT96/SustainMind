@@ -6,6 +6,9 @@ We develop a cloud-based supply chain software that enables corporations to anal
 
 ![Logo](https://www.sustainmind.de/logo.png)
 
+## Deployment Status
+[![Netlify Status](https://api.netlify.com/api/v1/badges/26994758-d413-4aaa-8b10-7467c7c0b8fb/deploy-status)](https://app.netlify.com/sites/grand-fenglisu-52932d/deploys)
+
 
 ## Pitch Deck
 
@@ -60,11 +63,6 @@ A lot of companies currently use excel tables to identify risks and to manage pr
 ## Pricing
 
 Our Sustainmind pricing model offers flexibility and scalability to meet the different needs of companies. The basic fee is 40,000 euros and already includes 100 suppliers. In addition, we offer a discount to small companies to help them get started.For an additional 50 suppliers beyond the included 100, there is a fee of 15,000 euros. This allows companies to expand their supplier network and extend a comprehensive risk analysis to a larger number of partners. In addition, we offer the option of an on-site audit, where we review various items to ensure that all relevant specifications and standards are met. We charge a separate fee of 500 euros for this audit. It ensures that companies receive a thorough review and can further strengthen their compliance efforts.
-## Settings
-
-
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/26994758-d413-4aaa-8b10-7467c7c0b8fb/deploy-status)](https://app.netlify.com/sites/grand-fenglisu-52932d/deploys)
 
 ## Run Locally
 
