@@ -3,11 +3,13 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-typescript.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-responsibility.svg)](https://forthebadge.com)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/26994758-d413-4aaa-8b10-7467c7c0b8fb/deploy-status)](https://app.netlify.com/sites/grand-fenglisu-52932d/deploys)
-
 SustainMind is a cloud-based supply chain due diligence software that enables corporations to analyze their supply chains, to identify risks, and to jointly conduct prevention measures. The live built can be visited at: [https://www.sustainmind.de/](https://www.sustainmind.de/).
 
-<img src="https://www.sustainmind.de/logo.png" alt="SustainMind Logo" style="width:100px;"/>
+<img src="https://www.sustainmind.de/logo.png" alt="SustainMind Logo" style="width:130px;"/>
+
+#### Deployment Status
+[![Netlify Status](https://api.netlify.com/api/v1/badges/26994758-d413-4aaa-8b10-7467c7c0b8fb/deploy-status)](https://app.netlify.com/sites/grand-fenglisu-52932d/deploys)
+
 
 # Background
 
@@ -19,6 +21,19 @@ Our product explanation video can be found here:
 
 [![Link to explainer video](https://img.youtube.com/vi/ZDqw2COKLmg/0.jpg
 )](https://www.youtube.com/watch?v=ZDqw2COKLmg)
+
+## Competitor Analysis
+
+Most companies currently use excel tables to identify risks and to manage prevention measures, which is a very time consuming procedure. Existing software solutions for supply chain compliance are often only targeted towards larger companies. Our software, on the other hand, also targets medium sized companies. Furthermore, we are the only company that allows collaboration with other companies who have the same suppliers to jointly conduct prevention measures and to share costs. We furthermore generate sustainability certificates to prove supply chain sustainability to customers.
+
+|  | SustainMind     |  Excel Table| Compliance Solutions | EcoVadis | Workive | Risk Cloud ESG software |AutidBoard | 
+| :-------- | :------- | :------- |  :------- | :------- | :------- | :------- | :------- |
+| Automated Reporting | ✅ | ❌ | ✅  | ✅ | ✅ | ✅ | ✅ | 
+| Own Risk Analysis| ✅ |✅ | ✅ | ✅ | ✅ |  ✅|  ✅| 
+| Supplier Risk Analysis | ✅ |✅ |✅  | ✅  | ❌ | ❌ | ❌ | 
+| Targeted towards | <span style="color:#0f0">Medium sized and large companies</span>  | <span style="color:#0f0">Medium sized and large companies</span>  | <span style="color:#f00">Only large corporations</span> | <span style="color:#f00">Only large corporations</span> | <span style="color:#f00">Only large corporations</span>|  <span style="color:#f00">Only large corporations</span>| <span style="color:#f00">Only large corporations</span> | 
+| Collaboration possible | ✅ |❌ |❌  | ❌  | ❌ | ❌ | ❌ | 
+| Sustainability certificates | ✅ |❌ |❌  | ❌  | ❌ | ❌ | ❌ | 
 
 # Run Locally
 
@@ -104,6 +119,8 @@ Registration System | ✅
 Dashboard | ✅
 Supplier Marketplace | ✅
 Supplier Data Collection | ✅
+Risk Score Calculation | ✅
+ESG Score Calculation | In Progress
 Risk Analysis | ✅
 Suggest Prevention Measures | ✅
 Conduct Prevention Measures | In Progress
@@ -186,13 +203,47 @@ SustainMind
 └──  README.md: technical documentation
 ```
 
-## Appendix
+# Risk Score Calculation
+
+The risk analysis combines both internal and external expertise by using publicly available indices, supplier knowledge from the SustainMind database and internal knowledge from people within customer organizations. By incorporating these perspectives, one can gain valuable insights and ensure a holistic understanding of the risks associated with the supply chain.
+
+Based on a supplier’s inventory and production countries, we use multiple indices to create a generic risk mapping. To get a comprehensive image, we combined information of the following indices:
+- The UNICEF Child Labor Dataset
+- The World Justice Project’s Rule of Law Index
+- The Walk Free Global Slavery Index
+- The Environmental Performance Index
+
+The generic risk mapping performed for each country includes the following
+risk categories, listed with their respective paragraph of the German Supply
+Chain Due Diligence Act (LkSG):
+- Child Labor (§ 2 II Nr. 1, 2 LkSG)
+- Modern Slavery (§ 2 II Nr. 3, 4 LkSG)
+- No Freedom of Association (§ 2 II Nr. 6 LkSG)
+- Poor Labor Rights and Work Safety (§ 2 II Nr. 5 LkSG)
+- Discrimination (§ 2 II Nr. 7 LkSG)
+- Waste Water Pollution (§ 2 II Nr. 9 LkSG)
+- Poor Air Quality (§ 2 II Nr. 9 LkSG)
+- Release of Heavy Metals (§ 2 III Nr. 1, 2, 3 LkSG)
+- Inadequate Waste Disposal (§ 2 III Nr. 6, 7, 8 LkSG)
+
+For each of these risks, a score between 0 and 100 is calculated. A score below 30 indicates a low risk, a score of at least 30 and below 70 a medium risk and a score of at least 70 indicates a high risk. The scores give a good first impression of the severity of each risk. To refine the identified risks, employee surveys are conducted within our customer companies, especially of the purchasing departments. 
+
+We prioritize the risks based on the refined risk scores, the potential severity and our ability to eliminate the risks, measured by our contract volume compared to a supplier’s total revenue.
+
+# ESG score calculation
+
+The ESG score of a supplier is calculated based on how well the supplier implements prevention measures and audit results.
+
+The ESG score of a corporation is calculated as the average of the risk scores of its suppliers.
+
+The ESG score of a product is calculated as the average of the risk scores of the supplier companies involved in the supply chain.
+
+# Appendix
 
 [Link to Pitch Deck](https://app.pitch.com/app/presentation/a3e4d2b3-91b3-4d28-b7ad-3c9a854581c0/04592aaf-1616-4c72-b173-320963c01031)  
-[Link to prototype](https://www.sustainmind.de/)
+[Link to Prototype](https://www.sustainmind.de/)
 
 Our Team:
-
 Florian Weiser,
 Thorsten Lex,
 Burhan Yesilöz and
