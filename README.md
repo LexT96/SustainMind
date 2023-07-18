@@ -136,6 +136,56 @@ We use Clerk for authentication & user management
 ## Database Schema
 ![DatabaseSchema](./pitch/database.png)
 
+## File Structure
+
+Our project consists of the following non-exhaustiv list of files:
+```
+SustainMind
+├── server: Contains all backend functionality
+│   ├── node_modules: Dependency libraries
+│   ├── public
+│   │   └── risk_analysis
+│   │       └── pdfs: Generated risk analysis pdf files
+│   ├── src: Backend source code
+│   │   ├── controllers: Files for database requests
+│   │   ├── db
+│   │   │   ├── esg_scoring
+│   │   │   │   ├── index_loaders: Python scripts to read indices from excel/csv files into MongoDB
+│   │   │   │   ├── countries.csv: Exported table with country indices
+│   │   │   │   └── merge_countries_with_scores.py: Merge all indices into a single MongoDB collection
+│   │   │   └── seeders: Contains files to seed test data into MongoDB
+│   │   ├── models: Files to define the MongoDB schemes
+│   │   ├── risk_analysis: Loads supplier information from the database, adds it to a LaTeX file compiles it as PDF
+│   │   ├── routes: Routes backend requests
+│   │   ├── config.ts: Database connection configuration
+│   │   └── index.ts: ???
+│   └── .env
+├── web: Contains all frontend functionality
+│   ├── node_modules: Dependency libraries
+│   ├── public: Contains frontend graphics (e.g. company logos, product images)
+│   ├── src: Frontend code
+│   │   ├── api: Communication with backend
+│   │   ├── components
+│   │   │   ├── Analysis: Risk analysis components
+│   │   │   ├── Marketplace: Supplier marketplace components
+│   │   │   ├── Navbars: Navigation bars
+│   │   │   ├── ProductionSites: Code for production site components
+│   │   │   ├── Products: Product Overview code
+│   │   │   ├── sections/landing: Landing page sections
+│   │   │   ├── Startside: Authentication page code
+│   │   │   ├── Startsides: Dashboard components
+│   │   │   └── Suppliers: Supplier overview and supplier details components
+│   │   ├── pages: Code for the pages (AnalysisPage, MarketplacePage, ...)
+│   │   ├── react-query: ???
+│   │   ├── App.css: ???
+│   │   ├── App.tsx: ???
+│   │   ├── config.ts: ???
+│   │   ├── main.tsx
+│   │   └── router.tsx: Routes user requests
+│   └── .env
+└──  README.md: technical documentation
+```
+
 ## Appendix
 
 [Link to Pitch Deck](https://app.pitch.com/app/presentation/a3e4d2b3-91b3-4d28-b7ad-3c9a854581c0/04592aaf-1616-4c72-b173-320963c01031)  
