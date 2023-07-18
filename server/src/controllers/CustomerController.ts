@@ -125,8 +125,15 @@ export class CustomerController {
   public getAllProductSitesOfSupplier = async (req: Request, res: Response) => {
     const supplierId: string = req.params.id;
     const productionSites = await ProductionSite.find({
-      company: supplierId
+      company: supplierId,
     });
+    // let productionSites = await ProductionSite.find({
+    //   company: supplierId
+    // }).populate("riskScores");
+    // productionSites = productionSites.map((p: any) => {
+    //   const averageRiskScore = p.riskScores.reduce((acc: number, curr: any) => acc + parseInt(curr.riskScore), 0) / p.riskScores.length;
+    //   return {...p.toJSON(), averageRiskScore: averageRiskScore.toFixed(0)};
+    // }); 
     // const allSuppliersOfCurrentSupplier: typeof IsSupplier[] = await IsSupplier.find({ idCorporation: supplierId });
     // // get all productionsites of suppliers of current supplier and of the current supplier
     // const productionSites = await ProductionSite.find({
