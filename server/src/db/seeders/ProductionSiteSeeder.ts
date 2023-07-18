@@ -64,8 +64,8 @@ const generateProductionSites = async () => {
           }else if (company._id.equals(new ObjectId("9f85d32a129040f9b2509798"))){
             // Twists and Ties
             ps_location = {
-              country: "London",
-              city: "United Kingdom",
+              country: "United Kingdom of Great Britain and Northern Ireland",
+              city: "London",
             };
           }else if (company._id.equals(new ObjectId("9c35d78e1341c2f0b7976422"))){
             // Premium Shirts Turkey

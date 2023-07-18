@@ -38,6 +38,8 @@ const AddSupplierButton = ({ suppliers }: any) => {
     console.log('Supplier Name:', supplierName);
     console.log('Contract Volume:', contractVolume);
     setOpen(false);
+
+    location.reload();
   };
 
   const handleSupplierNameChange = (event: ChangeEvent<{}>, value: string | null) => {    
