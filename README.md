@@ -99,6 +99,14 @@ Start the server
   yarn dev
 ```
 
+### Demo Login Data
+
+To sign in as Christina you can use the following login data
+```bash
+  e-mail: christina.mattison.ceo@gmail.com
+  password: techChallengeWin2023
+```
+
 # Website Structure
 
 Our website consists of the following pages:
