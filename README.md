@@ -78,7 +78,7 @@ Install dependencies
   yarn
 ```
 
-Seed sample data into database:
+Seed sample data into database
 
 ```bash
   yarn seed
@@ -114,7 +114,7 @@ Start the server
 
 ### Demo Login Data
 
-To sign in as Christina you can use the following login data
+To sign in as Christina, you can use the following login data
 ```bash
   e-mail: christina.mattison.ceo@gmail.com
   password: techChallengeWin2023
