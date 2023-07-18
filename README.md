@@ -183,13 +183,13 @@ SustainMind
 │   │   ├── risk_analysis: Loads supplier information from the database, adds it to a LaTeX file compiles it as PDF
 │   │   ├── routes: Routes backend requests
 │   │   ├── config.ts: Database connection configuration
-│   │   └── index.ts: ???
+│   │   └── index.ts: The entry point of our application.
 │   └── .env
 ├── web: Contains all frontend functionality
 │   ├── node_modules: Dependency libraries
 │   ├── public: Contains frontend graphics (e.g. company logos, product images)
 │   ├── src: Frontend code
-│   │   ├── api: Communication with backend
+│   │   ├── api: Saves the REST calls that we to do our backend
 │   │   ├── components
 │   │   │   ├── Analysis: Risk analysis components
 │   │   │   ├── Marketplace: Supplier marketplace components
@@ -201,11 +201,11 @@ SustainMind
 │   │   │   ├── Startsides: Dashboard components
 │   │   │   └── Suppliers: Supplier overview and supplier details components
 │   │   ├── pages: Code for the pages (AnalysisPage, MarketplacePage, ...)
-│   │   ├── react-query: ???
-│   │   ├── App.css: ???
-│   │   ├── App.tsx: ???
-│   │   ├── config.ts: ???
-│   │   ├── main.tsx
+│   │   ├── react-query: Used for interactions with our backend (allows caching, loading state & error handling)
+│   │   ├── App.css: Our core .css file
+│   │   ├── App.tsx: The entry point of our frontend (initial setup)
+│   │   ├── config.ts: Handles the configuration (pulls values from our .env file or generally handles constants)
+│   │   ├── main.tsx: Loads the react app into the HTML of our website
 │   │   └── router.tsx: Routes user requests
 │   └── .env
 └──  README.md: technical documentation
