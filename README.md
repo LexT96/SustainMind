@@ -11,6 +11,17 @@ SustainMind is a cloud-based supply chain due diligence software that enables co
 [![Netlify Status](https://api.netlify.com/api/v1/badges/26994758-d413-4aaa-8b10-7467c7c0b8fb/deploy-status)](https://app.netlify.com/sites/grand-fenglisu-52932d/deploys)
 
 
+# Table of Contents
+1. [Background](#background)
+2. [Run Locally](#run-locally)
+3. [Features](#features)
+4. [Website Structure](#website-structure)
+5. [Infrastructure](#infrastructure)
+6. [Risk Score Calculation](#risk-score-calculation)
+7. [ESG Score Calculation](#esg-score-calculation)
+8. [Appendix](#appendix)
+
+
 # Background
 
 The German Supply Chain Due Diligence Act (Lieferkettensorgfaltspflichtengesetz) commits large corporations to prevent human right violations and environmental pollution in their supply chains, which includes identifying risks and conducting prevention programs for all their direct suppliers. These steps take a lot of time and need to be documented carefully. Violations can be punished with fines of up to 8 million euros or 2% of global revenue.
@@ -34,6 +45,8 @@ Most companies currently use excel tables to identify risks and to manage preven
 | Targeted towards | <span style="color:#0f0">Medium sized and large companies</span>  | <span style="color:#0f0">Medium sized and large companies</span>  | <span style="color:#f00">Only large corporations</span> | <span style="color:#f00">Only large corporations</span> | <span style="color:#f00">Only large corporations</span>|  <span style="color:#f00">Only large corporations</span>| <span style="color:#f00">Only large corporations</span> | 
 | Collaboration possible | ✅ |❌ |❌  | ❌  | ❌ | ❌ | ❌ | 
 | Sustainability certificates | ✅ |❌ |❌  | ❌  | ❌ | ❌ | ❌ | 
+
+<div id='run-locally'/>
 
 # Run Locally
 
@@ -107,18 +120,6 @@ To sign in as Christina you can use the following login data
   password: techChallengeWin2023
 ```
 
-# Website Structure
-
-Our website consists of the following pages:
-- Landing Page (path: "."): The landing page informs new users about the advantages of our software and convinces them to register
-- Dashboard (path: "/home"): Users see the an overview of the most relevant SustainMind features: My Products, My Suppliers, Supplier Marketplace, Risk Analysis, Production Sites
-- Products (path: "/products"): Users can view their own products with respective ESG scores. The scores are calculated based on the ESG scores of all suppliers involved in the supply chain. In future, our users will be able to generate QR codes to prove the sustainability of their products to their customers.
-- Suppliers (path: "/suppliers"): All suppliers of the current user are listed. After registration, a company has zero suppliers and adds suppliers from the SustainMind database with the "Add Supplier" button. In future, the list of suppliers can be automatically imported from ERP systems like SAP.
-- Supplier Details (path: "/suppliers/<SUPPLIER_ID>"): Allows the risk scores and suggested prevention measures for a specific supplier
-- Marketplace (path: "/marketplace"): The supplier marketplace lists all suppliers registered on our platform. It can be used by corporations to find new suppliers that value sustainability.
-- Production Sites (path: "/sites"): Allows to add and view production sites. Information about production sites is required for the automatic risk analysis.
-- Risk Analysis (path: "/analysis"): Corporations can see their own ESG score and document the identified risks and conducted prevention measures.
-
 # Features
 Feature | Implemented
 :------------ | :-------------
@@ -135,6 +136,20 @@ Conduct Prevention Measures | In Progress
 Automatic Reporting | ✅
 Multiple Logins per Company | Coming Soon
 Certificates (with QR Codes) | Coming Soon
+
+<div id='website-structure'/>
+
+# Website Structure
+
+Our website consists of the following pages:
+- Landing Page (path: "."): The landing page informs new users about the advantages of our software and convinces them to register
+- Dashboard (path: "/home"): Users see the an overview of the most relevant SustainMind features: My Products, My Suppliers, Supplier Marketplace, Risk Analysis, Production Sites
+- Products (path: "/products"): Users can view their own products with respective ESG scores. The scores are calculated based on the ESG scores of all suppliers involved in the supply chain. In future, our users will be able to generate QR codes to prove the sustainability of their products to their customers.
+- Suppliers (path: "/suppliers"): All suppliers of the current user are listed. After registration, a company has zero suppliers and adds suppliers from the SustainMind database with the "Add Supplier" button. In future, the list of suppliers can be automatically imported from ERP systems like SAP.
+- Supplier Details (path: "/suppliers/<SUPPLIER_ID>"): Allows the risk scores and suggested prevention measures for a specific supplier
+- Marketplace (path: "/marketplace"): The supplier marketplace lists all suppliers registered on our platform. It can be used by corporations to find new suppliers that value sustainability.
+- Production Sites (path: "/sites"): Allows to add and view production sites. Information about production sites is required for the automatic risk analysis.
+- Risk Analysis (path: "/analysis"): Corporations can see their own ESG score and document the identified risks and conducted prevention measures.
 
 # Infrastructure
 ## TechStack
@@ -211,6 +226,8 @@ SustainMind
 └──  README.md: technical documentation
 ```
 
+<div id='risk-score-calculation'/>
+
 # Risk Score Calculation
 
 The risk analysis combines both internal and external expertise by using publicly available indices, supplier knowledge from the SustainMind database and internal knowledge from people within customer organizations. By incorporating these perspectives, one can gain valuable insights and ensure a holistic understanding of the risks associated with the supply chain.
@@ -238,7 +255,9 @@ For each of these risks, a score between 0 and 100 is calculated. A score below 
 
 We prioritize the risks based on the refined risk scores, the potential severity and our ability to eliminate the risks, measured by our contract volume compared to a supplier’s total revenue.
 
-# ESG score calculation
+<div id='esg-score-calculation'/>
+
+# ESG Score Calculation
 
 The ESG score of a supplier is calculated based on how well the supplier implements prevention measures and audit results.
 
