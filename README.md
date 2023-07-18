@@ -16,7 +16,7 @@ SustainMind is a cloud-based supply chain due diligence software that enables co
 2. [Run Locally](#run-locally)
 3. [Features](#features)
 4. [Website Structure](#website-structure)
-5. [Infrastructure](#infrastructure)
+5. [Implementation Details](#implementation-details)
 6. [Risk Score Calculation](#risk-score-calculation)
 7. [ESG Score Calculation](#esg-score-calculation)
 8. [Appendix](#appendix)
@@ -151,7 +151,9 @@ Our website consists of the following pages:
 - Production Sites (path: "/sites"): Allows to add and view production sites. Information about production sites is required for the automatic risk analysis.
 - Risk Analysis (path: "/analysis"): Corporations can see their own ESG score and document the identified risks and conducted prevention measures.
 
-# Infrastructure
+<div id='implementation-details'/>
+
+# Implementation Details
 ## TechStack
 Frontend: React (Typescript)  
 Backend: Express (Node)  
@@ -253,22 +255,24 @@ Chain Due Diligence Act (LkSG):
 
 For each of these risks, a score between 0 and 100 is calculated. A score below 30 indicates a low risk, a score of at least 30 and below 70 a medium risk and a score of at least 70 indicates a high risk. The scores give a good first impression of the severity of each risk. To refine the identified risks, employee surveys are conducted within our customer companies, especially of the purchasing departments. 
 
-We prioritize the risks based on the refined risk scores, the potential severity and our ability to eliminate the risks, measured by our contract volume compared to a supplier’s total revenue.
+We prioritize the risks based on the refined risk scores, the potential severity and the ability to eliminate these risks, measured by the contract volume of a company compared to a suppier's total revenue.
 
 <div id='esg-score-calculation'/>
 
 # ESG Score Calculation
 
-The ESG score of a supplier is calculated based on how well the supplier implements prevention measures and audit results.
+The ESG score of a supplier is calculated based on how well the supplier implements prevention measures and based on audit results:
+- Up to 4 points can be achieved by making efforts to implement prevention measures. The maximum score is only given if the company implemented all suggested prevention measures before their deadline.
+- Up to 4 points can be achieved during audits for good human rights compliance and through following environmental standards. The audits are not announced.
+- Up to 2 points can be achieved by providing additional information or documents to prove the own sustainability, e.g. documentation/invoices of the waste disposal system.
+- Points can be deducted for reported violations of human rights or environmental standards.
+- A supplier's ESG score is the sum of points achieved. The minimum ESG score is 0, the maximum is 10. Partial points are possible. The final ESG score is rounded to one decimal place.
 
-The ESG score of a corporation is calculated as the average of the risk scores of its suppliers.
+The ESG score of a corporation is calculated as the average of the ESG scores of its suppliers.
 
-The ESG score of a product is calculated as the average of the risk scores of the supplier companies involved in the supply chain.
+The ESG score of a product is calculated as the average of the ESG scores of all supplier companies involved in the supply chain.
 
 # Appendix
-
-[Link to Pitch Deck](https://app.pitch.com/app/presentation/a3e4d2b3-91b3-4d28-b7ad-3c9a854581c0/04592aaf-1616-4c72-b173-320963c01031)  
-[Link to Prototype](https://www.sustainmind.de/)
 
 Our Team:
 Florian Weiser,
